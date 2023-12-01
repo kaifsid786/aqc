@@ -56,12 +56,13 @@ const ProductSection = () => {
 
     ]
   return (
+    <div className="all-container">
     <div className="ProductSection">
       <div className="health-magic" style={{ display: "flex", gap: "3rem" }}>
         <img src={diet} alt="" />
         <div
           className="health-magic-info"
-          style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}
+          style={{ display: "flex", flexDirection: "column", gap: "0.6rem",justifyContent:'center' }}
         >
           <div style={{ color: "#10C08E", fontSize: "0.7rem" }}>About Us</div>
           <div
@@ -135,6 +136,7 @@ const ProductSection = () => {
       <Gallery/>
 
         
+    </div>
     </div>
   );
 };

@@ -8,7 +8,9 @@
   
   
   
-  
+  .swiper-initialized{
+    width: 100%;
+  }
   
   .swiper-horizontal{
     overflow: visible;
@@ -16,9 +18,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    /* width: 90%; */
     flex-direction: column;
   }
+  
   .r-buttons{
     position: absolute;
     gap: 1rem;

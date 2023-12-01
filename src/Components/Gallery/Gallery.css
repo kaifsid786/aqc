@@ -1,8 +1,16 @@
+.gall-cont{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 .Gallery{
     width: 100%;
     gap: 5px;
     align-items: flex-end;
     justify-content: center;
+    display: flex;
+    max-width: 1520px;
 }
 .G-col1{
     flex: 1;
