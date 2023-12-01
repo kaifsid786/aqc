@@ -1,0 +1,13 @@
+.main-contact{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner{
+        width: 100%;
+        max-width: 1500px;
+        height: calc(100vh - 100px);
+        fill: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #F2F9FF 106.41%);
+    }
+}

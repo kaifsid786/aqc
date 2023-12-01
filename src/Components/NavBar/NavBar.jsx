@@ -21,7 +21,7 @@ export default function NavBar() {
                    <li onClick={()=>navigate("/contract")}>Contract Manufacturer</li>
                    <li onClick={()=>navigate("/technology")}>Technology</li>
                    <li onClick={()=>navigate("/media")}>Media</li>
-                   <li className="contactLink">Contact</li>
+                   <li className="contactLink" onClick={()=>navigate("/contact")}>Contact</li>
               </ul>
             </div>
         </div>
