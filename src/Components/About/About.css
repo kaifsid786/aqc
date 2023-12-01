@@ -7,7 +7,7 @@
 }
 .main-about .about-banner {
   width: 100%;
-  max-height: 45.625rem;
+  max-height: 55rem;
   height: calc(100vh - 100px);
   background: url("/public/AboutBan.png");
   background-size: cover;
@@ -31,11 +31,11 @@
   gap: 20px;
 }
 .main-about .about-banner .banner-text h3 {
-  width: 48rem;
+  width: 35rem;
   color: #002849;
   text-align: center;
   font-family: Poppins;
-  font-size: 4rem;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 500;
   line-height: 5rem; /* 110% */
@@ -53,7 +53,7 @@
   color: #000;
   text-align: center;
   font-family: Poppins;
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 300;
   line-height: 2rem; /* 145.455% */
@@ -69,7 +69,7 @@
   padding: 4rem 3rem;
   color: #000;
   font-family: Poppins;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 300;
   line-height: 2.125rem; /* 154.545% */
@@ -77,14 +77,15 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .intro {
-    font-size: 1.375rem;
+    font-size: 1.05rem;
     line-height: 2.125rem;
   }
 }
 .main-about .mission-vission {
   width: 100%;
   max-width: 1500px;
-  padding: 4rem 3rem;
+  padding: 0 3rem;
+  padding-bottom: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +101,7 @@
   border: 1px solid lightgrey;
   border-radius: 10px;
   padding: 0 2rem;
+  gap: 20px;
 }
 .main-about .mission-vission .card h3 {
   color: #000;
@@ -146,7 +148,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .commitment .wrapper {
-    padding: 5rem 3rem;
+    padding: 8rem 3rem;
   }
 }
 .main-about .commitment .wrapper .left {
@@ -155,7 +157,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 @media only screen and (min-width: 1536px) {
@@ -166,7 +168,7 @@
 .main-about .commitment .wrapper .left h3 {
   color: #000;
   font-family: Poppins;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
   line-height: 4rem; /* 114.286% */
@@ -215,6 +217,11 @@
   justify-content: center;
   align-items: center;
 }
+@media only screen and (min-width: 1536px) {
+  .main-about .usp {
+    padding: 8rem 0;
+  }
+}
 .main-about .team-section {
   width: 100%;
   background-color: #002849;
@@ -232,6 +239,12 @@
   align-items: flex-start;
   gap: 30px;
 }
+@media only screen and (min-width: 1536px) {
+  .main-about .team-section .wrapper {
+    padding: 8rem 3rem;
+    gap: 50px;
+  }
+}
 .main-about .team-section .wrapper .horz-bar {
   width: 100%;
   height: 0.0625rem;
@@ -240,7 +253,7 @@
 .main-about .team-section .wrapper h3 {
   color: #FFF;
   font-family: Poppins;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
   line-height: 5rem; /* 114.286% */
@@ -254,7 +267,7 @@
 .main-about .team-section .wrapper p {
   color: #FFF;
   font-family: Poppins;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -274,7 +287,7 @@
   width: 40rem;
   color: #FFF;
   font-family: Inter;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -299,10 +312,23 @@
     line-height: 2rem;
   }
 }
+.main-about .awards {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 3rem;
+}
+.main-about .awards img {
+  width: 80px;
+}
 .main-about .contact {
   width: 100%;
   max-width: 1500px;
   padding: 4rem 3rem;
+  margin: 4rem 0;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -311,11 +337,11 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .contact {
-    padding: 5rem 3rem;
+    padding: 8rem 3rem;
   }
 }
 .main-about .contact .left {
-  width: calc(65% - 20px);
+  width: calc(50% - 20px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -325,10 +351,10 @@
 .main-about .contact .left h3 {
   color: var(--22, #003E71);
   font-family: Poppins;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 4rem; /* 114.286% */
+  line-height: 3rem; /* 114.286% */
 }
 @media only screen and (min-width: 1536px) {
   .main-about .contact .left h3 {
@@ -339,7 +365,7 @@
 .main-about .contact .left p {
   color: var(--22, #003E71);
   font-family: Poppins;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 2.51238rem */

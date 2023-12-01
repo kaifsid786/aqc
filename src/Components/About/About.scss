@@ -64,7 +64,7 @@
    .intro{
     width: 100%;
     max-width: 1500px;
-    padding: 4rem 3rem;
+    padding: 4rem 5rem;
     color: #000;
     font-family: Poppins;
     font-size: 1rem;
@@ -73,14 +73,14 @@
     line-height: 2.125rem; /* 154.545% */
     text-align: left;
     @include xxl{
-        font-size: 1.375rem;
-        line-height: 2.125rem;
+        font-size: 1.05rem;
+        line-height: 2rem;
     }
    }
    .mission-vission{
     width: 100%;
     max-width: 1500px;
-    padding: 0 3rem;
+    padding: 0 5rem;
     padding-bottom: 4rem;
      display: flex;
      justify-content: space-between;
@@ -105,7 +105,7 @@
             font-weight: 500;
             line-height: 2.79138rem; /* 129.412% */
             @include xxl{
-                font-size: 2.125rem;
+                font-size: 2rem;
                 line-height: 3.125rem;
             }
         }
@@ -117,7 +117,7 @@
             font-weight: 400;
             line-height: 1.83631rem; /* 146.907% */
             @include xxl{
-                font-size: 1.375rem;
+                font-size: 1.05rem;
                 line-height: 2.125rem;
             }
         }
@@ -133,7 +133,7 @@
      .wrapper{
         width: 100%;
         max-width: 1500px;
-        padding: 4rem 3rem;
+        padding: 4rem 5rem;
          display: flex;
          justify-content: space-between;
          align-items: flex-start;
@@ -159,7 +159,7 @@
             font-weight: 500;
             line-height: 4rem; /* 114.286% */
             @include xxl{
-                font-size: 4rem;
+                font-size: 3.8rem;
                 line-height: 5rem;
             }
         }
@@ -171,7 +171,7 @@
             font-weight: 300;
             line-height: 2.125rem; /* 154.545% */
             @include xxl{
-                font-size: 1.375rem;
+                font-size: 1.2rem;
             }
         }
      }
@@ -213,7 +213,7 @@
       .wrapper{
         width: 100%;
         max-width: 1500px;
-        padding: 4rem 3rem;
+        padding: 4rem 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -238,7 +238,7 @@
             font-weight: 500;
             line-height: 5rem; /* 114.286% */
             @include xxl{
-                font-size: 4rem;
+                font-size: 3rem;
                 line-height: 5rem;
             }
         }
@@ -250,7 +250,7 @@
             font-weight: 400;
             line-height: normal;
             @include xxl{
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 line-height: 2.125rem;
             }
         }
@@ -268,7 +268,7 @@
                 font-weight: 700;
                 line-height: normal;
                 @include xxl{
-                    font-size: 2.2rem;
+                    font-size: 2rem;
                     line-height: normal;
                 }
             }
@@ -280,7 +280,7 @@
                 font-weight: 400;
                 line-height: 2rem; /* 145.455% */
                 @include xxl{
-                    font-size: 1.3rem;
+                    font-size: 1.1rem;
                     line-height: 2rem;
                 }
             }
@@ -294,7 +294,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 3rem;
+    padding: 4rem 5rem;
     img{
         width: 80px;
     }
@@ -303,7 +303,7 @@
    .contact{
       width: 100%;
       max-width: 1500px;
-      padding: 4rem 3rem;
+      padding: 4rem 5rem;
       margin: 4rem 0;
       margin-top: 0;
       display: flex;
@@ -330,7 +330,7 @@
             font-weight: 500;
             line-height: 3rem; /* 114.286% */
             @include xxl{
-                font-size: 4rem;
+                font-size: 3rem;
                 line-height: 5rem;
             }
         }

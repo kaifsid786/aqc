@@ -72,8 +72,8 @@ export default function Contract() {
 
       <div className="contact">
              <div className="left">
-               <h3>Together, Let's Build a Healthy world around us</h3>
-               <p>Are you ready to take your food to the next level in terms of taste & nutritional value to build a healthier world around us?</p>
+               <h3>A journey towards a healthy lifestyle.</h3>
+               <p>We promise to turn your vision into reality and be your partner in contract manufacturing experience. </p>
              </div>
              <div className="right">
               <button>Contact</button>

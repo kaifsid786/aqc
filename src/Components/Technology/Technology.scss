@@ -21,7 +21,7 @@
     .intro{
         width: 100%;
         max-width: 1500px;
-        padding: 4rem 3rem;
+        padding: 4rem 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -37,7 +37,7 @@
             line-height: 120%; /* 5.25rem */
             text-transform: capitalize;
             @include xxl{
-                font-size: 4.375rem;
+                font-size: 3.5rem;
             }
         }
         p{
@@ -49,7 +49,7 @@
             font-weight: 300;
             line-height: 2.125rem; /* 154.545% */
             @include xxl{
-                font-size: 1.375rem;
+                font-size: 1.1rem;
             }
         }
     }
@@ -57,12 +57,12 @@
     .cards{
         width: 100%;
         max-width: 1500px;
-        padding: 4rem 3rem;
+        padding: 4rem 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 50px;
 
         .card-1{
             width: 100%;
@@ -92,7 +92,7 @@
                     line-height: 120%; /* 3.75rem */
                     text-transform: capitalize;
                     @include xxl{
-                        font-size: 3.125rem;
+                        font-size: 2.5rem;
                     }
                 }
                 p{
@@ -104,7 +104,7 @@
                     line-height: 2.5rem; /* 133.333% */
                     text-transform: capitalize;
                     @include xxl{
-                        font-size: 1.875rem;
+                        font-size: 1.5rem;
                     }
                 }
             }
@@ -141,12 +141,12 @@
                 p{
                     color: #FFF;
                     font-family: Poppins;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     font-style: normal;
                     font-weight: 300;
                     line-height: 2.125rem; /* 154.545% */
                     @include xxl{
-                        font-size: 1.2rem;
+                        font-size: 1.05rem;
                     }
                 }
              }
@@ -156,7 +156,7 @@
     .contact{
         width: 100%;
         max-width: 1500px;
-        padding: 4rem 3rem;
+        padding: 4rem 5rem;
         margin: 4rem 0;
         display: flex;
         justify-content: space-between;
@@ -174,15 +174,16 @@
           justify-content: center;
           align-items: flex-start;
           gap: 30px;
+
           h3{
               color: var(--22, #003E71);
               font-family: Poppins;
               font-size: 2rem;
               font-style: normal;
               font-weight: 500;
-              line-height: 3rem; /* 114.286% */
+              line-height: 3.5rem; /* 114.286% */
               @include xxl{
-                  font-size: 4rem;
+                  font-size: 3rem;
                   line-height: 5rem;
               }
           }

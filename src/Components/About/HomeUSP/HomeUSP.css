@@ -6,19 +6,19 @@
     background-color: white;
 }
 .homeUSP-left{
-    width: calc(50% - 20px);
+    width: calc(50% - 50px);
     height: 100%;
     position: absolute;
     left: 0;
-    margin-left:-2rem;
+    margin-left:1rem;
     padding: 2rem 5rem;
 }
 .homeUSP-right{
-    width: calc(50% - 20px);
+    width: calc(50% - 50px);
     height: 100%;
     position: absolute;
     right: 0;
-    margin-right: 3rem;
+    margin-right: 4.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,19 +101,19 @@
 
 @media screen and (min-width:1500px){
     .homeUSP-left-content h1{
-        font-size: 4.125rem;
+        font-size: 3rem;
         line-height: 5rem;
     }
     .homeUSP-left-content p{
-        font-size: 1.375;
+        font-size: 1.05rem;
         line-height: 2.125rem;
     }
     .homeUSP-right-content h1{
-        font-size: 1.875rem;
+        font-size: 1.5rem;
         line-height: 2.45rem;
     }
     .homeUSP-right-content p{
-        font-size: 1.25rem;
+        font-size: 1.05rem;
         line-height: normal;
     }
 }

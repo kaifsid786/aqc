@@ -1,8 +1,13 @@
 .navbar {
   height: 100px;
 }
+@media only screen and (min-width: 1536px) {
+  .navbar {
+    height: 150px;
+  }
+}
 .navbar .wrapper {
-  max-width: 1366px;
+  max-width: 1500px;
   height: 100%;
   margin: auto;
   display: flex;
@@ -10,10 +15,20 @@
   align-items: center;
   padding: 0 2rem;
 }
+@media only screen and (min-width: 1536px) {
+  .navbar .wrapper {
+    padding: 0 5rem;
+  }
+}
 .navbar .wrapper img {
   width: 150px;
   height: 50px;
   flex-shrink: 0;
+}
+@media only screen and (min-width: 1536px) {
+  .navbar .wrapper img {
+    height: 80px;
+  }
 }
 .navbar .wrapper .links ul {
   list-style: none;
@@ -30,6 +45,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: 2.75rem; /* 220% */
+}
+@media only screen and (min-width: 1536px) {
+  .navbar .wrapper .links ul li {
+    font-size: 1rem;
+  }
 }
 .navbar .wrapper .links ul li:hover {
   font-weight: bolder;
