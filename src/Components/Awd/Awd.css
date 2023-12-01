@@ -1,0 +1,10 @@
+.awd{
+    display: flex;
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+.awd>img{
+    width: 5rem;
+    height: 5rem;
+}

@@ -41,7 +41,7 @@ export default function About() {
     <NavBar />
     <div className="main-about">
       <div className="about-banner">
-           <div className="banner-gradient"></div>
+           <div className="banner-gradient"></div>   
            <motion.div className="banner-text" variants={varient} initial="initial" animate="animate">
             <motion.h3 variants={varient}>We take “ <motion.span variants={varient} style={{color:"#10C08E"}}>Your Wish, Our Command!”</motion.span> very seriously.</motion.h3>
             <motion.p variants={varient}>Our primary approach has been to meet the customer needs and keep our customers always at the forefront of everything we do. </motion.p>

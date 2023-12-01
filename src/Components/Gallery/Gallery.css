@@ -1,0 +1,26 @@
+.Gallery{
+    width: 100%;
+    gap: 5px;
+    align-items: flex-end;
+    justify-content: center;
+}
+.G-col1{
+    flex: 1;
+    width: 1rem;
+    gap: 5px;
+}
+.G-col1>img{
+    border-radius: 15px;
+    object-fit: cover;
+}
+.awards{
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 3rem;
+    img{
+        width: 80px;
+    }
+}

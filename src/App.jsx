@@ -4,6 +4,7 @@ import Contract from "./Components/Contract/Contract";
 import Media from "./Components/Media/Media";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Technology from "./Components/Technology/Technology";
+import Home from "./Components/Home/Home";
 const App = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const App = () => {
              <Route path="/media" Component={Media} />
              <Route path="/contract" Component={Contract} />
              <Route path="/technology" Component={Technology} />
+             <Route path="/home" Component={Home} />
          </Routes>
        </BrowserRouter>
     </>
