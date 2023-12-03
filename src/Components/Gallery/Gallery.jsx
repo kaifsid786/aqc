@@ -17,6 +17,8 @@ import img13 from "../../images/colorful-candies-jelly-marmalade-wooden-box-swee
 import './Gallery.css'
 import {motion,AnimatePresence} from "framer-motion"
 const Gallery = () => {
+
+  
   return (
     <div className="gall-cont">
     <div className='Gallery' style={{display:'flex'}}>

@@ -14,6 +14,7 @@ const Home = () => {
     <div className='Home'>
 
         <Slider />
+        {/* <Counter /> */}
         <ProductSection/>
         <Awd/>
         <Awards/>

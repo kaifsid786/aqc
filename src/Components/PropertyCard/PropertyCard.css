@@ -145,19 +145,7 @@
 
 
 
-@media screen and (min-width:1700px){
-  .t-s-h {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 500;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    margin-top: -1rem;
-    line-height: 5rem;
-}
+
 
  @media screen and (max-width:1500px) {
   .c-s{
