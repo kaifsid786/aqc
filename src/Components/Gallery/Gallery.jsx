@@ -21,6 +21,19 @@ const Gallery = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
 const [start,setStart]=useState();
   const [end,setEnd]=useState();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -39,7 +52,7 @@ const [start,setStart]=useState();
 
   const style = {
     height: scrollHeight >= start && scrollHeight <=end  ? '40vh' : '0',
-    background: scrollHeight >= start && scrollHeight <=end ? 'linear-gradient(#00284900, #002849)' : 'transparent',
+    background: windowWidth<=1500?(scrollHeight >= start && scrollHeight <=end ? 'linear-gradient(#00284900, #002849)' : 'transparent'):(scrollHeight >= start && scrollHeight <=(end-300) ? 'linear-gradient(#00284900, #002849)' : 'transparent'),
     zIndex: scrollHeight >= start && scrollHeight <=end ? '100' : '-1',
     filter: scrollHeight >= start && scrollHeight <=(end) ? 'blur(10px)' : 'blur(0px)',
   };

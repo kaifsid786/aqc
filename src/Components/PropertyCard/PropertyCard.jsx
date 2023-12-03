@@ -16,6 +16,20 @@ import {motion} from 'framer-motion';
 const PropertyCard = ({card}) => {
   // console.log(card);
   const [direction, setDirection] = useState(1);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // console.log(windowWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -74,7 +88,7 @@ const PropertyCard = ({card}) => {
                <motion.img 
                initial={{y:"10rem"}}
                animate={{
-                y: direction === 1 ? "0rem" : "9rem",
+                y: windowWidth<=1500?(direction === 1 ? "0rem" : "9rem"):(direction === 1 ? "0rem" : "15rem"),
               }}
                transition={{
                 duration:1,
@@ -84,7 +98,8 @@ const PropertyCard = ({card}) => {
                <motion.img 
                initial={{y:"-10rem"}}
                animate={{
-                y: direction === 1 ? "0rem" : "-9rem",
+                y: windowWidth<=1500?(direction === 1 ? "0rem" : "-9rem"):(direction === 1 ? "0rem" : "-16rem"),
+               
               }}
                transition={{
                 duration:1,
@@ -115,7 +130,8 @@ const PropertyCard = ({card}) => {
             <motion.img 
                 initial={{y:"10rem"}}
                 animate={{
-                 y: direction === 1 ? "0rem" : "10rem",
+               
+                 y: windowWidth<=1500?(direction === 1 ? "0rem" : "10rem"):(direction === 1 ? "0rem" : "19rem"),
                }}
                transition={{
                 duration:1,
@@ -124,7 +140,8 @@ const PropertyCard = ({card}) => {
                 <motion.img 
                 initial={{x:"10rem"}}
                 animate={{
-                  x: direction === 1 ? "0rem" : "10rem",
+                  x: windowWidth<=1500?(direction === 1 ? "0rem" : "10rem"):(direction === 1 ? "0rem" : "15rem"),
+                  
                 }}
                transition={{
                 duration:1,
