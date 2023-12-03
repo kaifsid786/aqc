@@ -1,7 +1,7 @@
 import React from 'react'
 import './Counter.css';
 import img1 from "../../images/Vector.png";
-import img2 from "../../images/Group.png";
+import img2 from "../../images/country.png";
 import img3 from "../../images/Group 1171277277.png";
 import img4 from "../../images/Smile Face.png";
 import img5 from "../../images/Group.png";
