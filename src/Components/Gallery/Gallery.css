@@ -3,6 +3,22 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.gall-animation{
+    width: 100%;
+    max-width: 1520px;
+    color: rebeccapurple;
+    background: linear-gradient(#00284900, #002849);
+    /* border: 1px solid rebeccapurple; */
+   
+    position: fixed;
+    bottom: 0;
+}
+.gall-animation>hr{
+    /* position: fixed; */
+    /* top: 0; */
 }
 .Gallery{
     width: 100%;

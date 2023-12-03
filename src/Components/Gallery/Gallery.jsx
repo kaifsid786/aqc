@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import img1 from "../../images/spoon-ingredients-full-flour.png";
 
 
@@ -18,9 +18,40 @@ import './Gallery.css'
 import {motion,AnimatePresence} from "framer-motion"
 const Gallery = () => {
 
+  const [scrollHeight, setScrollHeight] = useState(0);
+const [start,setStart]=useState();
+  const [end,setEnd]=useState();
+
+  useEffect(() => {
+    const onScroll = () => {
+      // console.log(window.scrollY)
+
+      const element = document.querySelector('.gall-cont');
+      const newScrollHeight = element.scrollHeight;
+      setStart(document.querySelector('.gall-cont').scrollHeight-400);
+      setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight-400);
+      setScrollHeight(window.scrollY);
+    };
+
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollHeight]);
+
+  const style = {
+    height: scrollHeight >= start && scrollHeight <=end  ? '40vh' : '0',
+    background: scrollHeight >= start && scrollHeight <=end ? 'linear-gradient(#00284900, #002849)' : 'transparent',
+    zIndex: scrollHeight >= start && scrollHeight <=end ? '100' : '-1',
+    filter: scrollHeight >= start && scrollHeight <=(end) ? 'blur(10px)' : 'blur(0px)',
+  };
   
+ 
+
   return (
-    <div className="gall-cont">
+    
+    <div className="gall-cont" >
+      <div className="gall-animation" style={style}>
+        <hr />
+      </div>
     <div className='Gallery' style={{display:'flex'}}>
          <AnimatePresence>
         <motion.div
@@ -107,6 +138,7 @@ const Gallery = () => {
         </AnimatePresence>
     </div>
     </div>
+    
   )
 }
 
