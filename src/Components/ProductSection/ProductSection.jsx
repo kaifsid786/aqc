@@ -58,7 +58,7 @@ const ProductSection = () => {
   return (
     <div className="all-container">
     <div className="ProductSection">
-      <div className="health-magic" style={{ display: "flex", gap: "3rem" }}>
+      <div className="health-magic" style={{ display: "flex", gap: "3rem",marginTop:'7rem' }}>
         <img src={diet} alt="" />
         <div
           className="health-magic-info"

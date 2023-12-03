@@ -6,6 +6,7 @@ import ProductSection from '../ProductSection/ProductSection'
 import Awards from '../Awards/Awards';
 import Blog from '../Awards/Blog';
 import Footer from '../Footer/Footer';
+import Counter from '../Counter/Counter';
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
     <div className='Home'>
 
         <Slider />
-        {/* <Counter /> */}
+        <Counter />
         <ProductSection/>
         <Awd/>
         <Awards/>
