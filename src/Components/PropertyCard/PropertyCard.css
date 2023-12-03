@@ -1,20 +1,18 @@
 .r-card {
-    gap: 0.6rem;
-    padding: 1rem;
-    border-radius: 10px;
-    max-width: max-content;
-    margin: auto;
-    transition: all 300ms ease-in; 
-    position: relative;
-    z-index: 0;
-
-
-    height: 55rem;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  border-radius: 10px;
+  /* max-width: max-content; */
+  /* margin: auto; */
+  transition: all 300ms ease-in;
+  position: relative;
+  z-index: 0;
+  height: 55rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   }
   .r-card>svg{
     position: absolute;
@@ -147,7 +145,19 @@
 
 
 
-
+@media screen and (min-width:1700px){
+  .t-s-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+    line-height: 5rem;
+}
 
  @media screen and (max-width:1500px) {
   .c-s{
@@ -155,7 +165,7 @@
 
   }
   .r-card{
-    height: 35rem;
+    height: 34rem;
   }
   .t-s-card{
     scale: 0.8;
@@ -170,3 +180,5 @@
     width: 8rem;
   }
  }
+
+ 

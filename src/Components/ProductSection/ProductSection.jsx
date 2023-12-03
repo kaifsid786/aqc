@@ -91,18 +91,19 @@ const ProductSection = () => {
       </div>
 
       <div
-        style={{ display: "flex", justifyContent: "center", fontSize: "2rem" }}
+        className="pas"
       >
         Products and Services
       </div>
 
       <div className="product-slider">
-        <div id="residencies" className="r-wrapper">
+        <div id="residencies2" className="r-wrapper">
           <div className="paddings innerWidth r-container2">
             <div className="flexColStart r-head2">
               <span className="orangeText"></span>
               <span className="primaryText"></span>
             </div>
+           
             <Swiper {...sliderSettings}>
             <SlideNextButton />
               {/* slider */}
@@ -126,10 +127,10 @@ const ProductSection = () => {
           alignItems: "center",
         }}
       >
-        <div>Explore the Diverse Horizons:</div>
-        <div>
-          Discover the{" "}
-          <span style={{ color: "#10C08E" }}>Markets We Serve</span>
+        <div className="pas">Explore the Diverse Horizons:</div>
+        <div className="pas">
+          Discover the{"  "}
+          <span className="pas2" style={{ color: "#10C08E" }}>Markets We Serve</span>
         </div>
       </div>
 
@@ -147,11 +148,11 @@ export default ProductSection;
 const SlideNextButton = () => {
     const swiper = useSwiper();
     return (
-      <div className="flexCenter r-buttons">
-        <button onClick={() => swiper.slidePrev()} className="r-prevButton">
+      <div className="flexCenter r-buttons2">
+        <button onClick={() => swiper.slidePrev()} className="swiper-button-prev">
           &lt;
         </button>
-        <button onClick={() => swiper.slideNext()} className="r-nextButton">
+        <button onClick={() => swiper.slideNext()} className="swiper-button-next">
           &gt;
         </button>
       </div>

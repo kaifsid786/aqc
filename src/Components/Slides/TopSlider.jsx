@@ -36,7 +36,7 @@ export default TopSlidesr;
 const SlideNextButton = () => {
   const swiper = useSwiper();
   return (
-    <div className="flexCenter r-buttons">
+    <div className="flexCenter ">
       <button onClick={() => swiper.slidePrev()} className="r-prevButton">
         &lt;
       </button>

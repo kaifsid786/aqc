@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./PropertyCard.css"
 import ingredient from "../../images/ingredient-bags-full-flour.png";
 import milk from "../../images/milk-products-wooden-table.png";
@@ -9,64 +9,146 @@ import baby from "../../images/view-baby-food-with-apple.png";
 import blue from "../../images/blue-capsules-pills-wall.png";
 import uil from "../../images/uil_transaction.png"
 
-
+import {motion} from 'framer-motion';
 
 
 
 const PropertyCard = ({card}) => {
   // console.log(card);
- 
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection((prevDirection) => (prevDirection === 1 ? -1 : 1));
+    }, 2000); 
+
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     
     <div className="flexColStart r-card" >
       <div className="t-s-h">
-        <span style={{color:"#313131"}}> Enhancing <span style={{color:"#10C08E"}}>Nutrition</span></span>
-     
-     <span style={{color:"#10C08E"}}>
-        Empowering <span style={{color:"#313131"}}>Tomorrow.</span></span> 
+        <div>
+      <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+        <span style={{ color: "#313131" }}>Enhancing </span>
+      </motion.span>
+      <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>
+        <span style={{ color: "#10C08E" }}>Nutrition</span>
+      </motion.span>
       </div>
+      <div>
+      <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }}>
+        <span style={{ color: "#10C08E" }}>Empowering </span>
+      </motion.span>
+      <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.5 }}>
+        <span style={{ color: "#313131" }}>Tomorrow.</span>
+      </motion.span>
+      </div>
+    </div>
 
       <div className="c-s">
         <div className="f-t-s">
-        <div className="t-s-card">
+        <motion.div 
+        initial={{x:"-5rem"}}
+        animate={{
+          x: direction === 1 ? "5rem" : "-5rem",
+        }}
+        transition={{
+          type:"spring",
+          duration:2
+        }}
+        className="t-s-card">
             <img src={uil} alt="" />
             <div className="card-info">
                 <span>16,300,587</span>
                 <span>Customized Excellence</span>
             </div>
-        </div>
+        </motion.div>
         </div>
 
       
         
         <div className="s-t-s">
             <div className="im1-c">
-               <img src={ingredient} alt="" />
-               <img src={milk} alt="" />
+               <motion.img 
+               initial={{y:"10rem"}}
+               animate={{
+                y: direction === 1 ? "0rem" : "9rem",
+              }}
+               transition={{
+                duration:1,
+                type:"tween"
+               }}
+               src={ingredient} alt="" />
+               <motion.img 
+               initial={{y:"-10rem"}}
+               animate={{
+                y: direction === 1 ? "0rem" : "-9rem",
+              }}
+               transition={{
+                duration:1,
+                type:"tween"
+               }} src={milk} alt="" />
 
 
             </div>
             <div className="im2-c">
-                <img src={rice} alt="" />
+            <motion.img 
+               initial={{y:"-5rem"}}
+               whileInView={{y:'0rem'}}
+               transition={{
+                duration:1,
+                type:"tween"
+               }} src={rice} alt="" />
                 <img src={pills} alt="" />
-                <img src={wooden} alt="" />
+                <motion.img 
+               initial={{y:"5rem"}}
+               whileInView={{y:'0rem'}}
+               transition={{
+                duration:1,
+                type:"tween"
+               }} src={wooden} alt="" />
 
             </div>
             <div className="im3-c">
-                <img src={baby} alt="" />
-                <img src={blue} alt="" />
+            <motion.img 
+                initial={{y:"10rem"}}
+                animate={{
+                 y: direction === 1 ? "0rem" : "10rem",
+               }}
+               transition={{
+                duration:1,
+                type:"tween"
+               }} src={baby} alt="" />
+                <motion.img 
+                initial={{x:"10rem"}}
+                animate={{
+                  x: direction === 1 ? "0rem" : "10rem",
+                }}
+               transition={{
+                duration:1,
+                type:"tween"
+               }} src={blue} alt="" />
             </div>
         </div>
 
         <div className="t-t-s">
-            <div className="t-s-card">
+           <motion.div 
+        initial={{x:"5rem"}}
+        animate={{
+          x: direction === 1 ? "-5rem" : "5rem",
+        }}
+        transition={{
+          type:"spring",
+          duration:2
+        }} className="t-s-card">
             <img src={uil} alt="" />
             <div className="card-info">
                 <span>16,300,587</span>
                 <span>Precise Nutrition</span>
             </div>
-        </div>
+        </motion.div>
         </div>
         </div>
 

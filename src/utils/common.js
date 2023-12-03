@@ -6,7 +6,7 @@ export const getMenuStyles = (menuOpened) => {
   
   export const sliderSettings = {
     slidesPerView: 1,
-    spaceBetween: 50,
+    spaceBetween: 100,
     breakpoints: {
       480: {
         slidesPerView: 1,
@@ -15,10 +15,13 @@ export const getMenuStyles = (menuOpened) => {
         slidesPerView: 2
       },
       750: {
-        slidesPerView: 3
+        slidesPerView: 3,
+         
       },
       1100: {
         slidesPerView: 3,
+       
+       
       },
     },
   
