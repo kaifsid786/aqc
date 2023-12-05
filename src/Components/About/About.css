@@ -66,7 +66,7 @@
 .main-about .intro {
   width: 100%;
   max-width: 1500px;
-  padding: 4rem 3rem;
+  padding: 4rem 5rem;
   color: #000;
   font-family: Poppins;
   font-size: 1rem;
@@ -78,13 +78,13 @@
 @media only screen and (min-width: 1536px) {
   .main-about .intro {
     font-size: 1.05rem;
-    line-height: 2.125rem;
+    line-height: 2rem;
   }
 }
 .main-about .mission-vission {
   width: 100%;
   max-width: 1500px;
-  padding: 0 3rem;
+  padding: 0 5rem;
   padding-bottom: 4rem;
   display: flex;
   justify-content: space-between;
@@ -113,7 +113,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .mission-vission .card h3 {
-    font-size: 2.125rem;
+    font-size: 2rem;
     line-height: 3.125rem;
   }
 }
@@ -127,7 +127,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .mission-vission .card p {
-    font-size: 1.375rem;
+    font-size: 1.05rem;
     line-height: 2.125rem;
   }
 }
@@ -141,7 +141,7 @@
 .main-about .commitment .wrapper {
   width: 100%;
   max-width: 1500px;
-  padding: 4rem 3rem;
+  padding: 4rem 5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -175,7 +175,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .commitment .wrapper .left h3 {
-    font-size: 4rem;
+    font-size: 3.8rem;
     line-height: 5rem;
   }
 }
@@ -189,7 +189,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .commitment .wrapper .left p {
-    font-size: 1.375rem;
+    font-size: 1.2rem;
   }
 }
 .main-about .commitment .wrapper .right {
@@ -232,7 +232,7 @@
 .main-about .team-section .wrapper {
   width: 100%;
   max-width: 1500px;
-  padding: 4rem 3rem;
+  padding: 4rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -260,7 +260,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .team-section .wrapper h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5rem;
   }
 }
@@ -274,7 +274,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .team-section .wrapper p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 2.125rem;
   }
 }
@@ -294,7 +294,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .team-section .wrapper .team h3 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: normal;
   }
 }
@@ -308,7 +308,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .team-section .wrapper .team p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 2rem;
   }
 }
@@ -318,7 +318,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 3rem;
+  padding: 4rem 5rem;
 }
 .main-about .awards img {
   width: 80px;
@@ -326,7 +326,7 @@
 .main-about .contact {
   width: 100%;
   max-width: 1500px;
-  padding: 4rem 3rem;
+  padding: 4rem 5rem;
   margin: 4rem 0;
   margin-top: 0;
   display: flex;
@@ -358,7 +358,7 @@
 }
 @media only screen and (min-width: 1536px) {
   .main-about .contact .left h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5rem;
   }
 }

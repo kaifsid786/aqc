@@ -3,6 +3,7 @@ import './Contract.scss';
 import img from '../../../public/Contr2.png'
 import Footer from '../Footer/Footer';
 import {motion} from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const varient = {
    initial:{
@@ -20,6 +21,9 @@ const varient = {
  }
 
 export default function Contract() {
+
+  const navigate = useNavigate();
+
   return (
   <>
   <NavBar />
@@ -44,12 +48,12 @@ export default function Contract() {
                        <div className="card">
                           <h6>02</h6>
                           <h3>State-of-the art Facility:</h3>
-                          <p>AQC Chem Pvt Ltd understands that there cannot be one solution for all. The team of experts work closely to develop tailor made solutions to cater your exact specifications.</p>
+                          <p>We have some best in class technologies to offer our clients and adhere to industry standards. AQC Chem Pvt Ltd makes sure that production is efficient and precise right from the starting to full scale manufacturing.</p>
                        </div>
                        <div className="card">
                           <h6>03</h6>
                           <h3>Quality Assurance</h3>
-                          <p>AQC Chem Pvt Ltd understands that there cannot be one solution for all. The team of experts work closely to develop tailor made solutions to cater your exact specifications.</p>
+                          <p>For us, quality is the main checkpoint. We follow some rigorous quality control to meet and maintain quality standards. At AQC, we take compliance and safety very seriously. </p>
                        </div>
                   </div>
              </div>
@@ -76,7 +80,7 @@ export default function Contract() {
                <p>We promise to turn your vision into reality and be your partner in contract manufacturing experience. </p>
              </div>
              <div className="right">
-              <button>Contact</button>
+              <button onClick={()=>navigate('/contact')}>Contact</button>
              </div>
          </div>
 

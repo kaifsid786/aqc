@@ -106,6 +106,7 @@
                  align-items: center;
                 .card{
                     width: calc(30% - 20px);
+                    height: 22rem;
                     border:  1px solid white;
                     border-bottom: 0;
                     border-top: 0;
@@ -136,6 +137,7 @@
                     }
 
                     p{
+                        height: 50%;
                         color: #FFF;
                         font-family: Poppins;
                         font-size: 0.8rem;

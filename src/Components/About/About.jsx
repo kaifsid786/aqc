@@ -4,6 +4,7 @@ import img from '../../../public/AboutBan.png'
 import HomeUSP from './HomeUSP/HomeUSP'
 import Footer from '../Footer/Footer'
 import NavBar from '../NavBar/NavBar'
+import { useNavigate } from 'react-router-dom'
 import {motion} from "framer-motion"
 
 const varient = {
@@ -35,7 +36,11 @@ const varient2 = {
 },
 }
 
+
 export default function About() {
+
+  const navigate = useNavigate();
+
   return (
     <>
     <NavBar />
@@ -129,7 +134,7 @@ export default function About() {
                <p>Are you ready to take your food to the next level in terms of taste & nutritional value to build a healthier world around us?</p>
              </div>
              <div className="right">
-              <button>Contact</button>
+              <button onClick={()=>navigate('/contact')}>Contact</button>
              </div>
          </div>
     </div>

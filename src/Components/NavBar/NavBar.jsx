@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export default function NavBar() {
 
   const navigate = useNavigate();
+ 
 
   return (
     <div className='navbar'>
@@ -13,10 +14,12 @@ export default function NavBar() {
              animate={{opacity:1,scale:1}}
              transition={{duration:1}}
              src="./AQC.svg"
+             onClick={()=>navigate('/')}
+             style={{cursor:"pointer"}}
             />
             <div className="links">
               <ul>
-                   <li onClick={()=>navigate("/")}>About Us</li>
+                   <li onClick={()=>navigate("/about")}>About Us</li>
                    <li>Products</li>
                    <li onClick={()=>navigate("/contract")}>Contract Manufacturer</li>
                    <li onClick={()=>navigate("/technology")}>Technology</li>

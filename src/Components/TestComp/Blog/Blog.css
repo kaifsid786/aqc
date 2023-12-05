@@ -1,0 +1,64 @@
+.main-blog {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-blog .wrapper {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 5rem;
+  gap: 50px;
+}
+.main-blog .wrapper h3 {
+  color: var(--black, #313131);
+  font-family: Poppins;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.21894rem; /* 54% */
+  letter-spacing: -0.08219rem;
+}
+.main-blog .wrapper .cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-blog .wrapper .cards .card {
+  width: calc(30% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  cursor: pointer;
+}
+.main-blog .wrapper .cards .card img {
+  width: 90%;
+  height: 10rem;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-blog .wrapper .cards .card h6 {
+  width: 90%;
+  color: var(--black, #313131);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 135% */
+}
+.main-blog .wrapper .cards .card p {
+  color: var(--11, #10C08E);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.21894rem; /* 150% */
+}/*# sourceMappingURL=Blog.css.map */

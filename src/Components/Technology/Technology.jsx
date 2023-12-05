@@ -1,7 +1,9 @@
 import './Technology.scss';
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
+import { useNavigate } from 'react-router-dom';
 export default function Technology() {
+   const navigate = useNavigate();
   return (
     <>     
     <NavBar />
@@ -67,7 +69,7 @@ export default function Technology() {
                <p>Are you ready to take your food to the next level in terms of taste & nutritional value to build a healthier world around us?</p>
              </div>
              <div className="right">
-              <button>Contact</button>
+              <button onClick={()=>navigate('/contact')}>Contact</button>
              </div>
          </div>
      </div>

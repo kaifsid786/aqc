@@ -1,5 +1,6 @@
 import About from "./Components/About/About";
 import './App.scss'
+import Home from './Components/Home/Home';
 import Contract from "./Components/Contract/Contract";
 import Media from "./Components/Media/Media";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
@@ -12,7 +13,8 @@ const App = () => {
     <>
        <BrowserRouter>
          <Routes>
-             <Route path="/" Component={About} />
+             <Route path="/" Component={Home} />
+             <Route path="/about" Component={About} />
              <Route path="/media" Component={Media} />
              <Route path="/contract" Component={Contract} />
              <Route path="/technology" Component={Technology} />
