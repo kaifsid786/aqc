@@ -48,3 +48,13 @@
         width: 80px;
     }
 }
+.bottom{
+   
+   background:blinear-gradient(#00284900, #002849);
+    position: absolute;
+    /* width: 20vh; */
+    height: 40vh;
+    z-index: 10000;
+    filter: blur(10px);
+    bottom: -25px;
+}

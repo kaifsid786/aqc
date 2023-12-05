@@ -21,6 +21,7 @@ const Gallery = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
 const [start,setStart]=useState();
   const [end,setEnd]=useState();
+  const [trigger,setTrigger]=useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -37,24 +38,37 @@ const [start,setStart]=useState();
 
   useEffect(() => {
     const onScroll = () => {
-      // console.log(window.scrollY)
-
+      console.log(window.scrollY);
+      
+      
       const element = document.querySelector('.gall-cont');
       const newScrollHeight = element.scrollHeight;
       setStart(document.querySelector('.gall-cont').scrollHeight-400);
       setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight-400);
       setScrollHeight(window.scrollY);
     };
+    
+      if (scrollHeight >= end) {
+        document.querySelector('.gall-animation').classList.add('bottom');
+        setTrigger(true);
 
+        // bottom.style.background='linear-gradient(#00284900, #002849)'
+        
+      }else{
+        setTrigger(false);
+      }
+    
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, [scrollHeight]);
-
+  
   const style = {
+  
     height: scrollHeight >= start && scrollHeight <=end  ? '40vh' : '0',
-    background: windowWidth<=1500?(scrollHeight >= start && scrollHeight <=end ? 'linear-gradient(#00284900, #002849)' : 'transparent'):(scrollHeight >= start && scrollHeight <=(end-300) ? 'linear-gradient(#00284900, #002849)' : 'transparent'),
+    background: windowWidth<=1500?(scrollHeight >= start && scrollHeight <=(end)? 'linear-gradient(#00284900, #002849)':''):(scrollHeight >= start && scrollHeight <=(end-300) ? 'linear-gradient(#00284900, #002849)' : ''),
     zIndex: scrollHeight >= start && scrollHeight <=end ? '100' : '-1',
     filter: scrollHeight >= start && scrollHeight <=(end) ? 'blur(10px)' : 'blur(0px)',
+   
   };
   
  
@@ -62,6 +76,16 @@ const [start,setStart]=useState();
   return (
     
     <div className="gall-cont" >
+      {
+      trigger?
+      <div className="gall-animation bottom">
+        <hr />
+      </div>
+      :
+      <div className="gall-animation" style={style}>
+      <hr />
+    </div>
+      }
       <div className="gall-animation" style={style}>
         <hr />
       </div>
