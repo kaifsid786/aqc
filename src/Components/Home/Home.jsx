@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
     <NavBar/>
-    <div className='Home' style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",background:"transparent"}}>
+    <div className='Home' style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",background:"transparent",overflow:"hidden"}}>
 
         <Slider />
         <Counter />

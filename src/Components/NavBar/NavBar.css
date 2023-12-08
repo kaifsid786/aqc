@@ -1,6 +1,11 @@
 .navbar {
   height: 100px;
 }
+@media only screen and (max-width: 900px) {
+  .navbar {
+    height: 150px;
+  }
+}
 @media only screen and (min-width: 1536px) {
   .navbar {
     height: 150px;
@@ -28,6 +33,17 @@
 @media only screen and (min-width: 1536px) {
   .navbar .wrapper img {
     height: 80px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .navbar .wrapper img {
+    width: 180px;
+    height: 70px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .navbar .wrapper .links {
+    display: none;
   }
 }
 .navbar .wrapper .links ul {
@@ -69,4 +85,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.navbar .wrapper .hamBurger {
+  width: 6rem;
+  height: 4rem;
+  background-color: #003E71;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+@media only screen and (min-width: 900px) {
+  .navbar .wrapper .hamBurger {
+    display: none;
+  }
+}
+.navbar .wrapper .hamBurger .line {
+  width: 70%;
+  height: 5px;
+  background-color: white;
+  border-radius: 10px;
+}
+.navbar .wrapper .hamMenu {
+  width: 40%;
+  height: 70vh;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 150px;
+  z-index: 999;
+}
+.navbar .wrapper .hamMenu .ham-links {
+  width: 100%;
+  height: 100%;
+}
+.navbar .wrapper .hamMenu .ham-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }/*# sourceMappingURL=NavBar.css.map */

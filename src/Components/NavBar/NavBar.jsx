@@ -1,10 +1,23 @@
 import './NavBar.scss';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 export default function NavBar() {
 
   const navigate = useNavigate();
- 
+  const [showhamMenu,setShowHamMenu] = useState(true);
+  const [showHamB,setShowHamB] = useState(false);
+
+  useEffect(()=>{
+       window.addEventListener('scroll',()=>{
+           if(window.pageYOffset > 10)
+           setShowHamMenu(false);
+          else{
+            setShowHamMenu(true);
+            setShowHamB(false);
+          }
+       })
+  },[showhamMenu])
 
   return (
     <div className='navbar'>
@@ -26,6 +39,25 @@ export default function NavBar() {
                    <li onClick={()=>navigate("/media")}>Media</li>
                    <li className="contactLink" onClick={()=>navigate("/contact")}>Contact</li>
               </ul>
+            </div>
+
+            <div className="hamBurger" onClick={()=>{setShowHamB(!showHamB)}}>
+                 <div className="line"></div>
+                 <div className="line"></div>
+                 <div className="line"></div>
+            </div>
+
+            <div className={showHamB?"hamMenu slideB":"hamMenu slide"} style={!showhamMenu?{display:"none"}:{}}>
+                <div className="ham-links">
+                  <ul>
+                   <li onClick={()=>navigate("/about")}>About Us</li>
+                   <li>Products</li>
+                   <li onClick={()=>navigate("/contract")}>Contract Manufacturer</li>
+                   <li onClick={()=>navigate("/technology")}>Technology</li>
+                   <li onClick={()=>navigate("/media")}>Media</li>
+                   <li className="contactLink" onClick={()=>navigate("/contact")}>Contact</li>
+                   </ul>
+                 </div>
             </div>
         </div>
     </div>

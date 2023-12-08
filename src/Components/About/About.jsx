@@ -121,10 +121,10 @@ export default function About() {
       </div>
 
         <div className="awards">
-          <img src="/fssc.png" alt="" />
-          <img src="/halal.png" alt="" />
-          <img src="/iso.png" alt="" />
-          <img src="/gain.png" alt="" />
+          <img style={{width:"10rem"}} src="/fssc.png" alt="" />
+          <img style={{width:"4rem"}} src="/halal.png" alt="" />
+          <img  src="/iso.png" alt="" />
+          <img style={{width:"6rem"}}src="/gain.png" alt="" />
           <img src="/fssai.png" alt="" />
         </div>
          

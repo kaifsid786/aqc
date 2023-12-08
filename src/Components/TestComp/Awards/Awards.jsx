@@ -23,7 +23,7 @@ export default function Awards() {
                       <div className="card">
                          <div className="num"> <h6>3</h6></div>
                           <h3>Blending:</h3>
-                          <p>The Art of  Nutrient Synergy</p>
+                          <p>The Art of Nutrient Synergy</p>
                       </div>
                       <div className="card">
                          <div className="num"> <h6>4</h6></div>

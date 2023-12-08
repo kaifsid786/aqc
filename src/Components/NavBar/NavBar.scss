@@ -1,6 +1,9 @@
 @import '../Css/mixin.scss';
 .navbar{
     height: 100px;
+    @include md{
+        height: 150px;
+    }
     @include xxl{
         height: 150px;
     }
@@ -22,8 +25,15 @@
             @include xxl{
                 height: 80px;
             }
+            @include md{
+                width: 180px;
+                height: 70px;
+            }
         }
         .links{
+            @include md{
+                display: none;
+            }
             ul{
                 list-style: none;
                 display: flex;
@@ -61,6 +71,87 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                }
+            }
+        }
+
+        .hamBurger{
+             width: 6rem;
+             height: 4rem;
+             background-color:#003E71;
+             border-radius: 0.3rem;
+             display: flex;
+             justify-content: center;
+             flex-direction: column;
+             align-items: center;
+             gap: 10px;
+             @include mds{
+                display: none;
+             }
+
+             .line{
+                width: 70%;
+                height: 5px;
+                background-color: white;
+                border-radius: 10px;
+             }
+        }
+
+        .hamMenu{
+            width: 50%;
+            height: 70vh;
+            background-color: white;
+            position: fixed;
+            left: 0;
+            top: 150px;
+            z-index: 999;
+            @include mds{
+                display: none;
+             }
+            .ham-links{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding:3rem;
+                ul{
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 20px;
+                    // z-index: 1000;
+                    li{
+                        font-size: 1.5rem;
+                    }
+
+                }
+            }
+        }
+
+        .slide{
+            left: -100%;
+            animation: slide 1s ease;
+            @keyframes slide {
+                0%{
+                    left: 0;
+                }
+                100%{
+                    left: -100%;
+                }
+            }
+        }
+        .slideB{
+            left: 0%;
+            animation: slideB 1s ease;
+            @keyframes slideB {
+                0%{
+                    left: -100%;
+                }
+                100%{
+                    left: 0;
                 }
             }
         }

@@ -44,28 +44,29 @@
   gap: 10px;
 }
 .main-techComp .content .process .card {
-  width: calc(20% - 20px);
-  height: 8rem;
+  width: calc(25% - 20px);
+  height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
   background: #FFF;
   box-shadow: 0px 4px 50px 5px rgba(31, 31, 31, 0.05);
   border-radius: 10px;
+  padding: 10px;
 }
 .main-techComp .content .process .card .num {
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  margin: 1rem 0;
 }
 .main-techComp .content .process .card .num h6 {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
 .main-techComp .content .process .card h3 {
   color: #000;
@@ -75,6 +76,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 2rem; /* 128% */
+  margin-bottom: -0.3rem;
 }
 .main-techComp .content .process .card p {
   margin: 0;

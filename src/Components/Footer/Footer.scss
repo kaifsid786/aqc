@@ -16,12 +16,23 @@
             @include xxl{
               padding: 4rem 0;
           }
+          @include md{
+              flex-direction: column;
+              gap: 50px;
+          }
            .row-1{
              width: 45rem;
              display: flex;
              align-items: flex-start;
              justify-content: space-between;
 
+             @include md{
+              width: 100%;
+             }
+             @include sm{
+              flex-wrap: wrap;
+              gap: 50px;
+            }
               .col-1{
                 width: 70%;
                 display: flex;
@@ -29,6 +40,12 @@
                 justify-content: center;
                 align-items: flex-start;
                 gap: 40px;
+                @include md{
+                  width: 50%;
+                }
+                @include sm{
+                  width: 100%;
+                }
                 p{
                     color: #FFF;
                     font-size: 1rem;
@@ -63,6 +80,14 @@
                 align-items: flex-start;
                 gap: 10px;
                 padding-left: 5rem;
+                @include md{
+                  width: 40%;
+                  padding-left: 2rem;
+                }
+                @include sm{
+                  width: 100%;
+                  padding-left: 0;
+                }
                 h3{
                     color: #FFF;
                     font-size: 1.3rem;
@@ -87,7 +112,13 @@
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-
+            @include md{
+              width: 100%;
+            }
+            @include sm{
+              flex-wrap: wrap;
+              gap: 50px;
+            }
             .col-2{
               width: 50%;
               display: flex;
@@ -96,6 +127,13 @@
               align-items: flex-start;
               gap: 10px;
               padding-left: 5rem;
+              @include md{
+                padding-left: 0;
+              }
+              @include sm{
+                width: 100% !important;
+                padding-left: 0 !important;
+              }
               h3{
                   color: #FFF;
                   font-size: 1.3rem;
@@ -120,6 +158,9 @@
       width: 100%;
       max-width: 1366px;
       padding: 3rem 3rem;
+      @include sm{
+        padding: 0 3rem 3rem 3rem;
+      }
       .line{
         width: 100%;
          background-color: white;
@@ -142,6 +183,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: 3.16669rem; /* 230.303% */
+        @include sm{
+          font-size: 1rem;
+          line-height: 2rem;
+        }
       }
     }
 }

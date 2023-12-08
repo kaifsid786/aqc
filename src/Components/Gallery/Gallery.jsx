@@ -21,6 +21,7 @@ const Gallery = () => {
   const [scrollHeight, setScrollHeight] = useState(0);
 const [start,setStart]=useState();
   const [end,setEnd]=useState();
+  const [trigger,setTrigger]=useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -45,13 +46,34 @@ const [start,setStart]=useState();
         setStart(document.querySelector('.gall-cont').scrollHeight+100);
         setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight+250);
         setScrollHeight(window.scrollY);
+
+        if (scrollHeight >= end-400) {
+          document.querySelector('.gall-animation').classList.add('bottom');
+          setTrigger(true);
+    
+          // bottom.style.background='linear-gradient(#00284900, #002849)'
+          
+        }else{
+          setTrigger(false);
+        }
       }
       else{
       setStart(document.querySelector('.gall-cont').scrollHeight-10);
-      setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight+50);
+      setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight-50);
       setScrollHeight(window.scrollY);
+
+      if (scrollHeight >= end-100) {
+        document.querySelector('.gall-animation').classList.add('bottom');
+        setTrigger(true);
+  
+        // bottom.style.background='linear-gradient(#00284900, #002849)'
+        
+      }else{
+        setTrigger(false);
+      }
       }
     };
+
 
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -69,6 +91,18 @@ const [start,setStart]=useState();
   return (
     
     <div className="gall-cont" >
+      
+      {
+      trigger?
+      <div className="gall-animation bottom">
+        <hr />
+      </div>
+      :
+      <div className="gall-animation" style={style}>
+      <hr />
+    </div>
+      }
+
       <div className="gall-animation" style={style}>
         <hr />
       </div>

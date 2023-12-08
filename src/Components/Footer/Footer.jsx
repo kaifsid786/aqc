@@ -43,7 +43,7 @@ export default function Footer() {
                      <li>Lorem</li>
                      <li>Ipsum Lorem</li>
                 </div>
-                 <div className="col-2">
+                 <div className="col-2" style={window.innerWidth<=900?{width:"40%",paddingLeft:"2rem"}:{}}>
                     <h3>More</h3>
                      <li>Terms & Conditions</li>
                      <li>Privacy policy</li>
@@ -56,7 +56,10 @@ export default function Footer() {
               <div className="line"></div>
            </div>
            <div className="copyright">
-             <p>AQC NUTRITION 2011-2021© | All rights reserved.</p>
+            {
+                window.innerWidth <=500?<p>AQC NUTRITION <br />2011-2021© All rights reserved.</p>:
+                <p>AQC NUTRITION 2011-2021© | All rights reserved.</p>
+            }
            </div>
       </div>
   )
