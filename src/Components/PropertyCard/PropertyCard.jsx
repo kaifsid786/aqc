@@ -52,7 +52,7 @@ const PropertyCard = ({card}) => {
         <span style={{ color: "#10C08E" }}>Nutrition</span>
       </motion.span>
       </div>
-      <div>
+      <div className="t-s-h2">
       <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }}>
         <span style={{ color: "#10C08E" }}>Empowering </span>
       </motion.span>
@@ -153,6 +153,9 @@ const PropertyCard = ({card}) => {
             </div>
         </motion.div>
         </div>
+        </div>
+        <div>
+        Recognizing the vital role of nutrition in today's society, we are proud of our progress and unwavering dedication 
         </div>
 
     </div>

@@ -1,11 +1,25 @@
-.awards{
+.awards2{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4rem 6rem !important;
+    padding: 4rem 6rem;
    }
 
-   .awards img{
+   .awards2 img{
         width: 80px;
+   }
+
+   @media screen and (max-width:480px) {
+     .awards2{
+          padding: 1rem;
+          flex-wrap: wrap-reverse;
+          justify-content: space-around;
+     }
+     .awards2 img{
+          width: 6rem;
+     }
+     .awards2>:nth-child(2){
+          width: 4rem;
+     }
    }

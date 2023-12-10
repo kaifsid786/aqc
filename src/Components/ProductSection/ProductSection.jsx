@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductSection.css";
 
 import { useNavigate } from "react-router-dom";
@@ -14,10 +14,23 @@ import diet from "../../images/dietary-supplement-capsules-ingredients-hand-phar
 import svg1 from "../../images/handshake_9261993 (1).png";
 import svg2 from "../../images/experiments_1974484.png";
 import svg3 from "../../images/capsule_1948415.png";
+import GalleryMob from "../Gallery/GalleryMob";
 
 const ProductSection = () => {
 
+
   const navigate = useNavigate();
+
+  const [windowWidth,setWindowWidth]=useState(window.innerWidth);
+  useEffect(()=>{
+    const handleResize=()=>{
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize',handleResize);
+    return ()=>{
+      window.removeEventListener('resize',handleResize);
+    }
+  },[])
 
     const data=[
         {
@@ -67,13 +80,14 @@ const ProductSection = () => {
           className="health-magic-info"
           style={{ display: "flex", flexDirection: "column", gap: "0.6rem",justifyContent:'center' }}
         >
-          <div className="magic-title" style={{ color: "#10C08E", fontSize: "0.7rem" }}>About Us</div>
+          <div className="magic-title">About Us</div>
           <div
             className="health-magin-info-title"
-            style={{ fontSize: "2rem", lineHeight: "2.5rem" }}
+          
           >
             Health Magic- Where Taste
-            <br />
+            {windowWidth<=480?'':<br />}
+            
             Meets Nutrition
           </div>
 
@@ -98,28 +112,33 @@ const ProductSection = () => {
       >
         Products and Services
       </div>
-
-      <div className="product-slider">
-        <div id="residencies2" className="r-wrapper">
-          <div className="paddings innerWidth r-container2">
-            <div className="flexColStart r-head2">
-              <span className="orangeText"></span>
-              <span className="primaryText"></span>
-            </div>
-           
-            <Swiper {...sliderSettings}>
-            <SlideNextButton />
-              {/* slider */}
-              {data?.map((card, i) => (
-                <SwiperSlide key={i}>
-                  <PropertyCard2 card={card} />
-                </SwiperSlide>
-              ))}
-              
-            </Swiper>
-          </div>
+      {windowWidth <= 480 ? (
+  data?.map((card, i) => (
+    <PropertyCard2 card={card} key={i} />
+  ))
+) : (
+  <div className="product-slider">
+    <div id="residencies2" className="r-wrapper">
+      <div className="paddings innerWidth r-container2">
+        <div className="flexColStart r-head2">
+          <span className="orangeText"></span>
+          <span className="primaryText"></span>
         </div>
+        <Swiper {...sliderSettings}>
+          <SlideNextButton />
+          {/* slider */}
+          {data?.map((card, i) => (
+            <SwiperSlide key={i}>
+              <PropertyCard2 card={card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
+    </div>
+  </div>
+)}
+
+      
 
       <div
         style={{
@@ -132,12 +151,13 @@ const ProductSection = () => {
       >
         <div className="pas">Explore the Diverse Horizons:</div>
         <div className="pas ">
-          Discover the{"  "}
+          Discover the{" "}
           <span className="pas2" style={{ color: "#10C08E" }}>Markets We Serve</span>
         </div>
       </div>
 
-      <Gallery/>
+        {windowWidth<=480?<GalleryMob/>:<Gallery/>}
+      
 
         
     </div>

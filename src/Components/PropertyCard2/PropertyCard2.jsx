@@ -5,7 +5,7 @@ import "./PropertyCard2.css"
 
 
 const PropertyCard = ({card}) => {
-  // console.log(card);
+  console.log(card);
   
   
   return (

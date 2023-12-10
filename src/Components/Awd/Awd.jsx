@@ -3,12 +3,12 @@ import './Awd.css'
 
 const awd = () => {
   return (
-          <div className="awards">
-          <img style={{width:"10rem"}} src="/fssc.png" alt="" />
-          <img style={{width:"70px"}} src="/halal.png" alt="" />
-          <img style={{width:"6rem"}} src="/iso.png" alt="" />
-          <img style={{width:"9rem"}} src="/gain.png" alt="" />
-          <img style={{width:"7rem"}} src="/fssai.png" alt="" />
+          <div className="awards2">
+          <img  src="/fssc.png" alt="" />
+          <img  src="/halal.png" alt="" />
+          <img  src="/iso.png" alt="" />
+          <img  src="/gain.png" alt="" />
+          <img  src="/fssai.png" alt="" />
         </div>
   )
 }

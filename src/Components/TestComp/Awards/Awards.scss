@@ -92,3 +92,24 @@
      }
 
 }
+
+@media screen and (max-width:480px) {
+  .main-techComp .content{
+    padding: 2rem;
+  }
+  .main-techComp .content p{
+    margin-top: -3rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  .main-techComp .content h3{
+    font-size: 2rem;
+    
+  }
+  .main-techComp .content .process{
+    flex-direction: column;
+  }
+  .main-techComp .content .process .card{
+    width: 100%;
+  }
+}

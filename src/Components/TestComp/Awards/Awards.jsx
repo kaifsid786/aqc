@@ -7,7 +7,7 @@ export default function Awards() {
                <div className="content">
                   <h3>Technologies</h3>
                   <p>
-                     At AQC Chem. Lab Pvt. Ltd., innovation is in our DNA. We harness a range of state- of- the- art technologies that redefine food science, enhancing product quality, efficacy, and consumer experience.
+                     <span style={{fontWeight:"bold"}}>At AQC Chem. Lab Pvt. Ltd., innovation is in our DNA.</span> We harness a range of state- of- the- art technologies that redefine food science, enhancing product quality, efficacy, and consumer experience.
                   </p>
                   <div className="process">
                       <div className="card">

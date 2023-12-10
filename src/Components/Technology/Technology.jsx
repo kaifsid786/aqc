@@ -2,8 +2,34 @@ import './Technology.scss';
 import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
+
 export default function Technology() {
    const navigate = useNavigate();
+   useEffect(() => {
+      const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+      const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+  
+      const fetchData = async () => {
+        try {
+          const res = await axios.get(`${baseURL}/technologies?populate=*`, {
+            headers: headers,
+          });
+  
+          
+          console.log(res.data); 
+        } catch (error) {
+          console.error(error); // Log any potential errors
+        }
+      };
+  
+      fetchData(); // Call the fetchData function to initiate the API request
+  
+    }, []);
   return (
     <>     
     <NavBar />

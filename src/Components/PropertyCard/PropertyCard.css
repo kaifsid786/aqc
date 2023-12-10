@@ -145,7 +145,9 @@
 
 
 
-
+  .r-card > :nth-child(3){
+    display: none;
+  }
 
  @media screen and (max-width:1500px) {
   .c-s{
@@ -169,4 +171,57 @@
   }
  }
 
- 
+ @media screen and (max-width:480px) {
+  .t-s-h {
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+  }
+  .t-s-h2{
+    display: flex;
+  } 
+  .t-s-card{
+    display: none;
+  }
+  .s-t-s{
+    scale: 0.8;
+    width: fit-content;
+  }
+  /* .im1-c>img {
+    width: 8rem;
+    height: 10rem;
+  }
+  .im2-c>img {
+    width: 8rem;
+    height: 8.5rem;
+  }
+  .im3-c>img {
+    width: 8rem;
+    height: 10rem;
+  } */
+  #residencies{
+    /* height: calc(100vh - 200px); */
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+  }
+  .r-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -16px;
+    margin-right: 0rem;
+    width: 100%;
+  }
+
+  .r-card > :nth-child(3) {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    display: flex;
+}
+
+ }
