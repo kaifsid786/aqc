@@ -20,6 +20,9 @@ export default function Technology() {
                  <div className="left">
                     <h3>Encapsulation:</h3>
                     <p>Safeguarding the goodness</p>
+                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
+                    Our encapsulation technology is a cornerstone of product stability and controlled release. By encasing active ingredients within protective shells, we ensure their preservation until consumption, maximising potency and bioavailability. This empowers our partners to offer products with enhanced shelf life and targeted nutrient delivery.
+                    </p>
                  </div>
                  <div className="right">
                     <img src="/Tech1.png" alt="" />
@@ -29,6 +32,9 @@ export default function Technology() {
                  <div className="left">
                     <h3>Spray Drying: :</h3>
                     <p>The Art of Transformations</p>
+                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
+                    Our encapsulation technology is a cornerstone of product stability and controlled release. By encasing active ingredients within protective shells, we ensure their preservation until consumption, maximising potency and bioavailability. This empowers our partners to offer products with enhanced shelf life and targeted nutrient delivery.
+                      </p>
                  </div>
                  <div className="right">
                     <img src="/Tech3.jpg" alt="" />
@@ -38,27 +44,37 @@ export default function Technology() {
                  <div className="left">
                     <h3>Blending:</h3>
                     <p>The Art of  Nutrient Synergy</p>
+                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
+                    Our blending technology is an alchemy of precision and innovation. By combining diverse ingredients, we create nutrient-rich formulations that resonate with modern dietary demands. This process ensures uniform distribution of components, yielding products that deliver consistent nutritional impact.
+                      </p>
                  </div>
                  <div className="right">
-                  <p>Our blending technology is an alchemy of precision and innovation. By combining diverse ingredients, we create nutrient-rich formulations that resonate with modern dietary demands. This process ensures uniform distribution of components, yielding products that deliver consistent nutritional impact.</p>
+                  <p style={window.innerWidth<=500?{display:"none"}:{}}>Our blending technology is an alchemy of precision and innovation. By combining diverse ingredients, we create nutrient-rich formulations that resonate with modern dietary demands. This process ensures uniform distribution of components, yielding products that deliver consistent nutritional impact.</p>
+                   <img style={window.innerWidth>500?{display:"none"}:{width:"100%"}} src="/Tech4.jpg" alt="" />
                  </div>
              </div>
              <div className="card-1 type2">
                  <div className="left">
                     <h3>Granulation::</h3>
                     <p>Solidifying Quality</p>
+                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
+                    Granulation is our pathway to product cohesion and durability. By mixing and matching  fine particles, we ensure uniformity and homogeneity, elevating product handling and dissolution properties. The result is nutritional products that are as robust as they are effective.
+                      </p>
                  </div>
                  <div className="right">
-                    <img src="/Tech4.jpg" alt="" />
+                    <img src="/Tech5.jpg" alt="" />
                  </div>
              </div>
              <div className="card-1">
                  <div className="left">
                     <h3>Extrusion:</h3>
                     <p>Shaping Nutritional Excellence</p>
+                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
+                    This is where art meets nutrition. Extrusion technology shapes our commitment to nutritional excellence. It allows us to craft products with unique textures and structures while keeping all nutritional value. This technology is particularly vital for sculpting nutritional masterpieces for your taste buds. In the world of food processing, we are not just keeping up with the standards but we are leading the way with these mind blowing technologies. 
+                      </p>
                  </div>
                  <div className="right">
-                    <img src="/Tech5.jpg" alt="" />
+                    <img src="/Tech2.jpg" alt="" />
                  </div>
              </div>
          </div>

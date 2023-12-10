@@ -18,11 +18,28 @@
     padding: 4rem 0;
   }
 }
+@media only screen and (max-width: 900px) {
+  .main-footer .wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
 .main-footer .wrapper .row-1 {
   width: 45rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+}
+@media only screen and (max-width: 900px) {
+  .main-footer .wrapper .row-1 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-footer .wrapper .row-1 {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
 }
 .main-footer .wrapper .row-1 .col-1 {
   width: 70%;
@@ -31,6 +48,16 @@
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
+}
+@media only screen and (max-width: 900px) {
+  .main-footer .wrapper .row-1 .col-1 {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-footer .wrapper .row-1 .col-1 {
+    width: 100%;
+  }
 }
 .main-footer .wrapper .row-1 .col-1 p {
   color: #FFF;
@@ -66,6 +93,18 @@
   gap: 10px;
   padding-left: 5rem;
 }
+@media only screen and (max-width: 900px) {
+  .main-footer .wrapper .row-1 .col-2 {
+    width: 40%;
+    padding-left: 2rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-footer .wrapper .row-1 .col-2 {
+    width: 100%;
+    padding-left: 0;
+  }
+}
 .main-footer .wrapper .row-1 .col-2 h3 {
   color: #FFF;
   font-size: 1.3rem;
@@ -88,6 +127,17 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+@media only screen and (max-width: 900px) {
+  .main-footer .wrapper .row-2 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-footer .wrapper .row-2 {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
 .main-footer .wrapper .row-2 .col-2 {
   width: 50%;
   display: flex;
@@ -96,6 +146,17 @@
   align-items: flex-start;
   gap: 10px;
   padding-left: 5rem;
+}
+@media only screen and (max-width: 900px) {
+  .main-footer .wrapper .row-2 .col-2 {
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-footer .wrapper .row-2 .col-2 {
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
 }
 .main-footer .wrapper .row-2 .col-2 h3 {
   color: #FFF;
@@ -118,6 +179,11 @@
   max-width: 1366px;
   padding: 3rem 3rem;
 }
+@media only screen and (max-width: 500px) {
+  .main-footer .border {
+    padding: 0 3rem 3rem 3rem;
+  }
+}
 .main-footer .border .line {
   width: 100%;
   background-color: white;
@@ -139,4 +205,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 3.16669rem; /* 230.303% */
+}
+@media only screen and (max-width: 500px) {
+  .main-footer .copyright p {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
 }/*# sourceMappingURL=Footer.css.map */

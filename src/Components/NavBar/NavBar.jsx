@@ -14,19 +14,18 @@ export default function NavBar() {
            setShowHamMenu(false);
           else{
             setShowHamMenu(true);
-            setShowHamB(false);
           }
        })
   },[showhamMenu])
 
   return (
     <div className='navbar'>
-        <div className="wrapper">
+        <div className="wrapper" style={showHamB?{background:"#003E71",transition:"all 1s ease"}:{}}>
             <motion.img
              initial={{opacity:0,scale:0.5}}
              animate={{opacity:1,scale:1}}
              transition={{duration:1}}
-             src="./AQC.svg"
+             src={!showHamB?"./AQC.svg":"/AQC2.svg"}
              onClick={()=>navigate('/')}
              style={{cursor:"pointer"}}
             />
@@ -42,14 +41,14 @@ export default function NavBar() {
             </div>
 
             <div className="hamBurger" onClick={()=>{setShowHamB(!showHamB)}}>
-                 <div className="line"></div>
-                 <div className="line"></div>
-                 <div className="line"></div>
+                 <div className="line" style={showHamB?{transform: "rotateZ(-405deg) translate(0.3rem, -0.5rem)",transition:"all 1s ease"}:{}}></div>
+                 <div className="line" style={showHamB?{display:"none"}:{}}></div>
+                 <div className="line" style={showHamB?{transform: "rotateZ(405deg) translate(-0.9rem, -0.6rem)"}:{}}></div>
             </div>
 
-            <div className={showHamB?"hamMenu slideB":"hamMenu slide"} style={!showhamMenu?{display:"none"}:{}}>
+            <div className={showHamB?"hamMenu slideB":"hamMenu"} style={(showhamMenu && showHamB)?{background:"#003E71"}:(!showhamMenu)?{display:"none"}:{left:"-100%",transition:"all 1s ease"}}>
                 <div className="ham-links">
-                  <ul>
+                  <ul style={showHamB?{color:"white"}:{}}>
                    <li onClick={()=>navigate("/about")}>About Us</li>
                    <li>Products</li>
                    <li onClick={()=>navigate("/contract")}>Contract Manufacturer</li>

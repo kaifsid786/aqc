@@ -5,11 +5,22 @@
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 500px) {
+  .main-tech {
+    overflow: hidden;
+  }
+}
 .main-tech .banner {
   width: 100%;
   height: calc(100vh - 100px);
   max-height: 55rem;
   padding: 3rem;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .banner {
+    height: 20rem;
+    padding: 1rem;
+  }
 }
 .main-tech .banner img {
   width: 100%;
@@ -28,6 +39,11 @@
   align-items: center;
   gap: 20px;
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .intro {
+    padding: 0 2rem;
+  }
+}
 .main-tech .intro h3 {
   color: var(--11, #10C08E);
   text-align: center;
@@ -41,6 +57,12 @@
 @media only screen and (min-width: 1536px) {
   .main-tech .intro h3 {
     font-size: 3.5rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .intro h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
 }
 .main-tech .intro p {
@@ -57,6 +79,12 @@
     font-size: 1.1rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .intro p {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+}
 .main-tech .cards {
   width: 100%;
   max-width: 1500px;
@@ -67,6 +95,11 @@
   align-items: center;
   gap: 50px;
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .cards {
+    padding: 4rem 1rem;
+  }
+}
 .main-tech .cards .card-1 {
   width: 100%;
   display: flex;
@@ -75,10 +108,14 @@
   background-color: #10C08E;
   border-radius: 10px;
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .card-1 {
+    flex-direction: column-reverse;
+  }
+}
 .main-tech .cards .card-1 .left {
   width: 30rem;
   height: 15rem;
-  background-color: #10C08E;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -86,6 +123,13 @@
   align-items: flex-start;
   gap: 20px;
   padding: 1.5rem;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .card-1 .left {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 .main-tech .cards .card-1 .left h3 {
   color: #FFF;
@@ -102,6 +146,11 @@
     font-size: 2.5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .card-1 .left h3 {
+    font-size: 1.5rem;
+  }
+}
 .main-tech .cards .card-1 .left p {
   color: #FFF;
   font-family: Poppins;
@@ -116,10 +165,24 @@
     font-size: 1.5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .card-1 .left p {
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+  }
+}
+.main-tech .cards .card-1 .left .p2 {
+  font-size: 0.75rem;
+}
 .main-tech .cards .card-1 .right {
   width: 60rem;
   height: 15rem;
   border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .card-1 .right {
+    width: 100%;
+  }
 }
 .main-tech .cards .card-1 .right img {
   width: 100%;
@@ -131,14 +194,35 @@
 .main-tech .cards .type2 {
   flex-direction: row-reverse;
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .type2 {
+    flex-direction: column-reverse;
+    background-color: #003E71;
+  }
+}
 .main-tech .cards .type3 {
   background-color: #F6F6F6;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .type3 {
+    background-color: #10C08E;
+  }
 }
 .main-tech .cards .type3 .left {
   background-color: #F6F6F6;
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .type3 .left {
+    background: transparent;
+  }
+}
 .main-tech .cards .type3 .left h3, .main-tech .cards .type3 .left p {
   color: #003E71;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .type3 .left h3, .main-tech .cards .type3 .left p {
+    color: white;
+  }
 }
 .main-tech .cards .type3 .right {
   background-color: #003E71;
@@ -146,6 +230,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .cards .type3 .right {
+    padding: 0;
+  }
 }
 .main-tech .cards .type3 .right p {
   color: #FFF;
@@ -176,6 +265,14 @@
     padding: 8rem 3rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .contact {
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4rem 1rem;
+  }
+}
 .main-tech .contact .left {
   width: calc(50% - 20px);
   display: flex;
@@ -183,6 +280,11 @@
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .contact .left {
+    width: 100%;
+  }
 }
 .main-tech .contact .left h3 {
   color: var(--22, #003E71);
@@ -198,6 +300,12 @@
     line-height: 5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .contact .left h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
 .main-tech .contact .left p {
   color: var(--22, #003E71);
   font-family: Poppins;
@@ -211,11 +319,23 @@
     font-size: 1.5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-tech .contact .left p {
+    font-size: 0.75rem;
+    margin-top: -1rem;
+  }
+}
 .main-tech .contact .right {
   width: calc(50% - 20px);
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .contact .right {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 .main-tech .contact .right button {
   width: 150px;
@@ -239,5 +359,12 @@
     height: 70px;
     font-size: 1.5rem;
     line-height: 2.125rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-tech .contact .right button {
+    margin: 0;
+    font-size: 0.9rem;
+    height: 40px;
   }
 }/*# sourceMappingURL=Technology.css.map */

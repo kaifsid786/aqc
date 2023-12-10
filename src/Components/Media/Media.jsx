@@ -15,11 +15,11 @@ export default function Media() {
               <div className="wrapper">
                   <h3>Extraplanetary how far <br /> away with pretty stories</h3>
                   <div className="vert-Bar"></div>
-                  <p> Bearable only through love of hydrogen atoms bits of moving fluff culture shores of the on cosmic ocean blue sky.</p>
+                  <p> Bearable only through love of hydrogen atoms bits of moving fluff culture shores of the oncosmic ocean blue sky.</p>
               </div>
            </div>
            
-           <div className="images-section">
+           <div className="images-section" style={window.innerWidth<=500?{display:"none"}:{}}>
                <div className="row-1">
                  <img src="/medImg-1.png" alt="" />
                  <img src="/medImg2.png" alt="" />
@@ -41,6 +41,31 @@ export default function Media() {
                <img src="/mediaImg4.png" alt="" />
                </div>
            </div>
+
+           <div className="ph-img-section" style={window.innerWidth>500?{display:"none"}:{}}>
+              <div className="row-1">
+                 <img src="/medImg-1.png" alt="" />
+                 <img src="/medImg2.png" alt="" />
+                </div>
+
+                 <div className="row-2">
+                    <img src="/mediaImg4.png" alt="" />
+                  </div>
+
+                  <div className="row-3">
+                     <img src="/mediaImg5.png" alt="" />
+                      <img src="/mediaImg6.png" alt="" />
+                    </div>
+
+                    <div className="row-4">
+                    <img src="/medImg9.png" alt="" />
+                  </div>
+
+                   <div className="row-5">
+                     <img src="/medImg8.png" alt="" />
+                      <img src="/mediaImg7.png" alt="" />
+                   </div>
+            </div>
             
            <div className="btn">
                <button>Show More</button>
