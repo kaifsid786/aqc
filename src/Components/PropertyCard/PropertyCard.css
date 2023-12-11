@@ -200,7 +200,8 @@
   } */
   #residencies{
     /* height: calc(100vh - 200px); */
-    height: 100vh;
+    /* height: 100vh; */
+    height: calc(100vh - 200px);
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -225,3 +226,16 @@
 }
 
  }
+ @media screen and (max-width:390px) {
+  .r-container{
+    margin-left: 0;
+  }
+ }
+@media screen and (max-width:380px){
+  #residencies{
+    height: 105vh;
+  }
+  .r-container{
+    margin-left: 0;
+  }
+}

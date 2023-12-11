@@ -90,7 +90,7 @@ export default function Technology() {
                  <div className="right">
                  <img src="/Tech5.jpg" alt="" />
                  </div>
-             </div>
+             </div>  
              <div className="card-1">
                  <div className="left">
                     <h3>Extrusion:</h3>
