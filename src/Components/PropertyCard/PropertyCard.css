@@ -217,6 +217,9 @@
     margin-right: 0rem;
     width: 100%;
   }
+  .r-card{
+    height: 0;
+  }
 
   .r-card > :nth-child(3) {
     font-size: 1.2rem;
