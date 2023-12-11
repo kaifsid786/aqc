@@ -5,11 +5,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include sm{
+        overflow: hidden;
+    }
     .banner{
         width: 100%;
         height: calc(100vh - 100px);
         max-height: 55rem;
         padding:3rem;
+        @include sm{
+            height: 20rem;
+            padding: 1rem;
+        }
          img{
             width: 100%;
             height: 100%;
@@ -27,6 +34,9 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
+        @include sm{
+            padding: 0 2rem;
+       }
         h3{
             color: var(--11, #10C08E);
             text-align: center;
@@ -39,6 +49,10 @@
             @include xxl{
                 font-size: 3.5rem;
             }
+            @include sm{
+                font-size: 1.25rem;
+                line-height: 2rem;
+           }
         }
         p{
             color: #000;
@@ -51,6 +65,10 @@
             @include xxl{
                 font-size: 1.1rem;
             }
+            @include sm{
+                font-size: 0.8rem;
+                line-height: 1.25rem;
+           }
         }
     }
 
@@ -63,6 +81,9 @@
         justify-content: center;
         align-items: center;
         gap: 50px;
+        @include sm{
+            padding: 4rem 1rem;
+        }
 
         .card-1{
             width: 100%;
@@ -71,10 +92,12 @@
             align-items: center;
             background-color: #10C08E;
             border-radius: 10px;
+            @include sm{
+                flex-direction: column-reverse;
+            }
             .left{
                 width: 30rem;
                 height: 15rem;
-                background-color: #10C08E;
                 border-radius: 10px;
                 display: flex;
                 flex-direction: column;
@@ -82,6 +105,10 @@
                 align-items: flex-start;
                 gap: 20px;
                 padding: 1.5rem;
+                @include sm{
+                    width: 100%;
+                    height: fit-content;
+                }
                 h3{
                     color: #FFF;
                     text-align: center;
@@ -93,6 +120,9 @@
                     text-transform: capitalize;
                     @include xxl{
                         font-size: 2.5rem;
+                    }
+                    @include sm{
+                        font-size: 1.5rem;
                     }
                 }
                 p{
@@ -106,12 +136,22 @@
                     @include xxl{
                         font-size: 1.5rem;
                     }
+                    @include sm{
+                        font-size: 0.9rem;
+                        line-height: 1.25rem;
+                    }
+                }
+                .p2{
+                    font-size: 0.75rem;
                 }
             }
             .right{
                 width: 60rem;
                 height: 15rem;
                 border-radius: 10px;
+                @include sm{
+                    width: 100%;
+                }
                 img{
                     width: 100%;
                     height: 100%;
@@ -123,13 +163,26 @@
 
         .type2{
             flex-direction: row-reverse;
+            @include sm{
+                flex-direction: column-reverse;
+                background-color:#003E71;
+            }
         }
         .type3{
             background-color: #F6F6F6;
+            @include sm{
+                background-color: #10C08E;
+            }
               .left{
                 background-color: #F6F6F6;
+                @include sm{
+                    background: transparent;
+                }
                 h3,p{
                      color: #003E71;
+                     @include sm{
+                        color: white;
+                     }
                 }
               }
              .right{
@@ -138,6 +191,9 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                @include sm{
+                    padding: 0;
+                }
                 p{
                     color: #FFF;
                     font-family: Poppins;
@@ -166,6 +222,12 @@
         @include xxl{
           padding: 8rem 3rem;
       }
+      @include sm{
+        width: 90%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 4rem 1rem;
+    }
   
         .left{
           width: calc(50% - 20px);
@@ -174,6 +236,9 @@
           justify-content: center;
           align-items: flex-start;
           gap: 30px;
+          @include sm{
+            width: 100%;
+        }
 
           h3{
               color: var(--22, #003E71);
@@ -186,6 +251,10 @@
                   font-size: 3rem;
                   line-height: 5rem;
               }
+              @include sm{
+                font-size: 1.25rem;
+                line-height: 2rem;
+            }
           }
           p{
               color: var(--22, #003E71);
@@ -197,6 +266,10 @@
               @include xxl{
                   font-size: 1.5rem;
               }
+              @include sm{
+                font-size: 0.75rem;
+                margin-top: -1rem;
+            }
           }
         }
         .right{
@@ -204,6 +277,10 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            @include sm{
+                width: 100%;
+                justify-content: flex-start;
+              }
   
             button{
               width: 150px;
@@ -226,7 +303,12 @@
                   font-size: 1.5rem;
                   line-height: 2.125rem;
               }
+              @include sm{
+                margin: 0;
+                font-size: 0.9rem;
+                height: 40px;
             }
-        }
+            }
+        } 
      }
 }

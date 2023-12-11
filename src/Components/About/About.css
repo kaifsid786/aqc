@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 500px) {
+  .main-about {
+    overflow: hidden;
+  }
+}
 .main-about .about-banner {
   width: 100%;
   max-height: 55rem;
@@ -14,10 +19,20 @@
   background-position: center;
   position: relative;
 }
+@media only screen and (max-width: 500px) {
+  .main-about .about-banner {
+    height: 20rem;
+  }
+}
 .main-about .about-banner .banner-gradient {
   width: 100%;
   height: 70%;
   background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.6) 57.81%, rgba(255, 255, 255, 0) 100%);
+}
+@media only screen and (max-width: 500px) {
+  .main-about .about-banner .banner-gradient {
+    height: 80%;
+  }
 }
 .main-about .about-banner .banner-text {
   width: 100%;
@@ -48,6 +63,13 @@
     line-height: 6.25rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .about-banner .banner-text h3 {
+    font-size: 1.5rem;
+    width: 20rem;
+    line-height: 2.5rem;
+  }
+}
 .main-about .about-banner .banner-text p {
   width: 48rem;
   color: #000;
@@ -61,6 +83,13 @@
 @media only screen and (min-width: 1536px) {
   .main-about .about-banner .banner-text p {
     width: 60rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-about .about-banner .banner-text p {
+    font-size: 0.8rem;
+    width: 17rem;
+    line-height: 1.5rem;
   }
 }
 .main-about .intro {
@@ -81,6 +110,13 @@
     line-height: 2rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .intro {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+    padding: 4rem 2rem;
+  }
+}
 .main-about .mission-vission {
   width: 100%;
   max-width: 1500px;
@@ -89,6 +125,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 500px) {
+  .main-about .mission-vission {
+    flex-direction: column;
+    padding: 0 2rem;
+    gap: 30px;
+    padding-bottom: 4rem;
+  }
 }
 .main-about .mission-vission .card {
   width: calc(50% - 20px);
@@ -102,6 +146,13 @@
   border-radius: 10px;
   padding: 0 2rem;
   gap: 20px;
+}
+@media only screen and (max-width: 500px) {
+  .main-about .mission-vission .card {
+    width: 100%;
+    padding: 0 1rem;
+    height: 15rem;
+  }
 }
 .main-about .mission-vission .card h3 {
   color: #000;
@@ -117,6 +168,11 @@
     line-height: 3.125rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .mission-vission .card h3 {
+    font-size: 1.25rem;
+  }
+}
 .main-about .mission-vission .card p {
   color: #000;
   font-family: Poppins;
@@ -129,6 +185,12 @@
   .main-about .mission-vission .card p {
     font-size: 1.05rem;
     line-height: 2.125rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-about .mission-vission .card p {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
   }
 }
 .main-about .commitment {
@@ -151,6 +213,12 @@
     padding: 8rem 3rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .commitment .wrapper {
+    flex-direction: column-reverse;
+    padding: 2rem 2rem;
+  }
+}
 .main-about .commitment .wrapper .left {
   width: calc(50% - 40px);
   height: 25rem;
@@ -163,6 +231,13 @@
 @media only screen and (min-width: 1536px) {
   .main-about .commitment .wrapper .left {
     height: 30rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-about .commitment .wrapper .left {
+    width: 100%;
+    height: 20rem;
+    gap: 15px;
   }
 }
 .main-about .commitment .wrapper .left h3 {
@@ -179,6 +254,11 @@
     line-height: 5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .commitment .wrapper .left h3 {
+    font-size: 1.25rem;
+  }
+}
 .main-about .commitment .wrapper .left p {
   color: #000;
   font-family: Poppins;
@@ -192,6 +272,12 @@
     font-size: 1.2rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .commitment .wrapper .left p {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+}
 .main-about .commitment .wrapper .right {
   width: calc(50% - 40px);
   height: 25rem;
@@ -202,6 +288,12 @@
 @media only screen and (min-width: 1536px) {
   .main-about .commitment .wrapper .right {
     height: 30rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-about .commitment .wrapper .right {
+    width: 100%;
+    height: 13rem;
   }
 }
 .main-about .commitment .wrapper .right img {
@@ -245,6 +337,12 @@
     gap: 50px;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .team-section .wrapper {
+    padding: 4rem 2rem;
+    gap: 20px;
+  }
+}
 .main-about .team-section .wrapper .horz-bar {
   width: 100%;
   height: 0.0625rem;
@@ -264,6 +362,12 @@
     line-height: 5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .team-section .wrapper h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
 .main-about .team-section .wrapper p {
   color: #FFF;
   font-family: Poppins;
@@ -278,10 +382,22 @@
     line-height: 2.125rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .team-section .wrapper p {
+    font-size: 0.8rem;
+    margin-top: -1rem;
+  }
+}
 .main-about .team-section .wrapper .team {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 500px) {
+  .main-about .team-section .wrapper .team {
+    flex-direction: column;
+    gap: 25px;
+  }
 }
 .main-about .team-section .wrapper .team h3 {
   width: 40rem;
@@ -298,6 +414,12 @@
     line-height: normal;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .team-section .wrapper .team h3 {
+    font-size: 1rem;
+    width: 100%;
+  }
+}
 .main-about .team-section .wrapper .team p {
   color: #FFF;
   font-family: Inter;
@@ -312,6 +434,13 @@
     line-height: 2rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .team-section .wrapper .team p {
+    font-size: 0.75rem;
+    width: 100%;
+    line-height: 1.25rem;
+  }
+}
 .main-about .awards {
   width: 100%;
   max-width: 1500px;
@@ -320,8 +449,24 @@
   align-items: center;
   padding: 4rem 5rem;
 }
+@media only screen and (max-width: 500px) {
+  .main-about .awards {
+    width: 23rem;
+    padding: 4rem 2rem !important;
+  }
+}
 .main-about .awards img {
   width: 80px !important;
+}
+@media only screen and (max-width: 500px) {
+  .main-about .awards img {
+    width: 80px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-about .awards {
+    flex-wrap: wrap;
+  }
 }
 .main-about .contact {
   width: 100%;
@@ -340,6 +485,14 @@
     padding: 8rem 3rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .contact {
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4rem 1rem;
+  }
+}
 .main-about .contact .left {
   width: calc(50% - 20px);
   display: flex;
@@ -347,6 +500,11 @@
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
+}
+@media only screen and (max-width: 500px) {
+  .main-about .contact .left {
+    width: 100%;
+  }
 }
 .main-about .contact .left h3 {
   color: var(--22, #003E71);
@@ -362,6 +520,12 @@
     line-height: 5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .contact .left h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
 .main-about .contact .left p {
   color: var(--22, #003E71);
   font-family: Poppins;
@@ -375,11 +539,22 @@
     font-size: 1.5rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-about .contact .left p {
+    font-size: 0.75rem;
+  }
+}
 .main-about .contact .right {
   width: calc(50% - 20px);
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+@media only screen and (max-width: 500px) {
+  .main-about .contact .right {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 .main-about .contact .right button {
   width: 150px;
@@ -404,4 +579,11 @@
     font-size: 1.5rem;
     line-height: 2.125rem;
   }
-}/*# sourceMappingURL=About.css.map */
+}
+@media only screen and (max-width: 500px) {
+  .main-about .contact .right button {
+    margin: 0;
+    font-size: 0.9rem;
+    height: 40px;
+  }
+}

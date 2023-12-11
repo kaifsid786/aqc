@@ -143,23 +143,29 @@
 
 @media screen and (max-width:480px){
     .homeUSP-left h1{
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
     .homeUSP-left p{
-        font-size: 1rem !important;
+        width: 90%;
+        font-size: 0.8rem !important;
     }
     .homeUSP-left-content{
+        padding: 0 1rem;
         min-height: 20rem;
+        gap: 1rem;
+    }
+    .homeUSP-right{
+        padding: 0 1rem;
     }
     .homeUSP-right-content{
         padding: 0 1rem !important;
         gap: 10px;
-        height: 12rem;
+        height: 8rem;
     }
     .homeUSP-right-content h1{
-        font-size: 1.4rem !important;
+        font-size: 1rem !important;
     }
     .homeUSP-right-content p{
-        font-size: 1rem !important;
+        font-size: 0.8rem !important;
     }
 }

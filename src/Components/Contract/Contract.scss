@@ -5,20 +5,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include sm{
+        overflow: hidden;
+    }
 
     .banner{
         width: 100%;
         max-height: 55rem;
         height: calc(100vh - 100px);
-        // background: url("/public/ContrBan.png");
+        background: url("/public/ContrBan.png");
         background-size: cover;
         background-position: center;
         position: relative;
+        @include sm{
+            height: 20rem;
+        }
 
         .banner-gradient{
             width: 100%;
             height: 70%;
             background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.60) 57.81%, rgba(255, 255, 255, 0.00) 100%);
+            @include sm{
+                height: 80%;
+            }
          }
          .banner-text{
             width: 100%;
@@ -45,6 +54,11 @@
                     font-size: 6rem;
                     line-height: 6.875rem;
                 }
+                @include sm{
+                    font-size: 1.5rem;
+                    width: 20rem;
+                    line-height: 2.5rem;
+                }
             }
             p{
                 width: 55rem;
@@ -57,6 +71,11 @@
                 line-height: 2rem; /* 145.455% */
                 @include xxl{
                     width: 65rem;
+                }
+                @include sm{
+                    font-size: 0.8rem;
+                    width: 17rem;
+                    line-height: 1.5rem;
                 }
             }
          }
@@ -81,6 +100,9 @@
              @include xxl{
                 padding: 8rem 0;
              }
+             @include sm{
+                padding: 4rem 2rem;
+            }
 
              h3{
                 width: 40rem;
@@ -96,6 +118,11 @@
                     width: 70rem;
                     font-size: 4.375rem;
                 }
+                @include sm{
+                    width: 20rem;
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                }
              }
 
              .contents{
@@ -104,6 +131,10 @@
                 flex-wrap: wrap;
                  justify-content: center;
                  align-items: center;
+                 @include sm{
+                    flex-direction: column;
+                    gap: 20px;
+                }
                 .card{
                     width: calc(30% - 20px);
                     height: 22rem;
@@ -117,6 +148,15 @@
                     align-items: flex-start;
                     gap: 20px;
                     cursor: pointer;
+                    @include sm{
+                        width: 100%;
+                        gap:10px;
+                        height: 15rem;
+                        border: 0;
+                        padding: 0 1rem;
+                        background: #053C69;
+                        border-radius: 10px;
+                    }
                     h6{
                         color: #0873CB;
                         font-family: Poppins;
@@ -124,6 +164,10 @@
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
+                        @include sm{
+                            font-size: 0.7rem;
+                            line-height: 1.5rem;
+                        }
                     }
                     h3{
                         width: 11rem;
@@ -134,6 +178,11 @@
                         font-weight: 600;
                         line-height: 2.5rem; /* 125% */
                         text-align: left;
+                        @include sm{
+                            width: 100%;
+                            font-size: 0.9rem;
+                            line-height: 1.5rem;
+                        }
                     }
 
                     p{
@@ -144,6 +193,10 @@
                         font-style: normal;
                         font-weight: 300;
                         line-height: 1.75rem; /* 155.556% */
+                        @include sm{
+                            font-size: 0.75rem;
+                            line-height: 1.5rem;
+                        }
                     }
                 }
                 .card:hover{
@@ -172,6 +225,10 @@
              @include xxl{
                 padding: 8rem 3rem;
             }
+            @include sm{
+                flex-direction: column-reverse;
+                padding: 2rem 2rem;
+            }
              .left{
             width: calc(50% - 40px);
             height: 25rem;
@@ -180,6 +237,11 @@
             justify-content: center;
             align-items: flex-start;
             gap: 30px;
+            @include sm{
+                width: 100%;
+                height: 20rem;
+                gap: 15px;
+            }
             h3{
                 width: 30rem;
                 color: #000;
@@ -193,6 +255,10 @@
                     font-size: 4rem;
                     line-height: 5rem;
                 }
+                @include sm{
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                }
             }
             p{
                 color: #000;
@@ -205,6 +271,10 @@
                     font-size: 1.375rem;
                     line-height: 2rem;
                 }
+                @include sm{
+                    font-size: 0.8rem;
+                    line-height: 1.25rem;
+                }
             }
          }
          .right{
@@ -213,6 +283,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            @include sm{
+                width: 100%;
+                height: 13rem;
+            }
             img{
                 object-fit: cover;
                 width: 100%;
@@ -236,6 +310,10 @@
             outline: none;
             border: none;
             cursor: pointer;
+            @include sm{
+                font-size: 0.9rem;
+                height: 40px;
+            }
         }
          }
          
@@ -254,6 +332,12 @@
         @include xxl{
           padding: 8rem 3rem;
       }
+      @include sm{
+        width: 90%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 4rem 1rem;
+    }
   
         .left{
           width: calc(50% - 20px);
@@ -262,6 +346,9 @@
           justify-content: center;
           align-items: flex-start;
           gap: 30px;
+          @include sm{
+            width: 100%;
+        }
 
           h3{
               color: var(--22, #003E71);
@@ -274,6 +361,10 @@
                   font-size: 3rem;
                   line-height: 5rem;
               }
+              @include sm{
+                font-size: 1.25rem;
+                line-height: 2rem;
+            }
           }
           p{
               color: var(--22, #003E71);
@@ -285,6 +376,10 @@
               @include xxl{
                   font-size: 1.5rem;
               }
+              @include sm{
+                font-size: 0.75rem;
+                margin-top: -1rem;
+            }
           }
         }
         .right{
@@ -292,6 +387,10 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            @include sm{
+                width: 100%;
+                justify-content: flex-start;
+              }
   
             button{
               width: 150px;
@@ -314,6 +413,11 @@
                   font-size: 1.5rem;
                   line-height: 2.125rem;
               }
+              @include sm{
+                margin: 0;
+                font-size: 0.9rem;
+                height: 40px;
+            }
             }
         }
      }

@@ -11,6 +11,11 @@
     height: 150px;
   }
 }
+@media only screen and (max-width: 500px) {
+  .navbar {
+    height: 100px;
+  }
+}
 .navbar .wrapper {
   max-width: 1500px;
   height: 100%;
@@ -39,6 +44,12 @@
   .navbar .wrapper img {
     width: 180px;
     height: 70px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper img {
+    width: 100px;
+    height: 50px;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -102,14 +113,26 @@
     display: none;
   }
 }
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamBurger {
+    width: 3rem;
+    height: 2rem;
+    gap: 5px;
+  }
+}
 .navbar .wrapper .hamBurger .line {
   width: 70%;
   height: 5px;
   background-color: white;
   border-radius: 10px;
 }
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamBurger .line {
+    height: 2px;
+  }
+}
 .navbar .wrapper .hamMenu {
-  width: 40%;
+  width: 50%;
   height: 70vh;
   background-color: white;
   position: fixed;
@@ -117,15 +140,67 @@
   top: 150px;
   z-index: 999;
 }
+@media only screen and (min-width: 900px) {
+  .navbar .wrapper .hamMenu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamMenu {
+    width: 80%;
+    top: 100px;
+  }
+}
 .navbar .wrapper .hamMenu .ham-links {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 3rem;
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamMenu .ham-links {
+    padding: 3rem 1rem;
+  }
 }
 .navbar .wrapper .hamMenu .ham-links ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  align-items: flex-start;
+  gap: 20px;
+}
+.navbar .wrapper .hamMenu .ham-links ul li {
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamMenu .ham-links ul li {
+    font-size: 1rem;
+  }
+}
+.navbar .wrapper .slide {
+  left: -100%;
+  animation: slide 1s ease;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+.navbar .wrapper .slideB {
+  left: 0%;
+  animation: slideB 1s ease;
+}
+@keyframes slideB {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
 }/*# sourceMappingURL=NavBar.css.map */

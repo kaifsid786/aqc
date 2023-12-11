@@ -1,4 +1,3 @@
-
 @import '../Css/mixin.scss';
 
 .main-about{
@@ -7,6 +6,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include sm{
+        overflow: hidden;
+    }
     .about-banner{
     width: 100%;
     max-height: 55rem;
@@ -15,10 +17,16 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    @include sm{
+        height: 20rem;
+    }
      .banner-gradient{
         width: 100%;
         height: 70%;
         background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.60) 57.81%, rgba(255, 255, 255, 0.00) 100%);
+        @include sm{
+            height: 80%;
+        }
      }
      .banner-text{
         width: 100%;
@@ -45,6 +53,11 @@
                 font-size: 6.25rem;
                 line-height: 6.25rem;
             }
+            @include sm{
+                font-size: 1.5rem;
+                width: 20rem;
+                line-height: 2.5rem;
+            }
         }
         p{
             width: 48rem;
@@ -57,6 +70,11 @@
             line-height: 2rem; /* 145.455% */
             @include xxl{
                 width: 60rem;
+            }
+            @include sm{
+                font-size: 0.8rem;
+                width: 17rem;
+                line-height: 1.5rem;
             }
         }
      }
@@ -76,6 +94,11 @@
         font-size: 1.05rem;
         line-height: 2rem;
     }
+    @include sm{
+         font-size: 0.8rem;
+         line-height: 1.25rem;
+         padding: 4rem 2rem;
+    }
    }
    .mission-vission{
     width: 100%;
@@ -85,6 +108,12 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
+     @include sm{
+        flex-direction: column;
+        padding: 0 2rem;
+        gap: 30px;
+        padding-bottom: 4rem;
+     }
     .card{
         width: calc(50% - 20px);
         display: flex;
@@ -97,6 +126,11 @@
         border-radius: 10px;
         padding: 0 2rem;
         gap: 20px;
+        @include sm{
+            width: 100%;
+            padding: 0 1rem;
+            height: 15rem;
+        }
         h3{
             color: #000;
             font-family: Poppins;
@@ -107,6 +141,9 @@
             @include xxl{
                 font-size: 2rem;
                 line-height: 3.125rem;
+            }
+            @include sm{
+                font-size: 1.25rem;
             }
         }
         p{
@@ -119,6 +156,10 @@
             @include xxl{
                 font-size: 1.05rem;
                 line-height: 2.125rem;
+            }
+            @include sm{
+                 font-size: 0.8rem;
+                 line-height: 1.25rem;
             }
         }
     }
@@ -140,6 +181,10 @@
          @include xxl{
             padding: 8rem 3rem;
         }
+        @include sm{
+            flex-direction: column-reverse;
+            padding: 2rem 2rem;
+        }
          .left{
         width: calc(50% - 40px);
         height: 25rem;
@@ -150,6 +195,11 @@
         gap: 20px;
         @include xxl{
             height: 30rem;
+        }
+        @include sm{
+            width: 100%;
+            height: 20rem;
+            gap: 15px;
         }
         h3{
             color: #000;
@@ -162,6 +212,9 @@
                 font-size: 3.8rem;
                 line-height: 5rem;
             }
+            @include sm{
+                font-size: 1.25rem;
+            }
         }
         p{
             color: #000;
@@ -173,6 +226,10 @@
             @include xxl{
                 font-size: 1.2rem;
             }
+            @include sm{
+                font-size: 0.8rem;
+                line-height: 1.25rem;
+            }
         }
      }
      .right{
@@ -183,6 +240,10 @@
         align-items: center;
         @include xxl{
             height: 30rem;
+        }
+        @include sm{
+            width: 100%;
+            height: 13rem;
         }
         img{
             object-fit: cover;
@@ -223,6 +284,10 @@
             padding: 8rem 3rem;
             gap: 50px;
          }
+         @include sm{
+            padding: 4rem 2rem;
+            gap: 20px;
+         }
 
          .horz-bar{
             width: 100%;
@@ -241,6 +306,10 @@
                 font-size: 3rem;
                 line-height: 5rem;
             }
+            @include sm{
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
         }
         p{
             color: #FFF;
@@ -253,11 +322,19 @@
                 font-size: 1.2rem;
                 line-height: 2.125rem;
             }
+            @include sm{
+                font-size: 0.8rem;
+                margin-top: -1rem;
+            }
         }
          .team{
             width: 100%;
             display: flex;
             justify-content: space-between;
+            @include sm{
+                flex-direction: column;
+                gap: 25px;
+            }
              
             h3{
                 width: 40rem;
@@ -271,6 +348,10 @@
                     font-size: 2rem;
                     line-height: normal;
                 }
+                @include sm{
+                    font-size: 1rem;
+                    width: 100%;
+                }
             }
             p{
                 color: #FFF;
@@ -282,6 +363,11 @@
                 @include xxl{
                     font-size: 1.1rem;
                     line-height: 2rem;
+                }
+                @include sm{
+                    font-size: 0.75rem;
+                    width: 100%;
+                    line-height: 1.25rem;
                 }
             }
          }
@@ -295,8 +381,18 @@
     justify-content: space-between;
     align-items: center;
     padding: 4rem 5rem;
+    @include sm{
+        width: 23rem;
+        padding: 4rem 2rem !important;
+    }
     img{
         width: 80px;
+        @include sm{
+            width: 80px !important;
+        }
+    }
+    @include sm{
+        flex-wrap: wrap;
     }
    }
    
@@ -314,6 +410,12 @@
       @include xxl{
         padding: 8rem 3rem;
     }
+    @include sm{
+        width: 90%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 4rem 1rem;
+    }
 
       .left{
         width: calc(50% - 20px);
@@ -322,6 +424,9 @@
         justify-content: center;
         align-items: flex-start;
         gap: 30px;
+        @include sm{
+            width: 100%;
+        }
         h3{
             color: var(--22, #003E71);
             font-family: Poppins;
@@ -332,6 +437,10 @@
             @include xxl{
                 font-size: 3rem;
                 line-height: 5rem;
+            }
+            @include sm{
+                font-size: 1.25rem;
+                line-height: 2rem;
             }
         }
         p{
@@ -344,6 +453,9 @@
             @include xxl{
                 font-size: 1.5rem;
             }
+            @include sm{
+                font-size: 0.75rem;
+            }
         }
       }
       .right{
@@ -351,6 +463,10 @@
           display: flex;
           justify-content: center;
           align-items: flex-end;
+          @include sm{
+            width: 100%;
+            justify-content: flex-start;
+          }
 
           button{
             width: 150px;
@@ -372,6 +488,11 @@
                 height: 70px;
                 font-size: 1.5rem;
                 line-height: 2.125rem;
+            }
+            @include sm{
+                margin: 0;
+                font-size: 0.9rem;
+                height: 40px;
             }
           }
       }
