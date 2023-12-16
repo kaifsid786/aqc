@@ -48,26 +48,18 @@ export default function About() {
   // const [ourTeam,setOurTeam]=useState();
   // const [whyAqc,setWhyAqc]=useState();
   // const [commitment,setCommitment]=useState();
-  // const [visionMission,setVisionMission]=useState();
+ 
 
 
-  const [data, setData] = useState({
-    headerInfo: '',
-    aboutImg:'',
-    desc1: '',
-    desc2: '',
-    
-    our_team: '',
-    vision_mission: '',
-    why_aqc: '',
-    
-    // Add other attributes here with default values if needed
-  });
-
+ const [aboutData,setAboutData]=useState(' ');
+ const [visionMission,setVisionMission]=useState();
   
 
 const [commitment,setCommitment]=useState('');
 const [awd,setAwd]=useState('');
+
+
+const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
   useEffect(()=>{
     const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
@@ -80,23 +72,13 @@ const [awd,setAwd]=useState('');
         const res=await axios.get(`${baseURL}/abouts?populate=*`,{ 
           headers:headers
         })
-        if (res.data?.data && res.data.data.length > 0) {
-          const aboutData = res.data.data[0].attributes;
-          setData({
-            aboutImg:aboutData.img || '',
-            headerInfo: aboutData.headerInfo || '',
-            desc1: aboutData.desc1 || '',
-            desc2: aboutData.desc2 || '',
-          
-            our_team: aboutData.our_team?.data?.attributes || '',
-            vision_mission: aboutData?.vision_mission?.data?.attributes || '',
-            why_aqc: aboutData.why_aqc?.data?.attributes || '',
-            
-            // Update with other attributes as needed
-          });
-          
+        if(res.data){
+          const Data=res.data.data[0].attributes;
+          setAboutData(Data);
+          setVisionMission(Data.vision_mission?.data?.attributes);
+         
         }
-        console.log(res.data.data[0]);
+        console.log(res.data.data[0].attributes);
         
        
       } catch (error) {
@@ -104,18 +86,7 @@ const [awd,setAwd]=useState('');
       }
     }
 
-    const fetchCommitment=async()=>{
-      try {
-        const res=await axios.get(`${baseURL}/commitments?populate=*`,{ 
-          headers:headers
-        })
-        const commitmentData=res?.data?.data[0].attributes;
-        // console.log(commitmentData);
-        setCommitment(commitmentData);
-      } catch (error) {
-        console.log(error)
-      }
-    }
+    
 
     const fetchAwd=async()=>{
       try {
@@ -128,76 +99,90 @@ const [awd,setAwd]=useState('');
         console.log(error);
       }
     }
+    const fetchCommetment=async()=>{
+      try {
+        const res=await axios.get(`${baseURL}/our-commitments?populate=*`,{ 
+          headers:headers
+        })
+        const cmt=res?.data?.data[0].attributes;
+        setCommitment(cmt);
+      } catch (error) {
+        console.log(error);
+      }
+    }
     fetchData();
-    fetchCommitment();
+    fetchCommetment();
     fetchAwd();
   },[])
 
-// console.log("http://localhost:1337/"+"data?.aboutImg?.data?.attributes?.url");
-const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
 
-// console.log(ImgURL)
+  const backgroundImageStyle = {
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    background: `url(${ImgURL}${aboutData?.Image?.data?.attributes?.url})`,
+    width: "100%", 
+    maxHeight: "55rem", 
+    height: "calc(100vh - 100px)", 
+    position: "relative", 
+  };
+
+
+// console.log(aboutData);
+console.log(commitment);
+// console.log(`${ImgURL}${aboutData?.Image?.data?.attributes?.url}`);
 // console.log(awd)
   return (
     
     <>
     <NavBar />
     <div className="main-about">
-      <div className="about-banner" style={{
-           background: `url( "http://localhost:1337"+"/data?.aboutImg?.data?.attributes?.url")`
-      }}>
+    <div className="about-banner" 
+    // style={backgroundImageStyle}
+    >
+
            <div className="banner-gradient"></div>
            <motion.div className="banner-text" variants={varient} initial="initial" animate="animate">
-            <motion.h3 variants={varient}>We take “ <motion.span variants={varient} style={{color:"#10C08E"}}>Your Wish, Our Command!”</motion.span> very seriously.</motion.h3>
-            <motion.p variants={varient}>{data.headerInfo}  </motion.p>
+            <motion.h3 variants={varient}><div dangerouslySetInnerHTML={{ __html: aboutData.Heading}} /></motion.h3>
+            <motion.p variants={varient}><div dangerouslySetInnerHTML={{ __html: aboutData.Sub_Heading}} /> </motion.p>
            </motion.div>
       </div>
       <div className="intro">
-       
-       {/* Embarking on our journey in 2009, <span style={{fontWeight:"800"}}>AQC Chem</span> set out with a grand vision: to transform the world of nutrition through innovation and sheer excellence. Born with the minds of a team from industry experts and right from the start our dedication was clear– to seamlessly blend technology and culinary science into a harmonious union.  */}
-       {data.desc1}
-        <br /> <br />
-       
-       {/* Through years of learning, we honed our expertise and skills, prioritising research and development and we swiftly emerged as a pioneering presence in the nutrition domain. In our early years we took time to deeply understand industry's intricacies, guiding us to customise our offerings to meet specific requisites. As time passed, our unwavering dedication to quality and precision propelled us to create our flagship products – micronutrient premixes, nutraceutical solutions, and specialised laboratory equipment. These pillars of innovation not only enhanced the nutritional quotient of foods but also revolutionised production methodologies, setting new industry benchmarks. <span style={{fontWeight:"800",cursor:"pointer",color:"#10C08E"}}>READ MORE</span>  */}
-       {data.desc2}
+      
+       <div dangerouslySetInnerHTML={{ __html: aboutData.About_Information}} />
        <span style={{fontWeight:"800",cursor:"pointer",color:"#10C08E"}}> READ MORE</span> 
       </div>
 
       <motion.div variants={varient2} initial="initial" whileInView="whileInView" viewport={{once:true}} className="mission-vission">
          <motion.div className="card">
-            <h3>{data.vision_mission?.vision}</h3>
-            <p>{data.vision_mission?.visionInfo}</p>
+         <div dangerouslySetInnerHTML={{ __html: visionMission?.Vision}} />
+         <div dangerouslySetInnerHTML={{ __html: visionMission?.Vision_Information}} />
          </motion.div>
          <motion.div className="card">
-            <h3>{data.vision_mission?.mission}</h3>
-            <p>{data.vision_mission?.missionInfo}</p>
+         <div dangerouslySetInnerHTML={{ __html: visionMission?.Mission}} />
+         <div dangerouslySetInnerHTML={{ __html: visionMission?.Mission_Information}} />
          </motion.div>
       </motion.div>
 
       <div className="commitment">
         <div className="wrapper">
           <div className="left">
-            <h3>{commitment?.title} </h3>
-            <p>{commitment?.info1}
-              <br /> <br />
-              {commitment?.info2}
-            </p> 
+          <div dangerouslySetInnerHTML={{ __html: commitment?.Heading}} />
           </div>
           <div className="right">
-          <img src={`http://localhost:1337${commitment?.img?.data?.attributes?.url}`} alt="" />
+          {/* <img src={`http://localhost:1337${commitment?.img?.data?.attributes?.url}`} alt="" /> */}
           </div></div>
       </div>
 
       <div className="usp">
-        <HomeUSP homeUsp={data.why_aqc}/>
+        {/* <HomeUSP homeUsp={data.why_aqc}/> */}
       </div>
 
       <div className="team-section">
         <div className="wrapper">
-           <h3>{data.our_team?.heading}</h3>
-           <p>{data.our_team?.desc}</p>
+           {/* <h3>{data.our_team?.heading}</h3>
+           <p>{data.our_team?.desc}</p> */}
            <div className="horz-bar"></div>
-           {
+           {/* {
           data.our_team?.team &&
           data.our_team?.team.map((item, index) => {
              return (
@@ -210,7 +195,7 @@ const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
                </>
             );
            })
-          }
+          } */}
            
 
       </div>

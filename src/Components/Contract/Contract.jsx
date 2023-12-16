@@ -64,7 +64,7 @@ export default function Contract() {
         });
        
         const collab=res.data.data[0].attributes;
-        // console.log(collab);
+        console.log(collab);
         setCollaborater(collab);
       } catch (error) {
         console.log(error);
@@ -75,7 +75,9 @@ export default function Contract() {
     fetchCollaborator();
   }, []);
  
-// console.log(collaborater)
+// console.log(banner?.Sub_Heading[0].children[0].text)
+
+// console.log(banner?.Heading)
   return (
   <>
   <NavBar />
@@ -87,29 +89,39 @@ export default function Contract() {
           >
              <div className="banner-gradient"></div>
                <motion.div className="banner-text" variants={varient} initial="initial" animate="animate">
-               <motion.h3 variants={varient}>{banner?.BannerHeading && banner.BannerHeading[0]?.text}{" "}<motion.span variants={varient} style={{ color: banner?.BannerHeading && banner.BannerHeading[1]?.color }}>{banner?.BannerHeading && banner.BannerHeading[1]?.text}</motion.span> to the table at AQC</motion.h3>
-               <motion.p variants={varient}>{banner?.BannerInfo }  </motion.p>
+              
+  
+               <div dangerouslySetInnerHTML={{ __html: banner.Heading }} />
+               <div dangerouslySetInnerHTML={{ __html: banner.Sub_Heading }} />
+               
+               
+               
                </motion.div>
              </div>
 
          <div className="services">
              <div className="wrapper">
-                 <h3>{service?.heading && service?.heading[0]?.text} <span style={{color:service?.heading && service?.heading[1]?.color}}>{service?.heading && service?.heading[1]?.text}</span> {service?.heading && service?.heading[2]?.text}</h3>
+             <div dangerouslySetInnerHTML={{ __html: service.Heading }} />
                   <div className="contents">
                        <div className="card">
-                          <h6>{service?.heading && service?.serviceInfo[0]?.SNO}</h6>
+                        
+                         <div dangerouslySetInnerHTML={{ __html: service.Card1 }} />
+                          {/* <h6>{service?.heading && service?.serviceInfo[0]?.SNO}</h6>
                           <h3>{service?.heading && service?.serviceInfo[0]?.heading}</h3>
-                          <p>{service?.heading && service?.serviceInfo[0]?.info}</p>
-                       </div>
+                          <p>{service?.heading && service?.serviceInfo[0]?.info}</p> */}
+                       </div> 
+                      
                        <div className="card">
-                          <h6>{service?.heading && service?.serviceInfo[1]?.SNO}</h6>
+                       <div dangerouslySetInnerHTML={{ __html: service.Card2 }} />
+                          {/* <h6>{service?.heading && service?.serviceInfo[1]?.SNO}</h6>
                           <h3>{service?.heading && service?.serviceInfo[1]?.heading}</h3>
-                          <p>{service?.heading && service?.serviceInfo[1]?.info}</p>
+                          <p>{service?.heading && service?.serviceInfo[1]?.info}</p> */}
                        </div>
                        <div className="card">
-                          <h6>{service?.heading && service?.serviceInfo[2]?.SNO}</h6>
+                       <div dangerouslySetInnerHTML={{ __html: service.Card3 }} />
+                          {/* <h6>{service?.heading && service?.serviceInfo[2]?.SNO}</h6>
                           <h3>{service?.heading && service?.serviceInfo[2]?.heading}</h3>
-                          <p>{service?.heading && service?.serviceInfo[2]?.info} </p>
+                          <p>{service?.heading && service?.serviceInfo[2]?.info} </p> */}
                        </div>
                   </div>
              </div>
@@ -118,9 +130,11 @@ export default function Contract() {
          <div className="commitment">
            <div className="wrapper">
               <div className="left">
-             <h3>{collaborater?.heading}</h3>
+             
+             <div dangerouslySetInnerHTML={{ __html: collaborater.Heading }} />
+             
              <p>
-             {collaborater?.info}
+             <div dangerouslySetInnerHTML={{ __html: collaborater.Information }} />
              </p>
              <button>Get Started</button>
           </div>
@@ -133,8 +147,8 @@ export default function Contract() {
 
       <div className="contact">
              <div className="left">
-               <h3>{bottomBanner?.heading}</h3>
-               <p>{bottomBanner?.info} </p>
+               <h3><div dangerouslySetInnerHTML={{ __html: bottomBanner.Heading}} /></h3>
+               <p><div dangerouslySetInnerHTML={{ __html: bottomBanner.Sub_Heading }} /> </p>
              </div>
              <div className="right">
               <button onClick={()=>navigate('/contact')}>Contact</button>
