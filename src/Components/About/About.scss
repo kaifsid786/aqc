@@ -333,11 +333,11 @@
             justify-content: space-between;
             @include sm{
                 flex-direction: column;
-                gap: 25px;
+                gap: 3rem;
             }
              
             h3{
-                width: 40rem;
+                width: 25rem;
                 color: #FFF;
                 font-family: Inter;
                 font-size: 1.2rem;

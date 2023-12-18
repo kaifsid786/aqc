@@ -76,11 +76,7 @@ export default function Technology() {
               )
             })
           }
-            
-             
-             
-             
-            
+          
          </div>
 
          <div className="contact">

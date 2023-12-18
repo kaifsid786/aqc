@@ -7,21 +7,19 @@ export default function HomeUSP({ homeUsp }) {
       <div className="main-homeUSP xyz">
         <div className="homeUSP-left">
           <div className="homeUSP-left-content">
-            <h1>{homeUsp?.title}</h1>
-            <p>{homeUsp?.titleInfo}</p>
+            
+            <div dangerouslySetInnerHTML={{ __html: homeUsp?.Heading }} />
           </div>
         </div>
         <div className="homeUSP-right">
-
-          {homeUsp.cards &&
-            homeUsp.cards.length > 0 &&
-            homeUsp.cards.map((item, index) => (
+          {homeUsp?.why_aqc_cards?.data.map((item, index) => {
+            const card = item.attributes;
+            return (
               <div className="homeUSP-right-content" key={index}>
-                <h1>{item.cardTitle}</h1>
-                <p>{item.cardInfo}</p>
+                <div style={{display:'flex',gap:'1rem',flexDirection:'column'}} dangerouslySetInnerHTML={{ __html: card?.Card }} />
               </div>
-            ))}
-
+            );
+          })}
         </div>
       </div>
     </>

@@ -45,16 +45,16 @@ export default function About() {
 
   // const [data,setData]=useState('');
   // const [awd,setAwd]=useState();
-  // const [ourTeam,setOurTeam]=useState();
-  // const [whyAqc,setWhyAqc]=useState();
+  
+  
   // const [commitment,setCommitment]=useState();
  
 
 
  const [aboutData,setAboutData]=useState(' ');
  const [visionMission,setVisionMission]=useState();
-  
-
+  const [whyAqc,setWhyAqc]=useState();
+const [ourTeam,setOurTeam]=useState();
 const [commitment,setCommitment]=useState('');
 const [awd,setAwd]=useState('');
 
@@ -76,7 +76,7 @@ const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
           const Data=res.data.data[0].attributes;
           setAboutData(Data);
           setVisionMission(Data.vision_mission?.data?.attributes);
-         
+         setOurTeam(Data.our_teams);
         }
         console.log(res.data.data[0].attributes);
         
@@ -110,9 +110,21 @@ const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
         console.log(error);
       }
     }
+    const fetchWhy=async()=>{
+      try {
+        const res=await axios.get(`${baseURL}/why-aqcs?populate=*`,{ 
+          headers:headers
+        })
+        const why=res?.data?.data[0].attributes;
+        setWhyAqc(why);
+      } catch (error) {
+        console.log(error);
+      }
+    }
     fetchData();
     fetchCommetment();
     fetchAwd();
+    fetchWhy();
   },[])
 
 
@@ -128,7 +140,7 @@ const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
 
 
 // console.log(aboutData);
-console.log(commitment);
+// console.log(whyAqc);
 // console.log(`${ImgURL}${aboutData?.Image?.data?.attributes?.url}`);
 // console.log(awd)
   return (
@@ -166,36 +178,38 @@ console.log(commitment);
       <div className="commitment">
         <div className="wrapper">
           <div className="left">
-          <div dangerouslySetInnerHTML={{ __html: commitment?.Heading}} />
+          <div style={{display:'flex',gap:'1rem',flexDirection:'column'}} dangerouslySetInnerHTML={{ __html: commitment?.Commitment}} />
           </div>
           <div className="right">
-          {/* <img src={`http://localhost:1337${commitment?.img?.data?.attributes?.url}`} alt="" /> */}
+          <img src={`${ImgURL}${commitment?.Image?.data?.attributes?.url}`} alt="" />
           </div></div>
       </div>
 
       <div className="usp">
-        {/* <HomeUSP homeUsp={data.why_aqc}/> */}
+        <HomeUSP homeUsp={whyAqc}/>
+
       </div>
 
       <div className="team-section">
         <div className="wrapper">
-           {/* <h3>{data.our_team?.heading}</h3>
-           <p>{data.our_team?.desc}</p> */}
+           <h3>Our Team</h3>
+           <p>At AQC Chem Pvt Ltd, Our core values are -</p>
            <div className="horz-bar"></div>
-           {/* {
-          data.our_team?.team &&
-          data.our_team?.team.map((item, index) => {
+           {
+          
+          ourTeam?.data.map((item, index) => {
+            const team = item.attributes;
              return (
              <>
                 <div className="team" key={index}>
-                <h3>{item?.title}</h3>
-                <p>{item?.info}</p>
+                <h3><div dangerouslySetInnerHTML={{ __html: team?.Name}} /></h3>
+                <p><div dangerouslySetInnerHTML={{ __html: team?.Information}} /></p>
                </div>
                <div className="horz-bar" ></div>
                </>
             );
            })
-          } */}
+          }
            
 
       </div>

@@ -21,8 +21,11 @@ export const sliderSettings = {
     1100: {
       slidesPerView: 3,
      
-     
     },
+    1800:{
+      slidesPerView:3,
+      spaceBetween:130,
+    }
   },
 
 };
