@@ -164,8 +164,19 @@
   font-size: 2rem;
    line-height: 2.5rem;
 }
-
-
+.e-d-h{
+ 
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: center;
+  
+}
+.pas-ch{
+ 
+ margin-bottom: 3rem;
+}
   @media screen and (min-width: 1500px) {
     #residencies2 .r-container2 .swiper-horizontal .swiper-wrapper .swiper-slide {
       width: 542.667px;
@@ -173,15 +184,19 @@
     }
     .r-card2{
       height: 15rem;
-      justify-content: space-around
+      justify-content: space-around;
     }
     .pas{
       font-size: 3.5rem;
       line-height: 4rem;
+    
     }
     .pas-ch{
       margin-top: 6rem;
-      margin-bottom: -4rem;
+     margin-bottom: 6rem;
+    }
+    .e-d-h{
+      margin-top: 5rem;
     }
     .pas2{
       font-size: 3.5rem;

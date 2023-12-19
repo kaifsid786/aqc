@@ -102,7 +102,7 @@ const ProductSection = (gall) => {
           </div>
         </div>
 
-        <div className="pas pas-ch" style={{ marginBottom: "3rem" }}>
+        <div className="pas pas-ch">
           Products and Services
         </div>
         {windowWidth <= 480 ? (
@@ -121,13 +121,8 @@ const ProductSection = (gall) => {
         )}
 
         <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            fontSize: "2rem",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
+          
+          className="e-d-h"
         >
           <div className="pas" style={{marginTop:'3rem'}}>Explore the Diverse Horizons:</div>
           <div className="pas ">
