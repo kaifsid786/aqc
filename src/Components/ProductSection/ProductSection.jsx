@@ -138,7 +138,7 @@ const ProductSection = (gall) => {
           </div>
         </div>
 
-        {windowWidth <= 480 ? <GalleryMob /> : <Gallery gall={gall} />}
+        {windowWidth <= 480 ? <GalleryMob gall={gall}/> : <Gallery gall={gall} />}
       </div>
     </div>
   );

@@ -16,14 +16,14 @@ import img12 from "../../images/selective-focus-shot-fresh-fruits-vegetables-wit
 import img13 from "../../images/colorful-candies-jelly-marmalade-wooden-box-sweets-old-background-top-view-free-copy-space.png";
 import './Gallery.css'
 import {motion,AnimatePresence} from "framer-motion"
-const GalleryMob = () => {
+const GalleryMob = (gall) => {
 
   const [scrollHeight, setScrollHeight] = useState(0);
 const [start,setStart]=useState();
   const [end,setEnd]=useState();
   const [trigger,setTrigger]=useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -109,50 +109,51 @@ const [start,setStart]=useState();
       </div>
     <div className='Gallery' style={{display:'flex'}}>
          <AnimatePresence>
-        <motion.div
-       initial={{y:"15rem"}}
-        whileInView={{y:"0"}}
-        transition={{
-          duration: 2,
-          type: "spring",
-        }}
-        viewport={{once:true}}
+
+         {(() => {
+            const len = gall?.gall?.gall?.Images?.data.length || 0;
+            const colLen = len / 2;
+            const rem=len/2;
+            let k = 0;
+            const elements = [];
+            console.log(len);
+
+            for (let i = 0; i < 2; i++) {
+              const images = []; // Store images for each column
+              for (let j = 0; j < colLen; j++) {
+                // Generate images and push them to the images array
+                images.push(
+                  <img style={{borderRadius:'15px',objectFit:'cover',height:`7+${i-2}`}}
+                    key={`${i}-${j}`}
+                    src={`${ImgURL}${gall?.gall?.gall?.Images?.data?.[k]?.attributes?.url}`}
+                    alt=""
+                  />
+                );
+                k++; 
+              }
+
+              
+              elements.push(
+                <motion.div
+                  key={`col-${i}`}
+                  initial={{ y: "15rem" }}
+                  whileInView={{ y: "0" }}
+                  transition={{
+                    duration: 2,
+                    type: "spring",
+                  }}
+                  viewport={{ once: true }}
+                  className={`G-col${i}`}
+                  style={{ display: "flex", flexDirection: "column",gap:'0.5rem',width:"1rem",flex:'1' }}
+                >
+                  {images} 
+                </motion.div>
+              );
+            }
+
+            return elements;
+          })()}
         
-        className="G-col1" style={{display:'flex',flexDirection:'column'}}>
-            <img src={img1} alt="" />
-            <img src={img9} alt="" />
-            <img src={img3} alt="" />
-            <img src={img4} alt="" />
-            <img src={img5} alt="" />
-            <img src={img6} alt="" />
-            <img src={img7} alt="" />
-            <img src={img8} alt="" />
-            <img src={img9} alt="" />
-            <img src={img10} alt="" />
-        </motion.div>
-        <motion.div
-     initial={{y:"15rem"}}
-     whileInView={{y:"0"}}
-        exit={{ opacity: 0, y: "2rem" }}
-        transition={{
-            duration: 2,
-          type: "spring",
-        }}
-        viewport={{once:true}}
-     
-        className="G-col1" style={{display:'flex',flexDirection:'column'}}>
-            <img src={img10} alt="" />
-            <img src={img11} alt="" />
-            <img src={img12} alt="" />
-            <img src={img13} alt="" />
-            <img src={img1} alt="" />
-            <img src={img3} alt="" />
-            <img src={img4} alt="" />
-            <img src={img5} alt="" />
-            <img src={img6} alt="" />
-            <img src={img7} alt="" />
-            
-        </motion.div>
         
         </AnimatePresence>
     </div>
