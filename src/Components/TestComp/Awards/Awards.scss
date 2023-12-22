@@ -1,0 +1,115 @@
+.main-techComp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     .content{
+        width: 100%;
+        max-width: 1500px;
+        padding: 4rem 5rem;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+          
+          h3{
+            color: #000;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 5rem; /* 114.286% */
+          }
+          p{
+            margin-bottom: 1rem;
+            margin-top: -2rem;
+            color: #000;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2rem; /* 145.455% */
+          }
+
+          .process{
+            width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              gap: 10px;
+              .card{
+                   width: calc(25% - 20px);
+                   height: 10rem;
+                   display: flex;
+                   flex-direction: column;
+                   justify-content: center;
+                   align-items: flex-start;
+                   background: #FFF;
+                   box-shadow: 0px 4px 50px 5px rgba(31, 31, 31, 0.05);
+                   border-radius: 10px;
+                  padding: 10px;
+                   .num{
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid black;
+                    margin: 1rem 0;
+                    h6{
+                        font-size: 0.8rem;
+                    }
+                   }
+
+                   h3{
+                    color: #000;
+                    text-align: center;
+                    font-family: Poppins;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 2rem; /* 128% */
+                    margin-bottom: -0.3rem;
+                   }
+                   p{
+                    margin: 0;
+                    color: #000;
+                    text-align: center;
+                    font-family: Poppins;
+                    font-size: 0.8rem;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 2rem; /* 200% */
+                   }
+              }
+          }
+     }
+
+}
+
+@media screen and (max-width:480px) {
+  .main-techComp .content{
+    padding: 2rem;
+  }
+  .main-techComp .content p{
+    margin-top: -3rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  .main-techComp .content h3{
+    font-size: 2rem;
+    
+  }
+  .main-techComp .content .process{
+    flex-direction: column;
+  }
+  .main-techComp .content .process .card{
+    width: 100%;
+  }
+}

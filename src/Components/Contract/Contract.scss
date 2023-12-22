@@ -1,0 +1,428 @@
+@import '../Css/mixin.scss';
+.main-contract{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include sm{
+        overflow: hidden;
+    }
+
+    .banner{
+        width: 100%;
+        max-height: 55rem;
+        height: calc(100vh - 100px);
+        background: url("/public/ContrBan.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        @include sm{
+            height: 20rem;
+        }
+
+        .banner-gradient{
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.60) 57.81%, rgba(255, 255, 255, 0.00) 100%);
+            @include sm{
+                height: 80%;
+            }
+         }
+         .banner-text{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            padding: 1rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             gap: 20px;
+            h3{
+                width: 35rem;
+                color: #002849;
+                text-align: center;
+                font-family: Poppins;
+                font-size: 2.5rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 4rem; /* 110% */
+                @include xxl{
+                    margin-top: 4rem;
+                    width: 80rem;
+                    font-size: 6rem;
+                    line-height: 6.875rem;
+                }
+                @include sm{
+                    font-size: 1.5rem;
+                    width: 20rem;
+                    line-height: 2.5rem;
+                }
+            }
+            p{
+                width: 55rem;
+                color: #000;
+                text-align: center;
+                font-family: Poppins;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 2rem; /* 145.455% */
+                @include xxl{
+                    width: 65rem;
+                }
+                @include sm{
+                    font-size: 0.8rem;
+                    width: 17rem;
+                    line-height: 1.5rem;
+                }
+            }
+         }
+    }
+
+    .services{
+        width: 100%;
+        background-color: #002849;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .wrapper{
+             width: 100%;
+             max-width: 1500px;
+             padding: 4rem 3rem;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             gap: 40px;
+             @include xxl{
+                padding: 8rem 0;
+             }
+             @include sm{
+                padding: 4rem 2rem;
+            }
+
+             h3{
+                width: 40rem;
+                color: #FFF;
+                text-align: center;
+                font-family: Poppins;
+                font-size: 2.5rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 5rem; /* 114.286% */
+                text-transform: capitalize;
+                @include xxl{
+                    width: 70rem;
+                    font-size: 4.375rem;
+                }
+                @include sm{
+                    width: 20rem;
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                }
+             }
+
+             .contents{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                 justify-content: center;
+                 align-items: center;
+                 @include sm{
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                .card{
+                    width: calc(30% - 20px);
+                    height: 22rem;
+                    border:  1px solid white;
+                    border-bottom: 0;
+                    border-top: 0;
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 20px;
+                    cursor: pointer;
+                    @include sm{
+                        width: 100%;
+                        gap:10px;
+                        height: 15rem;
+                        border: 0;
+                        padding: 0 1rem;
+                        background: #053C69;
+                        border-radius: 10px;
+                    }
+                    h6{
+                        color: #0873CB;
+                        font-family: Poppins;
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        @include sm{
+                            font-size: 0.7rem;
+                            line-height: 1.5rem;
+                        }
+                    }
+                    h3{
+                        width: 11rem;
+                        color: #FFF;
+                        font-family: Poppins;
+                        font-size: 1.2rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 2.5rem; /* 125% */
+                        text-align: left;
+                        @include sm{
+                            width: 100%;
+                            font-size: 0.9rem;
+                            line-height: 1.5rem;
+                        }
+                    }
+
+                    p{
+                        height: 50%;
+                        color: #FFF;
+                        font-family: Poppins;
+                        font-size: 0.8rem;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 1.75rem; /* 155.556% */
+                        @include sm{
+                            font-size: 0.75rem;
+                            line-height: 1.5rem;
+                        }
+                    }
+                }
+                .card:hover{
+                    background: #053C69;
+                    h6{
+                        color: white;
+                    }
+                }
+             }
+        }
+    }
+
+    .commitment{
+        width: 100%;
+        background: linear-gradient(119deg, #CDE8FF -1.11%, rgba(242, 249, 255, 0.47) 49.64%, #E9F5FF 95.36%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         .wrapper{
+            width: 100%;
+            max-width: 1500px;
+            padding: 4rem 5rem;
+             display: flex;
+             justify-content: space-between;
+             align-items: flex-start;
+             @include xxl{
+                padding: 8rem 3rem;
+            }
+            @include sm{
+                flex-direction: column-reverse;
+                padding: 2rem 2rem;
+            }
+             .left{
+            width: calc(50% - 40px);
+            height: 25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            @include sm{
+                width: 100%;
+                height: 20rem;
+                gap: 15px;
+            }
+            h3{
+                width: 30rem;
+                color: #000;
+                font-family: Poppins;
+                font-size: 2.2rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 4rem; /* 114.286% */
+                @include xxl{
+                    width: auto;
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+                @include sm{
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                }
+            }
+            p{
+                color: #000;
+                font-family: Poppins;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 2.125rem; /* 154.545% */
+                @include xxl{
+                    font-size: 1.375rem;
+                    line-height: 2rem;
+                }
+                @include sm{
+                    font-size: 0.8rem;
+                    line-height: 1.25rem;
+                }
+            }
+         }
+         .right{
+            width: calc(50% - 40px);
+            height: 25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include sm{
+                width: 100%;
+                height: 13rem;
+            }
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+         }
+         button{
+            width: 150px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 1.875rem;
+            background: var(--11, #10C08E);
+            color: #FFF;
+            text-align: center;
+            font-family: Poppins;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            @include sm{
+                font-size: 0.9rem;
+                height: 40px;
+            }
+        }
+         }
+         
+       }
+
+       .contact{
+        width: 100%;
+        max-width: 1500px;
+        padding: 4rem 5rem;
+        margin: 4rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0.9375rem;
+        background: #F6F6F6;
+        @include xxl{
+          padding: 8rem 3rem;
+      }
+      @include sm{
+        width: 90%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 4rem 1rem;
+    }
+  
+        .left{
+          width: calc(50% - 20px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 30px;
+          @include sm{
+            width: 100%;
+        }
+
+          h3{
+              color: var(--22, #003E71);
+              font-family: Poppins;
+              font-size: 2rem;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 3.5rem; /* 114.286% */
+              @include xxl{
+                  font-size: 3rem;
+                  line-height: 5rem;
+              }
+              @include sm{
+                font-size: 1.25rem;
+                line-height: 2rem;
+            }
+          }
+          p{
+              color: var(--22, #003E71);
+              font-family: Poppins;
+              font-size: 1rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 160%; /* 2.51238rem */
+              @include xxl{
+                  font-size: 1.5rem;
+              }
+              @include sm{
+                font-size: 0.75rem;
+                margin-top: -1rem;
+            }
+          }
+        }
+        .right{
+            width: calc(50% - 20px);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            @include sm{
+                width: 100%;
+                justify-content: flex-start;
+              }
+  
+            button{
+              width: 150px;
+              height: 50px;
+              border-radius: 3.04531rem;
+              background: var(--22, #003E71);
+              border: none;
+              outline: none;
+              color: var(--White, #FFF);
+              font-family: Poppins;
+              font-size: 1.2rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 160%; /* 2.5rem */
+              cursor: pointer;
+              margin-top: 10rem;
+              @include xxl{
+                  width: 250px;
+                  height: 70px;
+                  font-size: 1.5rem;
+                  line-height: 2.125rem;
+              }
+              @include sm{
+                margin: 0;
+                font-size: 0.9rem;
+                height: 40px;
+            }
+            }
+        }
+     }
+}
+
+.main-contract .services .wrapper .contents .card p{
+    height: 15%;
+}

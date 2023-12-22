@@ -1,0 +1,206 @@
+.navbar {
+  height: 100px;
+}
+@media only screen and (max-width: 900px) {
+  .navbar {
+    height: 150px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .navbar {
+    height: 150px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navbar {
+    height: 100px;
+  }
+}
+.navbar .wrapper {
+  max-width: 1500px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+@media only screen and (min-width: 1536px) {
+  .navbar .wrapper {
+    padding: 0 5rem;
+  }
+}
+.navbar .wrapper img {
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+}
+@media only screen and (min-width: 1536px) {
+  .navbar .wrapper img {
+    height: 80px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .navbar .wrapper img {
+    width: 180px;
+    height: 70px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper img {
+    width: 100px;
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .navbar .wrapper .links {
+    display: none;
+  }
+}
+.navbar .wrapper .links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.navbar .wrapper .links ul li {
+  cursor: pointer;
+  color: var(--22, #003E71);
+  font-family: Poppins;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.75rem; /* 220% */
+}
+@media only screen and (min-width: 1536px) {
+  .navbar .wrapper .links ul li {
+    font-size: 1rem;
+  }
+}
+.navbar .wrapper .links ul li:hover {
+  font-weight: bolder;
+}
+.navbar .wrapper .links ul .contactLink {
+  width: 5.5rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: var(--22, #003E71);
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.75rem; /* 220% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .wrapper .hamBurger {
+  width: 6rem;
+  height: 4rem;
+  background-color: #003E71;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+@media only screen and (min-width: 900px) {
+  .navbar .wrapper .hamBurger {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamBurger {
+    width: 3rem;
+    height: 2rem;
+    gap: 5px;
+  }
+}
+.navbar .wrapper .hamBurger .line {
+  width: 70%;
+  height: 5px;
+  background-color: white;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamBurger .line {
+    height: 2px;
+  }
+}
+.navbar .wrapper .hamMenu {
+  width: 50%;
+  height: 70vh;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 150px;
+  z-index: 999;
+}
+@media only screen and (min-width: 900px) {
+  .navbar .wrapper .hamMenu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamMenu {
+    width: 80%;
+    top: 100px;
+  }
+}
+.navbar .wrapper .hamMenu .ham-links {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 3rem;
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamMenu .ham-links {
+    padding: 3rem 1rem;
+  }
+}
+.navbar .wrapper .hamMenu .ham-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.navbar .wrapper .hamMenu .ham-links ul li {
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 500px) {
+  .navbar .wrapper .hamMenu .ham-links ul li {
+    font-size: 1rem;
+  }
+}
+.navbar .wrapper .slide {
+  left: -100%;
+  animation: slide 1s ease;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+.navbar .wrapper .slideB {
+  left: 0%;
+  animation: slideB 1s ease;
+}
+@keyframes slideB {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}/*# sourceMappingURL=NavBar.css.map */
