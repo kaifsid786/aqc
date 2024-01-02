@@ -1,314 +1,231 @@
-@import '../Css/mixin.scss';
-.main-tech{
+@import "../Css/mixin.scss";
+.main-tech {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  @include md {
+    margin-top: 150px;
+  }
+  @include xxl {
+    margin-top: 150px;
+  }
+
+  @include sm {
+    overflow: hidden;
+    margin-top: 100px;
+  }
+
+  .banner {
     width: 100%;
+    height: calc(100vh - 100px);
+    max-height: 55rem;
+    padding: 3rem;
+    @include sm {
+      height: 20rem;
+      padding: 1rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 1500px;
+    padding: 1rem 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include sm{
-        overflow: hidden;
+    gap: 20px;
+    @include sm {
+      padding: 0 2rem;
     }
-    .banner{
-        width: 100%;
-        height: calc(100vh - 100px);
-        max-height: 55rem;
-        padding:3rem;
-        @include sm{
-            height: 20rem;
-            padding: 1rem;
-        }
-         img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-         }
-    }
-
-    .intro{
-        width: 100%;
-        max-width: 1500px;
-        padding: 4rem 5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        @include sm{
-            padding: 0 2rem;
-       }
-        h3{
-            color: var(--11, #10C08E);
-            text-align: center;
-            font-family: Poppins;
-            font-size: 2.5rem;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 120%; /* 5.25rem */
-            text-transform: capitalize;
-            @include xxl{
-                font-size: 3.5rem;
-            }
-            @include sm{
-                font-size: 1.25rem;
-                line-height: 2rem;
-           }
-        }
-        p{
-            color: #000;
-            text-align: center;
-            font-family: Poppins;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 300;
-            line-height: 2.125rem; /* 154.545% */
-            @include xxl{
-                font-size: 1.1rem;
-            }
-            @include sm{
-                font-size: 0.8rem;
-                line-height: 1.25rem;
-           }
-        }
-    }
-
-    .cards{
-        width: 100%;
-        max-width: 1500px;
-        padding: 4rem 5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        @include sm{
-            padding: 4rem 1rem;
-        }
-
-        .card-1{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #10C08E;
-            border-radius: 10px;
-            @include sm{
-                flex-direction: column-reverse;
-            }
-            .left{
-                width: 30rem;
-                height: 15rem;
-                border-radius: 10px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                gap: 20px;
-                padding: 1.5rem;
-                @include sm{
-                    width: 100%;
-                    height: fit-content;
-                }
-                h3{
-                    color: #FFF;
-                    text-align: center;
-                    font-family: Poppins;
-                    font-size: 1.7rem;
-                    font-style: normal;
-                    font-weight: 600;
-                    line-height: 120%; /* 3.75rem */
-                    text-transform: capitalize;
-                    @include xxl{
-                        font-size: 2.5rem;
-                    }
-                    @include sm{
-                        font-size: 1.5rem;
-                    }
-                }
-                p{
-                    color: #FFF;
-                    font-family: Poppins;
-                    font-size: 1.2rem;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 2.5rem; /* 133.333% */
-                    text-transform: capitalize;
-                    @include xxl{
-                        font-size: 1.5rem;
-                    }
-                    @include sm{
-                        font-size: 0.9rem;
-                        line-height: 1.25rem;
-                    }
-                }
-                .p2{
-                    font-size: 0.75rem;
-                }
-            }
-            .right{
-                width: 60rem;
-                height: 15rem;
-                border-radius: 10px;
-                @include sm{
-                    width: 100%;
-                }
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 10px;
-                }
-            }
-        }
-
-        .type2{
-            flex-direction: row-reverse;
-            @include sm{
-                flex-direction: column-reverse;
-                background-color:#003E71;
-            }
-        }
-        .type3{
-            background-color: #F6F6F6;
-            @include sm{
-                background-color: #10C08E;
-            }
-              .left{
-                background-color: #F6F6F6;
-                @include sm{
-                    background: transparent;
-                }
-                h3,p{
-                     color: #003E71;
-                     @include sm{
-                        color: white;
-                     }
-                }
-              }
-             .right{
-                background-color: #003E71;
-                padding: 3rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                @include sm{
-                    padding: 0;
-                }
-                p{
-                    color: #FFF;
-                    font-family: Poppins;
-                    font-size: 1rem;
-                    font-style: normal;
-                    font-weight: 300;
-                    line-height: 2.125rem; /* 154.545% */
-                    @include xxl{
-                        font-size: 1.05rem;
-                    }
-                }
-             }
-        }
-    }
-
-    .contact{
-        width: 100%;
-        max-width: 1500px;
-        padding: 4rem 5rem;
-        margin: 4rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 0.9375rem;
-        background: #F6F6F6;
-        @include xxl{
-          padding: 8rem 3rem;
+    h3 {
+      color: var(--11, #10c08e);
+      text-align: center;
+      font-family: Poppins;
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 5.25rem */
+      text-transform: capitalize;
+      @include xxl {
+        font-size: 3.5rem;
       }
-      @include sm{
-        width: 90%;
-        flex-direction: column;
-        gap: 20px;
-        padding: 4rem 1rem;
+      @include sm {
+        font-size: 1.25rem;
+        line-height: 2rem;
+      }
     }
-  
-        .left{
-          width: calc(50% - 20px);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          gap: 30px;
-          @include sm{
-            width: 100%;
-        }
+    p {
+      color: #000;
+      width: 55rem;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.8rem; /* 154.545% */
+      @include xxl {
+        font-size: 1.1rem;
+      }
+      @include sm {
+        width: 20rem;
+        font-size: 0.8rem;
+        line-height: 1.25rem;
+      }
+    }
+  }
 
-          h3{
-              color: var(--22, #003E71);
-              font-family: Poppins;
-              font-size: 2rem;
-              font-style: normal;
-              font-weight: 500;
-              line-height: 3.5rem; /* 114.286% */
-              @include xxl{
-                  font-size: 3rem;
-                  line-height: 5rem;
-              }
-              @include sm{
-                font-size: 1.25rem;
-                line-height: 2rem;
-            }
+  .cards {
+    width: 100%;
+    max-width: 1500px;
+    padding: 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    @include sm {
+      padding: 4rem 1rem;
+    }
+
+    .card-1 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #10c08e;
+      border-radius: 10px;
+      // transition: all 0.5s ease;
+      @include sm {
+        flex-direction: column-reverse;
+      }
+      .left {
+        width: 30rem;
+        height: 15rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0px;
+        padding: 1.5rem;
+        @include sm {
+          width: 100%;
+          height: fit-content;
+        }
+        h3 {
+          color: #fff;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 1.7rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%; /* 3.75rem */
+          text-transform: capitalize;
+          @include xxl {
+            font-size: 2.5rem;
           }
-          p{
-              color: var(--22, #003E71);
-              font-family: Poppins;
-              font-size: 1rem;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 2.51238rem */
-              @include xxl{
-                  font-size: 1.5rem;
-              }
-              @include sm{
-                font-size: 0.75rem;
-                margin-top: -1rem;
-            }
+          @include sm {
+            font-size: 1.5rem;
           }
         }
-        .right{
-            width: calc(50% - 20px);
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            @include sm{
-                width: 100%;
-                justify-content: flex-start;
-              }
-  
-            button{
-              width: 150px;
-              height: 50px;
-              border-radius: 3.04531rem;
-              background: var(--22, #003E71);
-              border: none;
-              outline: none;
-              color: var(--White, #FFF);
-              font-family: Poppins;
-              font-size: 1.2rem;
-              font-style: normal;
-              font-weight: 600;
-              line-height: 160%; /* 2.5rem */
-              cursor: pointer;
-              margin-top: 10rem;
-              @include xxl{
-                  width: 250px;
-                  height: 70px;
-                  font-size: 1.5rem;
-                  line-height: 2.125rem;
-              }
-              @include sm{
-                margin: 0;
-                font-size: 0.9rem;
-                height: 40px;
-            }
-            }
+        p {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 1.2rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 2.5rem; /* 133.333% */
+          text-transform: capitalize;
+          @include xxl {
+            font-size: 1.5rem;
+          }
+          @include sm {
+            font-size: 0.9rem;
+            line-height: 1.25rem;
+          }
         }
-     }
+        .p2 {
+          font-size: 0.75rem;
+          @include sm {
+            margin-top: 0.8rem;
+          }
+        }
+      }
+      .right {
+        width: 60rem;
+        height: 15rem;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        @include sm {
+          width: 100%;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .type2 {
+      flex-direction: row-reverse;
+      @include sm {
+        flex-direction: column-reverse;
+        background-color: #003e71;
+      }
+    }
+    .type3 {
+      background-color: #f6f6f6;
+      @include sm {
+        background-color: #10c08e;
+      }
+      .left {
+        background-color: #f6f6f6;
+        @include sm {
+          background: transparent;
+        }
+        h3,
+        p {
+          color: #003e71;
+          @include sm {
+            color: white;
+          }
+        }
+      }
+      .right {
+        background-color: #003e71;
+        padding: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include sm {
+          padding: 0;
+        }
+        p {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 2.125rem; /* 154.545% */
+          @include xxl {
+            font-size: 1.05rem;
+          }
+        }
+      }
+    }
+  }
 }

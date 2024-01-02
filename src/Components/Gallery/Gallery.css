@@ -8,7 +8,7 @@
 }
 .gall-animation{
     width: 100%;
-    max-width: 1520px;
+    max-width: 1550px;
     color: rebeccapurple;
     background: linear-gradient(#00284900, #002849);
     /* border: 1px solid rebeccapurple; */
@@ -19,6 +19,7 @@
 .gall-animation>hr{
     /* position: fixed; */
     /* top: 0; */
+    display: none;
 }
 .Gallery{
     width: 100%;

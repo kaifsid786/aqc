@@ -4,10 +4,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
+  .main-tech {
+    margin-top: 150px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .main-tech {
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 769px) {
   .main-tech {
     overflow: hidden;
+    margin-top: 100px;
   }
 }
 .main-tech .banner {
@@ -16,7 +28,7 @@
   max-height: 55rem;
   padding: 3rem;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .banner {
     height: 20rem;
     padding: 1rem;
@@ -32,20 +44,20 @@
 .main-tech .intro {
   width: 100%;
   max-width: 1500px;
-  padding: 4rem 5rem;
+  padding: 1rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .intro {
     padding: 0 2rem;
   }
 }
 .main-tech .intro h3 {
-  color: var(--11, #10C08E);
+  color: var(--11, #10c08e);
   text-align: center;
   font-family: Poppins;
   font-size: 2.5rem;
@@ -59,7 +71,7 @@
     font-size: 3.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .intro h3 {
     font-size: 1.25rem;
     line-height: 2rem;
@@ -67,20 +79,22 @@
 }
 .main-tech .intro p {
   color: #000;
+  width: 55rem;
   text-align: center;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 2.125rem; /* 154.545% */
+  line-height: 1.8rem; /* 154.545% */
 }
 @media only screen and (min-width: 1536px) {
   .main-tech .intro p {
     font-size: 1.1rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .intro p {
+    width: 20rem;
     font-size: 0.8rem;
     line-height: 1.25rem;
   }
@@ -95,7 +109,7 @@
   align-items: center;
   gap: 50px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards {
     padding: 4rem 1rem;
   }
@@ -105,10 +119,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #10C08E;
+  background-color: #10c08e;
   border-radius: 10px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .card-1 {
     flex-direction: column-reverse;
   }
@@ -121,10 +135,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 0px;
   padding: 1.5rem;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .card-1 .left {
     width: 100%;
     height: -moz-fit-content;
@@ -132,7 +146,7 @@
   }
 }
 .main-tech .cards .card-1 .left h3 {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: Poppins;
   font-size: 1.7rem;
@@ -146,13 +160,13 @@
     font-size: 2.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .card-1 .left h3 {
     font-size: 1.5rem;
   }
 }
 .main-tech .cards .card-1 .left p {
-  color: #FFF;
+  color: #fff;
   font-family: Poppins;
   font-size: 1.2rem;
   font-style: normal;
@@ -165,7 +179,7 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .card-1 .left p {
     font-size: 0.9rem;
     line-height: 1.25rem;
@@ -174,12 +188,17 @@
 .main-tech .cards .card-1 .left .p2 {
   font-size: 0.75rem;
 }
+@media only screen and (max-width: 769px) {
+  .main-tech .cards .card-1 .left .p2 {
+    margin-top: 0.8rem;
+  }
+}
 .main-tech .cards .card-1 .right {
   width: 60rem;
   height: 15rem;
   border-radius: 10px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .card-1 .right {
     width: 100%;
   }
@@ -194,50 +213,52 @@
 .main-tech .cards .type2 {
   flex-direction: row-reverse;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .type2 {
     flex-direction: column-reverse;
-    background-color: #003E71;
+    background-color: #003e71;
   }
 }
 .main-tech .cards .type3 {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .type3 {
-    background-color: #10C08E;
+    background-color: #10c08e;
   }
 }
 .main-tech .cards .type3 .left {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .type3 .left {
     background: transparent;
   }
 }
-.main-tech .cards .type3 .left h3, .main-tech .cards .type3 .left p {
-  color: #003E71;
+.main-tech .cards .type3 .left h3,
+.main-tech .cards .type3 .left p {
+  color: #003e71;
 }
-@media only screen and (max-width: 500px) {
-  .main-tech .cards .type3 .left h3, .main-tech .cards .type3 .left p {
+@media only screen and (max-width: 769px) {
+  .main-tech .cards .type3 .left h3,
+  .main-tech .cards .type3 .left p {
     color: white;
   }
 }
 .main-tech .cards .type3 .right {
-  background-color: #003E71;
+  background-color: #003e71;
   padding: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .cards .type3 .right {
     padding: 0;
   }
 }
 .main-tech .cards .type3 .right p {
-  color: #FFF;
+  color: #fff;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -254,23 +275,24 @@
   max-width: 1500px;
   padding: 4rem 5rem;
   margin: 4rem 0;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 0.9375rem;
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 @media only screen and (min-width: 1536px) {
   .main-tech .contact {
     padding: 8rem 3rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .contact {
     width: 90%;
     flex-direction: column;
     gap: 20px;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
 }
 .main-tech .contact .left {
@@ -279,35 +301,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
+  gap: 10px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .contact .left {
     width: 100%;
   }
 }
 .main-tech .contact .left h3 {
-  color: var(--22, #003E71);
+  width: 25rem;
+  color: var(--22, #003e71);
   font-family: Poppins;
   font-size: 2rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 3.5rem; /* 114.286% */
+  line-height: 2.5rem; /* 114.286% */
 }
 @media only screen and (min-width: 1536px) {
   .main-tech .contact .left h3 {
+    width: 40rem;
     font-size: 3rem;
     line-height: 5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .contact .left h3 {
+    width: 15rem;
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
   }
 }
 .main-tech .contact .left p {
-  color: var(--22, #003E71);
+  color: var(--22, #003e71);
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -319,10 +344,9 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .contact .left p {
     font-size: 0.75rem;
-    margin-top: -1rem;
   }
 }
 .main-tech .contact .right {
@@ -331,27 +355,27 @@
   justify-content: center;
   align-items: flex-end;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .contact .right {
     width: 100%;
     justify-content: flex-start;
   }
 }
 .main-tech .contact .right button {
-  width: 150px;
+  width: 200px;
   height: 50px;
   border-radius: 3.04531rem;
-  background: var(--22, #003E71);
+  background: var(--22, #003e71);
   border: none;
   outline: none;
-  color: var(--White, #FFF);
+  color: var(--White, #fff);
   font-family: Poppins;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 160%; /* 2.5rem */
   cursor: pointer;
-  margin-top: 10rem;
+  margin-top: 6.5rem;
 }
 @media only screen and (min-width: 1536px) {
   .main-tech .contact .right button {
@@ -361,7 +385,7 @@
     line-height: 2.125rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-tech .contact .right button {
     margin: 0;
     font-size: 0.9rem;

@@ -33,16 +33,16 @@ const TopSlidesr = () => {
 
 export default TopSlidesr;
 
-const SlideNextButton = () => {
-  const swiper = useSwiper();
-  return (
-    <div className="flexCenter ">
-      <button onClick={() => swiper.slidePrev()} className="r-prevButton">
-        &lt;
-      </button>
-      <button onClick={() => swiper.slideNext()} className="r-nextButton">
-        &gt;
-      </button>
-    </div>
-  );
-};
+// const SlideNextButton = () => {
+//   const swiper = useSwiper();
+//   return (
+//     <div className="flexCenter ">
+//       <button onClick={() => swiper.slidePrev()} className="r-prevButton">
+//         &lt;
+//       </button>
+//       <button onClick={() => swiper.slideNext()} className="r-nextButton">
+//         &gt;
+//       </button>
+//     </div>
+//   );
+// };

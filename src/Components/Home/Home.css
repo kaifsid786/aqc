@@ -4,4 +4,29 @@
 
 #residencies {
   width: 100% !important;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 900px) {
+  .Home {
+    margin-top: 150px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .Home {
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .Home {
+    margin-top: 100px;
+  }
 }/*# sourceMappingURL=Home.css.map */

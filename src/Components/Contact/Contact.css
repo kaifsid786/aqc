@@ -4,27 +4,41 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
+  .main-contact {
+    margin-top: 150px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .main-contact {
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 769px) {
   .main-contact {
     overflow: hidden;
+    margin-top: 100px;
   }
 }
 .main-contact .banner {
   width: 100%;
   height: calc(90vh - 100px);
   max-height: 55rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F2F9FF 106.41%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f2f9ff 106.41%);
   -webkit-clip-path: ellipse(90% 100% at top);
           clip-path: ellipse(90% 100% at top);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner {
     height: -moz-fit-content;
     height: fit-content;
+    -webkit-clip-path: ellipse(122% 100% at top);
+            clip-path: ellipse(122% 100% at top);
   }
 }
 .main-contact .banner .wrapper {
@@ -36,7 +50,7 @@
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper {
     padding: 4rem 2rem;
   }
@@ -48,7 +62,7 @@
   justify-content: space-between;
   align-items: center;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper .cards {
     flex-direction: column;
     gap: 50px;
@@ -67,7 +81,7 @@
     gap: 30px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper .cards .card {
     width: 100%;
     align-items: center;
@@ -91,7 +105,7 @@
     font-size: 3rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper .cards .card .logo {
     width: 3rem;
     height: 3rem;
@@ -99,7 +113,7 @@
   }
 }
 .main-contact .banner .wrapper .cards .card h3 {
-  color: var(--22, #003E71);
+  color: var(--22, #003e71);
   text-align: center;
   font-family: Poppins;
   font-size: 1.5rem;
@@ -112,13 +126,13 @@
     font-size: 2.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper .cards .card h3 {
     font-size: 1.25rem;
   }
 }
 .main-contact .banner .wrapper .cards .card p {
-  color: #5A7184;
+  color: #5a7184;
   text-align: center;
   font-family: Poppins;
   font-size: 0.9rem;
@@ -132,7 +146,7 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper .cards .card p {
     font-size: 0.8rem;
     line-height: 1.5rem;
@@ -140,7 +154,7 @@
   }
 }
 .main-contact .banner .wrapper .cards .card .info {
-  color: var(--22, #003E71);
+  color: var(--22, #003e71);
   text-align: center;
   font-family: Poppins;
   font-size: 1.1rem;
@@ -153,7 +167,7 @@
     font-size: 1.8rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .banner .wrapper .cards .card .info {
     font-size: 1rem;
   }
@@ -169,7 +183,7 @@
 .main-contact .banner .wrapper .cards .card button {
   width: 10rem;
   height: 3rem;
-  color: var(--22, #003E71);
+  color: var(--22, #003e71);
   text-align: center;
   font-family: Poppins;
   font-size: 1rem;
@@ -179,7 +193,7 @@
   cursor: pointer;
   background-color: inherit;
   border-radius: 10px;
-  border: 1px solid #003E71;
+  border: 1px solid #003e71;
   outline: none;
 }
 @media only screen and (min-width: 1536px) {
@@ -197,7 +211,7 @@
   align-items: center;
   padding: 4rem 5rem;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section {
     padding: 4rem 1rem;
   }
@@ -206,10 +220,10 @@
   width: 100%;
   display: flex;
   border-radius: 2.5625rem;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.12);
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section .wrapper {
     flex-direction: column;
   }
@@ -231,7 +245,7 @@
     gap: 20px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section .wrapper .left {
     width: 100%;
     padding: 4rem 1.5rem;
@@ -240,7 +254,7 @@
 }
 .main-contact .form-section .wrapper .left h3 {
   width: 20rem;
-  color: #3F3F3F;
+  color: #3f3f3f;
   font-feature-settings: "clig" off, "liga" off;
   font-family: Poppins;
   font-size: 3rem;
@@ -254,7 +268,7 @@
     font-size: 4rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section .wrapper .left h3 {
     font-size: 1.375em;
   }
@@ -272,7 +286,7 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section .wrapper .left p {
     font-size: 0.8rem;
     margin-top: -1rem;
@@ -294,7 +308,7 @@
     gap: 20px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section .wrapper .right {
     height: -moz-fit-content;
     height: fit-content;
@@ -314,7 +328,8 @@
     font-size: 1.2rem;
   }
 }
-.main-contact .form-section .wrapper .right input, .main-contact .form-section .wrapper .right textarea {
+.main-contact .form-section .wrapper .right input,
+.main-contact .form-section .wrapper .right textarea {
   width: 70%;
   height: 2rem;
   border: none;
@@ -323,12 +338,14 @@
   padding-left: 1rem;
 }
 @media only screen and (min-width: 1536px) {
-  .main-contact .form-section .wrapper .right input, .main-contact .form-section .wrapper .right textarea {
+  .main-contact .form-section .wrapper .right input,
+  .main-contact .form-section .wrapper .right textarea {
     height: 3rem;
   }
 }
-@media only screen and (max-width: 500px) {
-  .main-contact .form-section .wrapper .right input, .main-contact .form-section .wrapper .right textarea {
+@media only screen and (max-width: 769px) {
+  .main-contact .form-section .wrapper .right input,
+  .main-contact .form-section .wrapper .right textarea {
     width: 38%;
   }
 }
@@ -344,10 +361,10 @@
 .main-contact .form-section .wrapper .right button {
   width: 10rem;
   height: 3rem;
-  background-color: #003E71;
+  background-color: #003e71;
   border-radius: 7.8rem;
   cursor: pointer;
-  color: #FFF;
+  color: #fff;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -363,7 +380,7 @@
     font-size: 1.3rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contact .form-section .wrapper .right button {
     width: 8rem;
     height: 2.5rem;

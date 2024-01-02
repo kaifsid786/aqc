@@ -55,3 +55,14 @@
     position: initial;
   }
 }
+
+@media screen and (max-width:480px) {
+  .swiper-wrapper{
+    /* display: none; */
+  }
+}
+@media screen and (max-width:390px) {
+  .r-head{
+    display: none;
+  }
+}

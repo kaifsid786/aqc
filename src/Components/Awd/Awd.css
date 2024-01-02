@@ -1,11 +1,41 @@
-.awards{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 6rem !important;
-   }
+.awards {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 5rem 5rem;
+}
+.awd-awards-title {
+  font-size: 3rem;
+}
+.awd-awards-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.awards img {
+  width: 80px;
+}
 
-   .awards img{
-        width: 80px;
-   }
+@media screen and (max-width: 480px) {
+  .awards {
+    padding-bottom: 2rem !important;
+  }
+  .awd-awards-title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .awd-awards-wrapper {
+    width: 23rem;
+    padding: 0 2rem !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .awards img {
+    margin-top: 1rem;
+  }
+}

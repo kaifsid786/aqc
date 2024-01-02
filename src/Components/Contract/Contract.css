@@ -4,10 +4,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
+  .main-contract {
+    margin-top: 150px;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .main-contract {
+    margin-top: 150px;
+  }
+}
+@media only screen and (max-width: 769px) {
   .main-contract {
     overflow: hidden;
+    margin-top: 100px;
   }
 }
 .main-contract .banner {
@@ -19,7 +31,7 @@
   background-position: center;
   position: relative;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .banner {
     height: 20rem;
   }
@@ -27,11 +39,11 @@
 .main-contract .banner .banner-gradient {
   width: 100%;
   height: 70%;
-  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.6) 57.81%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.6) 57.81%, rgba(255, 255, 255, 0) 100%);
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .banner .banner-gradient {
-    height: 80%;
+    height: 90%;
   }
 }
 .main-contract .banner .banner-text {
@@ -43,7 +55,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 .main-contract .banner .banner-text h3 {
   width: 35rem;
@@ -53,7 +65,7 @@
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 4rem; /* 110% */
+  line-height: 3rem; /* 110% */
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .banner .banner-text h3 {
@@ -63,33 +75,33 @@
     line-height: 6.875rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .banner .banner-text h3 {
     font-size: 1.5rem;
     width: 20rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
   }
 }
 .main-contract .banner .banner-text p {
-  width: 55rem;
+  width: 36rem;
   color: #000;
   text-align: center;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 2rem; /* 145.455% */
+  line-height: 1.5rem; /* 145.455% */
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .banner .banner-text p {
     width: 65rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .banner .banner-text p {
     font-size: 0.8rem;
     width: 17rem;
-    line-height: 1.5rem;
+    line-height: 1.2rem;
   }
 }
 .main-contract .services {
@@ -114,33 +126,34 @@
     padding: 8rem 0;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper {
     padding: 4rem 2rem;
   }
 }
 .main-contract .services .wrapper h3 {
   width: 40rem;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: Poppins;
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 5rem; /* 114.286% */
+  line-height: 3rem; /* 114.286% */
   text-transform: capitalize;
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .services .wrapper h3 {
     width: 70rem;
     font-size: 4.375rem;
+    line-height: 5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper h3 {
     width: 20rem;
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1.8rem;
   }
 }
 .main-contract .services .wrapper .contents {
@@ -150,7 +163,7 @@
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper .contents {
     flex-direction: column;
     gap: 20px;
@@ -167,45 +180,45 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 10px;
   cursor: pointer;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper .contents .card {
     width: 100%;
     gap: 10px;
     height: 15rem;
     border: 0;
     padding: 0 1rem;
-    background: #053C69;
+    background: #053c69;
     border-radius: 10px;
   }
 }
 .main-contract .services .wrapper .contents .card h6 {
-  color: #0873CB;
+  color: #0873cb;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper .contents .card h6 {
-    font-size: 0.7rem;
+    font-size: 1rem;
     line-height: 1.5rem;
   }
 }
 .main-contract .services .wrapper .contents .card h3 {
   width: 11rem;
-  color: #FFF;
+  color: #fff;
   font-family: Poppins;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 2.5rem; /* 125% */
+  line-height: 1.8rem; /* 125% */
   text-align: left;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper .contents .card h3 {
     width: 100%;
     font-size: 0.9rem;
@@ -214,28 +227,28 @@
 }
 .main-contract .services .wrapper .contents .card p {
   height: 50%;
-  color: #FFF;
+  color: #fff;
   font-family: Poppins;
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 1.75rem; /* 155.556% */
+  line-height: 1.5rem; /* 155.556% */
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .services .wrapper .contents .card p {
     font-size: 0.75rem;
-    line-height: 1.5rem;
+    line-height: 1.2rem;
   }
 }
 .main-contract .services .wrapper .contents .card:hover {
-  background: #053C69;
+  background: #053c69;
 }
 .main-contract .services .wrapper .contents .card:hover h6 {
   color: white;
 }
 .main-contract .commitment {
   width: 100%;
-  background: linear-gradient(119deg, #CDE8FF -1.11%, rgba(242, 249, 255, 0.47) 49.64%, #E9F5FF 95.36%);
+  background: linear-gradient(119deg, #cde8ff -1.11%, rgba(242, 249, 255, 0.47) 49.64%, #e9f5ff 95.36%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +266,7 @@
     padding: 8rem 3rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper {
     flex-direction: column-reverse;
     padding: 2rem 2rem;
@@ -266,9 +279,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
+  gap: 20px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper .left {
     width: 100%;
     height: 20rem;
@@ -282,7 +295,7 @@
   font-size: 2.2rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 4rem; /* 114.286% */
+  line-height: 3rem; /* 114.286% */
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .commitment .wrapper .left h3 {
@@ -291,10 +304,10 @@
     line-height: 5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper .left h3 {
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1rem;
   }
 }
 .main-contract .commitment .wrapper .left p {
@@ -311,7 +324,7 @@
     line-height: 2rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper .left p {
     font-size: 0.8rem;
     line-height: 1.25rem;
@@ -324,7 +337,7 @@
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper .right {
     width: 100%;
     height: 13rem;
@@ -342,8 +355,8 @@
   height: 50px;
   flex-shrink: 0;
   border-radius: 1.875rem;
-  background: var(--11, #10C08E);
-  color: #FFF;
+  background: var(--11, #10c08e);
+  color: #fff;
   text-align: center;
   font-family: Poppins;
   font-size: 1rem;
@@ -354,7 +367,7 @@
   border: none;
   cursor: pointer;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper button {
     font-size: 0.9rem;
     height: 40px;
@@ -369,19 +382,19 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 0.9375rem;
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .contact {
     padding: 8rem 3rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .contact {
     width: 90%;
     flex-direction: column;
     gap: 20px;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
 }
 .main-contract .contact .left {
@@ -390,35 +403,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
+  gap: 10px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .contact .left {
     width: 100%;
   }
 }
 .main-contract .contact .left h3 {
-  color: var(--22, #003E71);
+  width: 25rem;
+  color: var(--22, #003e71);
   font-family: Poppins;
   font-size: 2rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 3.5rem; /* 114.286% */
+  line-height: 2.5rem; /* 114.286% */
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .contact .left h3 {
+    width: 40rem;
     font-size: 3rem;
     line-height: 5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .contact .left h3 {
+    width: 15rem;
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
   }
 }
 .main-contract .contact .left p {
-  color: var(--22, #003E71);
+  color: var(--22, #003e71);
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -430,10 +446,9 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .contact .left p {
     font-size: 0.75rem;
-    margin-top: -1rem;
   }
 }
 .main-contract .contact .right {
@@ -442,27 +457,27 @@
   justify-content: center;
   align-items: flex-end;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .contact .right {
     width: 100%;
     justify-content: flex-start;
   }
 }
 .main-contract .contact .right button {
-  width: 150px;
+  width: 200px;
   height: 50px;
   border-radius: 3.04531rem;
-  background: var(--22, #003E71);
+  background: var(--22, #003e71);
   border: none;
   outline: none;
-  color: var(--White, #FFF);
+  color: var(--White, #fff);
   font-family: Poppins;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 160%; /* 2.5rem */
   cursor: pointer;
-  margin-top: 10rem;
+  margin-top: 6.5rem;
 }
 @media only screen and (min-width: 1536px) {
   .main-contract .contact .right button {
@@ -472,7 +487,7 @@
     line-height: 2.125rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 769px) {
   .main-contract .contact .right button {
     margin: 0;
     font-size: 0.9rem;

@@ -1,95 +1,284 @@
-import './Technology.scss';
-import NavBar from '../NavBar/NavBar'
-import Footer from '../Footer/Footer'
-import { useNavigate } from 'react-router-dom';
+import "./Technology.scss";
+import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
+import PreFooter from "../PreFooter/PreFooter";
+import { useEffect, useState } from "react";
 export default function Technology() {
-   const navigate = useNavigate();
+  const [hover1, setHover1] = useState(false);
+  const [hover2, setHover2] = useState(false);
+  const [hover3, setHover3] = useState(false);
+  const [hover4, setHover4] = useState(false);
+  const [ph, setPh] = useState(true);
+  useEffect(() => {
+    if (window.innerWidth <= 900) setPh(false);
+    else setPh(true);
+  }, []);
   return (
-    <>     
-    <NavBar />
-    <div className="main-tech">
-         <div className="banner">
-            <img src="/TechBan.png" alt="" />
-         </div>
-         <div className="intro">
-            <h3>TECHNOLOGY</h3>
-            <p> <span style={{fontWeight:"600"}}>At AQC Chem. Lab Pvt. Ltd.</span>, innovation is in our DNA. It is showcased through the cutting edge technologies that drive our food processing solutions. We harness a range of state-of-the-art technologies that redefine food science, enhancing product quality, efficacy, and consumer experience.</p>
-         </div>
-         <div className="cards">
-             <div className="card-1">
-                 <div className="left">
-                    <h3>Encapsulation:</h3>
-                    <p>Safeguarding the goodness</p>
-                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
-                    Our encapsulation technology is a cornerstone of product stability and controlled release. By encasing active ingredients within protective shells, we ensure their preservation until consumption, maximising potency and bioavailability. This empowers our partners to offer products with enhanced shelf life and targeted nutrient delivery.
-                    </p>
-                 </div>
-                 <div className="right">
-                    <img src="/Tech1.png" alt="" />
-                 </div>
-             </div>
-             <div className="card-1 type2">
-                 <div className="left">
-                    <h3>Spray Drying: :</h3>
-                    <p>The Art of Transformations</p>
-                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
-                    Our encapsulation technology is a cornerstone of product stability and controlled release. By encasing active ingredients within protective shells, we ensure their preservation until consumption, maximising potency and bioavailability. This empowers our partners to offer products with enhanced shelf life and targeted nutrient delivery.
-                      </p>
-                 </div>
-                 <div className="right">
-                    <img src="/Tech3.jpg" alt="" />
-                 </div>
-             </div>
-             <div className="card-1 type3">
-                 <div className="left">
-                    <h3>Blending:</h3>
-                    <p>The Art of  Nutrient Synergy</p>
-                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
-                    Our blending technology is an alchemy of precision and innovation. By combining diverse ingredients, we create nutrient-rich formulations that resonate with modern dietary demands. This process ensures uniform distribution of components, yielding products that deliver consistent nutritional impact.
-                      </p>
-                 </div>
-                 <div className="right">
-                  <p style={window.innerWidth<=500?{display:"none"}:{}}>Our blending technology is an alchemy of precision and innovation. By combining diverse ingredients, we create nutrient-rich formulations that resonate with modern dietary demands. This process ensures uniform distribution of components, yielding products that deliver consistent nutritional impact.</p>
-                   <img style={window.innerWidth>500?{display:"none"}:{width:"100%"}} src="/Tech4.jpg" alt="" />
-                 </div>
-             </div>
-             <div className="card-1 type2">
-                 <div className="left">
-                    <h3>Granulation::</h3>
-                    <p>Solidifying Quality</p>
-                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
-                    Granulation is our pathway to product cohesion and durability. By mixing and matching  fine particles, we ensure uniformity and homogeneity, elevating product handling and dissolution properties. The result is nutritional products that are as robust as they are effective.
-                      </p>
-                 </div>
-                 <div className="right">
-                    <img src="/Tech5.jpg" alt="" />
-                 </div>
-             </div>
-             <div className="card-1">
-                 <div className="left">
-                    <h3>Extrusion:</h3>
-                    <p>Shaping Nutritional Excellence</p>
-                    <p className='p2' style={window.innerWidth>500?{display:"none"}:{}}>
-                    This is where art meets nutrition. Extrusion technology shapes our commitment to nutritional excellence. It allows us to craft products with unique textures and structures while keeping all nutritional value. This technology is particularly vital for sculpting nutritional masterpieces for your taste buds. In the world of food processing, we are not just keeping up with the standards but we are leading the way with these mind blowing technologies. 
-                      </p>
-                 </div>
-                 <div className="right">
-                    <img src="/Tech2.jpg" alt="" />
-                 </div>
-             </div>
-         </div>
+    <>
+      <NavBar />
+      <div className="main-tech">
+        <div className="banner">
+          <img src="/TechBan.png" alt="" />
+        </div>
+        <div className="intro">
+          <h3>TECHNOLOGY</h3>
+          <p>
+            {" "}
+            <span style={{ fontWeight: "600" }}>
+              At AQC Chem. Lab Pvt. Ltd.
+            </span>
+            , innovation is in our DNA. It is showcased through the cutting edge
+            technologies that drive our food processing solutions. We harness a
+            range of state-of-the-art technologies that redefine food science,
+            enhancing product quality, efficacy, and consumer experience.
+          </p>
+        </div>
+        <div className="cards">
+          <div
+            className="card-1"
+            style={hover1 && ph ? { background: "#f6f6f6" } : {}}
+          >
+            <div className="left">
+              <h3 style={hover1 && ph ? { color: "#003e71" } : {}}>
+                Encapsulation:
+              </h3>
+              <p style={hover1 && ph ? { color: "#003e71" } : {}}>
+                Safeguarding the goodness
+              </p>
+              <p
+                className="p2"
+                style={window.innerWidth > 500 ? { display: "none" } : {}}
+              >
+                Our encapsulation technology is a cornerstone of product
+                stability and controlled release. By encasing active ingredients
+                within protective shells, we ensure their preservation until
+                consumption, maximising potency and bioavailability. This
+                empowers our partners to offer products with enhanced shelf life
+                and targeted nutrient delivery.
+              </p>
+            </div>
+            <div
+              className="right"
+              onMouseEnter={() => setHover1(!hover1)}
+              onMouseLeave={() => setHover1(!hover1)}
+            >
+              <img
+                src="/Tech1.png"
+                alt=""
+                style={hover1 && ph ? { display: "none" } : {}}
+              />
+              <p
+                className="p2"
+                style={
+                  !hover1 | !ph
+                    ? { display: "none" }
+                    : {
+                        background: "#003e71",
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "white",
+                        padding: "0 1rem",
+                        borderRadius: "10px",
+                      }
+                }
+              >
+                Our encapsulation technology is a cornerstone of product
+                stability and controlled release. By encasing active ingredients
+                within protective shells, we ensure their preservation until
+                consumption, maximising potency and bioavailability. This
+                empowers our partners to offer products with enhanced shelf life
+                and targeted nutrient delivery.
+              </p>
+            </div>
+          </div>
+          <div
+            className="card-1 type2"
+            style={hover2 && ph ? { background: "#f6f6f6" } : {}}
+          >
+            <div className="left">
+              <h3 style={hover2 && ph ? { color: "#003e71" } : {}}>
+                Spray Drying: :
+              </h3>
+              <p style={hover2 && ph ? { color: "#003e71" } : {}}>
+                The Art of Transformations
+              </p>
+              <p
+                className="p2"
+                style={window.innerWidth > 500 ? { display: "none" } : {}}
+              >
+                Our encapsulation technology is a cornerstone of product
+                stability and controlled release. By encasing active ingredients
+                within protective shells, we ensure their preservation until
+                consumption, maximising potency and bioavailability. This
+                empowers our partners to offer products with enhanced shelf life
+                and targeted nutrient delivery.
+              </p>
+            </div>
+            <div
+              className="right"
+              onMouseEnter={() => setHover2(!hover2)}
+              onMouseLeave={() => setHover2(!hover2)}
+            >
+              <img
+                src="/Tech3.jpg"
+                alt=""
+                style={hover2 && ph ? { display: "none" } : {}}
+              />
+              <p
+                className="p2"
+                style={
+                  !hover2 | !ph
+                    ? { display: "none" }
+                    : {
+                        background: "#003e71",
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "white",
+                        padding: "0 1rem",
+                        borderRadius: "10px",
+                      }
+                }
+              >
+                Our encapsulation technology is a cornerstone of product
+                stability and controlled release. By encasing active ingredients
+                within protective shells, we ensure their preservation until
+                consumption, maximising potency and bioavailability. This
+                empowers our partners to offer products with enhanced shelf life
+                and targeted nutrient delivery.
+              </p>
+            </div>
+          </div>
+          <div
+            className="card-1"
+            style={hover3 && ph ? { background: "#f6f6f6" } : {}}
+          >
+            <div className="left">
+              <h3 style={hover3 && ph ? { color: "#003e71" } : {}}>
+                Blending:
+              </h3>
+              <p style={hover3 && ph ? { color: "#003e71" } : {}}>
+                The Art of  Nutrient Synergy
+              </p>
+              <p
+                className="p2"
+                style={window.innerWidth > 500 ? { display: "none" } : {}}
+              >
+                Our blending technology is an alchemy of precision and
+                innovation. By combining diverse ingredients, we create
+                nutrient-rich formulations that resonate with modern dietary
+                demands. This process ensures uniform distribution of
+                components, yielding products that deliver consistent
+                nutritional impact.
+              </p>
+            </div>
+            <div
+              className="right"
+              onMouseEnter={() => setHover3(!hover3)}
+              onMouseLeave={() => setHover3(!hover3)}
+            >
+              <img
+                src="/Tech4.jpg"
+                alt=""
+                style={hover3 && ph ? { display: "none" } : {}}
+              />
+              <p
+                style={
+                  !hover3 | !ph
+                    ? { display: "none" }
+                    : {
+                        background: "#003e71",
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "white",
+                        padding: "0 1rem",
+                        borderRadius: "10px",
+                      }
+                }
+              >
+                Our blending technology is an alchemy of precision and
+                innovation. By combining diverse ingredients, we create
+                nutrient-rich formulations that resonate with modern dietary
+                demands. This process ensures uniform distribution of
+                components, yielding products that deliver consistent
+                nutritional impact.
+              </p>
+            </div>
+          </div>
 
-         <div className="contact">
-             <div className="left">
-               <h3>Together, Let's Build a Healthy world around us</h3>
-               <p>Are you ready to take your food to the next level in terms of taste & nutritional value to build a healthier world around us?</p>
-             </div>
-             <div className="right">
-              <button onClick={()=>navigate('/contact')}>Contact</button>
-             </div>
-         </div>
-     </div>
-     <Footer />
+          <div
+            className="card-1 type2"
+            style={hover4 && ph ? { background: "#f6f6f6" } : {}}
+          >
+            <div className="left">
+              <h3 style={hover4 && ph ? { color: "#003e71" } : {}}>
+                Extrusion:
+              </h3>
+              <p style={hover4 && ph ? { color: "#003e71" } : {}}>
+                Shaping Nutritional Excellence
+              </p>
+              <p
+                className="p2"
+                style={window.innerWidth > 500 ? { display: "none" } : {}}
+              >
+                Our encapsulation technology is a cornerstone of product
+                stability and controlled release. By encasing active ingredients
+                within protective shells, we ensure their preservation until
+                consumption, maximising potency and bioavailability. This
+                empowers our partners to offer products with enhanced shelf life
+                and targeted nutrient delivery.
+              </p>
+            </div>
+            <div
+              className="right"
+              onMouseEnter={() => setHover4(!hover4)}
+              onMouseLeave={() => setHover4(!hover4)}
+            >
+              <img
+                src="/Tech2.jpg"
+                alt=""
+                style={hover4 && ph ? { display: "none" } : {}}
+              />
+              <p
+                className="p2"
+                style={
+                  !hover4 | !ph
+                    ? { display: "none" }
+                    : {
+                        background: "#003e71",
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "white",
+                        padding: "0 1rem",
+                        borderRadius: "10px",
+                      }
+                }
+              >
+                Our encapsulation technology is a cornerstone of product
+                stability and controlled release. By encasing active ingredients
+                within protective shells, we ensure their preservation until
+                consumption, maximising potency and bioavailability. This
+                empowers our partners to offer products with enhanced shelf life
+                and targeted nutrient delivery.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <PreFooter />
+      </div>
+      <Footer />
     </>
   );
 }

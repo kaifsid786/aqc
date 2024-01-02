@@ -51,16 +51,49 @@
   font-size: 1.4rem;
 }
 
+.swiper-wrapper{
+  align-items: center;
+}
+
  @media screen and (min-width: 1700px) {
   .r-card2{
-    height: 18rem;
+    height: 19rem;
     justify-content: space-around;
   }
   .card-title{
     font-size: 2.3rem;
   }
   .primaryText{
-    font-size: 0.9rem;
+    font-size: 1rem;
   font-weight: 200;
+  }
+  .r-card2 img{
+    width: 4rem;
+    height: 4rem;
+  }
+  .swiper-horizontal .swiper-wrapper .swiper-slide-next .r-card2 img{
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media screen and (min-width:2100px){
+  .r-card2{
+    height: 23rem;
+  }
+  .primaryText{
+    font-size: 1.4rem;
+  }
+  .swiper-horizontal .swiper-wrapper .swiper-slide-next .r-card2{
+    height: 25rem;
+  }
+  .swiper-horizontal .swiper-wrapper .swiper-slide-next .r-card2 .primaryText{
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .primaryText{
+    font-size: 0.8rem;
   }
 }

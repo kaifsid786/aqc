@@ -1,0 +1,96 @@
+.main-blogPhone {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 0 !important;
+  .row {
+    width: 100%;
+    // padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+
+    span {
+      color: rgba(0, 0, 0, 0.4);
+      font-family: Poppins;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.06325rem; /* 121.514% */
+      letter-spacing: 0.00888rem;
+      padding: 0.5rem 0;
+    }
+
+    .selectBlog {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      select {
+        width: 8rem;
+        height: 2rem;
+        border: 1px solid grey;
+        border-radius: 10px;
+        outline: none;
+        color: grey;
+      }
+    }
+  }
+
+  .rowL {
+    position: relative;
+    border: none !important;
+    padding: 0;
+  }
+  .rowL::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0; /* Adjust the value to set the width of the border */
+    width: 40%; /* Adjust the value to set the width of the border */
+    border-bottom: 1px solid grey;
+  }
+
+  .row2 {
+    width: 100vw;
+    border-radius: 0.54313rem;
+    background: #ecf6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 2rem;
+
+    .row-2-content {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+
+      .content {
+        min-width: 6rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1.79419rem;
+        border: 0.574px solid #d9d9d9;
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.0625rem; /* 141.667% */
+        padding: 0.5rem;
+      }
+    }
+  }
+}

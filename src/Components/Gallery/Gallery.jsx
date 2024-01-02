@@ -43,8 +43,8 @@ const [start,setStart]=useState();
       const element = document.querySelector('.gall-cont');
       const newScrollHeight = element.scrollHeight;
       if(window.innerWidth > 1500){
-        setStart(document.querySelector('.gall-cont').scrollHeight+100);
-        setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight+250);
+        setStart(document.querySelector('.gall-cont').scrollHeight-200);
+        setEnd(document.querySelector('.gall-cont').scrollHeight+document.querySelector('.gall-cont').clientHeight+50);
         setScrollHeight(window.scrollY);
 
         if (scrollHeight >= end-400) {

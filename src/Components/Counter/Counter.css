@@ -38,8 +38,16 @@
     font-weight: 600;
 }
 
-@media screen and (max-width:1500px) {
-  
+@media screen and (max-width:480px) {
+    .prof>:nth-child(1){
+        width: 2.5rem;
+    }
+    .prof>:nth-child(3){
+        font-size: 1.2rem;
+    }
+    .prof>:nth-child(2) {
+        font-size: 0.8rem;
+        text-align: center;
+    }
 }
-
 
