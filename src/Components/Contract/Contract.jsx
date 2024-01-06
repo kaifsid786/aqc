@@ -60,7 +60,9 @@ export default function Contract() {
             </h3>
             <div className="contents">
               <div className="card">
-                <h6>01</h6>
+                <h6>
+                  <img src="/formula.svg" alt="" />
+                </h6>
                 <h3>Client Accquired Formulation:</h3>
                 <p>
                   AQC Chem Pvt Ltd understands that there cannot be one solution
@@ -69,7 +71,9 @@ export default function Contract() {
                 </p>
               </div>
               <div className="card">
-                <h6>02</h6>
+                <h6>
+                  <img src="/workers.svg" alt="" />
+                </h6>
                 <h3>High Manufacturing Capacity:</h3>
                 <p>
                   We have some best in class technologies to offer our clients
@@ -79,7 +83,9 @@ export default function Contract() {
                 </p>
               </div>
               <div className="card">
-                <h6>03</h6>
+                <h6>
+                  <img src="/research.svg" alt="" />
+                </h6>
                 <h3>Own Research and Development Labs:</h3>
                 <p>
                   For us, quality is the main checkpoint. We follow some

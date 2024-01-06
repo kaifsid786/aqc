@@ -4,8 +4,10 @@ import "./ProductSection.css";
 import { useNavigate } from "react-router-dom";
 
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/autoplay";
 
 import { sliderSettings } from "../../utils/common";
 import PropertyCard2 from "../PropertyCard2/PropertyCard2";
@@ -15,6 +17,7 @@ import svg1 from "../../images/handshake_9261993 (1).png";
 import svg2 from "../../images/experiments_1974484.png";
 import svg3 from "../../images/capsule_1948415.png";
 import GalleryMob from "../Gallery/GalleryMob";
+import { delay } from "framer-motion";
 
 const ProductSection = (gall) => {
   const navigate = useNavigate();
@@ -48,18 +51,8 @@ const ProductSection = (gall) => {
     },
     {
       img: svg1,
-      title: "Contract Manufacturing",
-      info: "Your trusted partner in contract manufacturing solutions while committing to quality, innovation & precision.",
-    },
-    {
-      img: svg2,
-      title: "Lab Equipments",
-      info: "We Believe that state of art technology and the best technology is the foundation of reliable scientific analysis. That is why we are committed to provide you with top notch equipment.",
-    },
-    {
-      img: svg3,
-      title: "Food Additives",
-      info: "Food Additives are essential substances which are used in the food industry to enhance the flavour, texture, appearance and shelf life of many products.",
+      title: "Micronutrient Premixes",
+      info: "These are nutritional strategies which involve adding a formulated mixture of vitamins and minerals to commonly consumed food products to enhance nutritional value. ",
     },
   ];
   return (
@@ -102,14 +95,27 @@ const ProductSection = (gall) => {
           </div>
         </div>
 
-        <div className="pas pas-ch" style={window.innerWidth<=1500?{marginTop:"2rem",marginBottom:"1rem"}:{}}>
+        <div
+          className="pas pas-ch"
+          style={
+            window.innerWidth <= 1500
+              ? { marginTop: "2rem", marginBottom: "1rem" }
+              : {}
+          }
+        >
           Products and Services
         </div>
         {windowWidth <= 480 ? (
           data?.map((card, i) => <PropertyCard2 card={card} key={i} />)
         ) : (
           <div className="product-slider">
-            <Swiper {...sliderSettings}>
+            <Swiper
+              modules={[Autoplay]}
+              {...sliderSettings}
+              autoplay={{ delay: 3000 }}
+              loop={true}
+              freeMode={true}
+            >
               {data?.map((card, i) => (
                 <SwiperSlide key={i}>
                   <PropertyCard2 card={card} />
@@ -121,7 +127,16 @@ const ProductSection = (gall) => {
         )}
 
         <div className="e-d-h">
-          <div className="pas pas-ph" style={window.innerWidth>1500?{marginTop:'7rem'}:{marginTop:"5rem"}}>Explore the Diverse Horizons:</div>
+          <div
+            className="pas pas-ph"
+            style={
+              window.innerWidth > 1500
+                ? { marginTop: "7rem" }
+                : { marginTop: "5rem" }
+            }
+          >
+            Explore the Diverse Horizons:
+          </div>
           <div className="pas ">
             Discover the{" "}
             <span className="pas2" style={{ color: "#10C08E" }}>

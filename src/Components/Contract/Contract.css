@@ -209,7 +209,7 @@
   }
 }
 .main-contract .services .wrapper .contents .card h3 {
-  width: 11rem;
+  width: 15rem;
   color: #fff;
   font-family: Poppins;
   font-size: 1.2rem;
@@ -243,8 +243,8 @@
 .main-contract .services .wrapper .contents .card:hover {
   background: #053c69;
 }
-.main-contract .services .wrapper .contents .card:hover h6 {
-  color: white;
+.main-contract .services .wrapper .contents .card:hover h6 img {
+  filter: brightness(0) invert(1);
 }
 .main-contract .commitment {
   width: 100%;
@@ -369,127 +369,6 @@
 }
 @media only screen and (max-width: 769px) {
   .main-contract .commitment .wrapper button {
-    font-size: 0.9rem;
-    height: 40px;
-  }
-}
-.main-contract .contact {
-  width: 100%;
-  max-width: 1500px;
-  padding: 4rem 5rem;
-  margin: 4rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 0.9375rem;
-  background: #f6f6f6;
-}
-@media only screen and (min-width: 1536px) {
-  .main-contract .contact {
-    padding: 8rem 3rem;
-  }
-}
-@media only screen and (max-width: 769px) {
-  .main-contract .contact {
-    width: 90%;
-    flex-direction: column;
-    gap: 20px;
-    padding: 2rem 1rem;
-  }
-}
-.main-contract .contact .left {
-  width: calc(50% - 20px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-}
-@media only screen and (max-width: 769px) {
-  .main-contract .contact .left {
-    width: 100%;
-  }
-}
-.main-contract .contact .left h3 {
-  width: 25rem;
-  color: var(--22, #003e71);
-  font-family: Poppins;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 2.5rem; /* 114.286% */
-}
-@media only screen and (min-width: 1536px) {
-  .main-contract .contact .left h3 {
-    width: 40rem;
-    font-size: 3rem;
-    line-height: 5rem;
-  }
-}
-@media only screen and (max-width: 769px) {
-  .main-contract .contact .left h3 {
-    width: 15rem;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-  }
-}
-.main-contract .contact .left p {
-  color: var(--22, #003e71);
-  font-family: Poppins;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 2.51238rem */
-}
-@media only screen and (min-width: 1536px) {
-  .main-contract .contact .left p {
-    font-size: 1.5rem;
-  }
-}
-@media only screen and (max-width: 769px) {
-  .main-contract .contact .left p {
-    font-size: 0.75rem;
-  }
-}
-.main-contract .contact .right {
-  width: calc(50% - 20px);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-@media only screen and (max-width: 769px) {
-  .main-contract .contact .right {
-    width: 100%;
-    justify-content: flex-start;
-  }
-}
-.main-contract .contact .right button {
-  width: 200px;
-  height: 50px;
-  border-radius: 3.04531rem;
-  background: var(--22, #003e71);
-  border: none;
-  outline: none;
-  color: var(--White, #fff);
-  font-family: Poppins;
-  font-size: 1.2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 160%; /* 2.5rem */
-  cursor: pointer;
-  margin-top: 6.5rem;
-}
-@media only screen and (min-width: 1536px) {
-  .main-contract .contact .right button {
-    width: 250px;
-    height: 70px;
-    font-size: 1.5rem;
-    line-height: 2.125rem;
-  }
-}
-@media only screen and (max-width: 769px) {
-  .main-contract .contact .right button {
-    margin: 0;
     font-size: 0.9rem;
     height: 40px;
   }

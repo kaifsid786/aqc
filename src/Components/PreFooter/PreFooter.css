@@ -1,0 +1,117 @@
+.contact {
+  width: 100%;
+  max-width: 1500px;
+  padding: 4rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.9375rem;
+  background: #f6f6f6;
+}
+@media only screen and (min-width: 1536px) {
+  .contact {
+    padding: 8rem 3rem;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .contact {
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem 1rem;
+  }
+}
+.contact .left {
+  width: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+@media only screen and (max-width: 769px) {
+  .contact .left {
+    width: 100%;
+  }
+}
+.contact .left h3 {
+  color: var(--22, #003e71);
+  font-family: Poppins;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.5rem; /* 114.286% */
+}
+@media only screen and (min-width: 1536px) {
+  .contact .left h3 {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .contact .left h3 {
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+  }
+}
+.contact .left p {
+  color: var(--22, #003e71);
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 2.51238rem */
+}
+@media only screen and (min-width: 1536px) {
+  .contact .left p {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .contact .left p {
+    font-size: 0.75rem;
+  }
+}
+.contact .right {
+  width: calc(50% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 769px) {
+  .contact .right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+.contact .right button {
+  width: 200px;
+  height: 50px;
+  border-radius: 3.04531rem;
+  background: var(--22, #003e71);
+  border: none;
+  outline: none;
+  color: var(--White, #fff);
+  font-family: Poppins;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%; /* 2.5rem */
+  cursor: pointer;
+  margin-top: 6.5rem;
+}
+@media only screen and (min-width: 1536px) {
+  .contact .right button {
+    width: 250px;
+    height: 70px;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .contact .right button {
+    margin: 0;
+    font-size: 0.9rem;
+    height: 40px;
+  }
+}/*# sourceMappingURL=PreFooter.css.map */

@@ -7,14 +7,14 @@ export default function NavBar() {
   const [showhamMenu, setShowHamMenu] = useState(true);
   const [showHamB, setShowHamB] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 10) setShowHamMenu(false);
-      else {
-        setShowHamMenu(true);
-      }
-    });
-  }, [showhamMenu]);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (window.pageYOffset > 10) setShowHamMenu(false);
+  //     else {
+  //       setShowHamMenu(true);
+  //     }
+  //   });
+  // }, [showhamMenu]);
 
   return (
     <div className="navbar">

@@ -8,7 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Awd from "../Awd/Awd";
 import PreFooter from "../PreFooter/PreFooter";
-
+import quality from "/qualityAss.svg";
+import innovation from "/innovation.svg";
+import sustain from "/sustain.svg";
 const varient = {
   initial: {
     x: -100,
@@ -41,14 +43,17 @@ const uspCard = [
   {
     title: "Quality Assurance",
     des: "Stringent quality control measures and commitment to source the finest materials",
+    img: quality,
   },
   {
     title: "Innovation",
     des: "Rigorously looking for new ways to stay ahead in an ever evolving industry.",
+    img: innovation,
   },
   {
     title: "Sustainability",
     des: "Seeking eco-friendly practices and packaging options to strive to minimise carbon footprint ",
+    img: sustain,
   },
 ];
 
@@ -172,6 +177,7 @@ export default function About() {
             {uspCard.map((val) => {
               return (
                 <div className="card">
+                  <img src={val.img} alt="" />
                   <h3>{val.title}</h3>
                   <p>{val.des}</p>
                 </div>

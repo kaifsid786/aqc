@@ -14,25 +14,19 @@
     margin-top: 150px;
   }
 
-  @include sm {
+  @include ph {
     overflow: hidden;
     margin-top: 100px;
   }
 
   .banner {
     width: 100%;
-    height: calc(90vh - 100px);
-    max-height: 55rem;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      #f2f9ff 106.41%
-    );
-    clip-path: ellipse(90% 100% at top);
+    // height: calc(90vh - 100px);
+    // max-height: 55rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include sm {
+    @include ph {
       height: fit-content;
       clip-path: ellipse(122% 100% at top);
     }
@@ -41,132 +35,184 @@
       max-width: 1500px;
       height: 100%;
       padding: 4rem 5rem;
+      padding-top: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
-      @include sm {
+      align-items: flex-start;
+      @include ph {
         padding: 4rem 2rem;
+        padding-top: 0;
+        flex-direction: column;
+        gap: 30px;
       }
-      .cards {
-        width: 100%;
-        height: 100%;
+      @include xxl {
+        padding-top: 4rem !important;
+      }
+
+      .left {
+        width: 40%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        @include sm {
-          flex-direction: column;
-          gap: 50px;
+        padding-right: 5rem;
+        @include ph {
+          width: 100%;
+          padding: 0;
         }
-        .card {
-          width: calc(30% - 20px);
+        .cards {
+          width: 100%;
+          height: 100%;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: flex-start;
-          gap: 12px;
+          align-items: center;
+          gap: 30px;
+          @include ph {
+            flex-direction: column;
+            gap: 50px;
+          }
           @include xxl {
-            gap: 30px;
+            gap: 50px;
           }
-          @include sm {
+          .card {
             width: 100%;
-            align-items: center;
-            gap: 10px;
-          }
-          .logo {
-            width: 3rem;
-            height: 3rem;
-            background-color: #e1f0fe;
-            border-radius: 10px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            font-size: 2rem;
+            align-items: flex-start;
+            gap: 12px;
             @include xxl {
-              width: 5rem;
-              height: 5rem;
-              font-size: 3rem;
+              gap: 30px;
             }
-            @include sm {
+            @include ph {
+              width: 100%;
+              align-items: center;
+              gap: 10px;
+            }
+            .logo {
               width: 3rem;
               height: 3rem;
-              font-size: 1.5rem;
+              background-color: #e1f0fe;
+              border-radius: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 2rem;
+              @include xxl {
+                width: 5rem;
+                height: 5rem;
+                font-size: 3rem;
+              }
+              @include ph {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.5rem;
+              }
             }
-          }
-          h3 {
-            color: var(--22, #003e71);
-            text-align: center;
-            font-family: Poppins;
-            font-size: 1.5rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 2.66669rem; /* 133.333% */
-            @include xxl {
-              font-size: 2.5rem;
-            }
-            @include sm {
-              font-size: 1.25rem;
-            }
-          }
-          p {
-            color: #5a7184;
-            text-align: center;
-            font-family: Poppins;
-            font-size: 0.9rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1.875rem; /* 150% */
-            text-align: left;
-            @include xxl {
-              font-size: 1.5rem;
-            }
-            @include sm {
-              font-size: 0.8rem;
-              line-height: 1.5rem;
+            h3 {
+              color: var(--22, #003e71);
               text-align: center;
-            }
-          }
-          .info {
-            color: var(--22, #003e71);
-            text-align: center;
-            font-family: Poppins;
-            font-size: 1.1rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 2.26669rem; /* 164.848% */
-            @include xxl {
-              font-size: 1.8rem;
-            }
-            @include sm {
-              font-size: 1rem;
-            }
-          }
-          img {
-            width: 2rem;
-            @include xxl {
-              width: 3rem;
-            }
-          }
-          button {
-            width: 10rem;
-            height: 3rem;
-            color: var(--22, #003e71);
-            text-align: center;
-            font-family: Poppins;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-            cursor: pointer;
-            background-color: inherit;
-            border-radius: 10px;
-            border: 1px solid #003e71;
-            outline: none;
-            @include xxl {
-              width: 15rem;
-              height: 5rem;
+              font-family: Poppins;
               font-size: 1.5rem;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 2.66669rem; /* 133.333% */
+              @include xxl {
+                font-size: 2.5rem;
+              }
+              @include ph {
+                font-size: 1.25rem;
+              }
+            }
+            p {
+              color: #5a7184;
+              text-align: center;
+              font-family: Poppins;
+              font-size: 0.9rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 1.875rem; /* 150% */
+              text-align: left;
+              @include xxl {
+                font-size: 1.5rem;
+              }
+              @include ph {
+                font-size: 0.8rem;
+                line-height: 1.5rem;
+                text-align: center;
+              }
+            }
+            .info {
+              color: var(--22, #003e71);
+              text-align: center;
+              font-family: Poppins;
+              font-size: 1.1rem;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 2.26669rem; /* 164.848% */
+              @include xxl {
+                font-size: 1.8rem;
+              }
+              @include ph {
+                font-size: 1rem;
+              }
+            }
+            img {
+              width: 2rem;
+              @include xxl {
+                width: 3rem;
+              }
+            }
+            button {
+              width: 10rem;
+              height: 3rem;
+              color: var(--22, #003e71);
+              text-align: center;
+              font-family: Poppins;
+              font-size: 1rem;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              cursor: pointer;
+              background-color: inherit;
+              border-radius: 10px;
+              border: 1px solid #003e71;
+              outline: none;
+              @include xxl {
+                width: 15rem;
+                height: 5rem;
+                font-size: 1.5rem;
+              }
             }
           }
+        }
+      }
+
+      .right {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+        @include ph {
+          width: 100%;
+          padding: 0;
+        }
+        .leaflet-container {
+          width: 60rem;
+          height: 30rem;
+          @include xxl {
+            height: 40rem;
+          }
+          @include ph {
+            height: 20rem;
+          }
+        }
+        .formMapContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid black;
         }
       }
     }
@@ -178,9 +224,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     padding: 4rem 5rem;
-    @include sm {
+    @include ph {
       padding: 4rem 1rem;
+      padding-top: 2rem;
+    }
+    .gradient {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 70%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        #f2f9ff 106.41%
+      );
+      clip-path: ellipse(90% 100% at top);
+      z-index: -1;
     }
     .wrapper {
       width: 100%;
@@ -188,7 +249,7 @@
       border-radius: 2.5625rem;
       background: #fff;
       box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.12);
-      @include sm {
+      @include ph {
         flex-direction: column;
       }
       .left {
@@ -204,7 +265,7 @@
           height: 40rem;
           gap: 20px;
         }
-        @include sm {
+        @include ph {
           width: 100%;
           padding: 4rem 1.5rem;
           height: 10rem;
@@ -223,7 +284,7 @@
             width: 30rem;
             font-size: 4rem;
           }
-          @include sm {
+          @include ph {
             font-size: 1.375em;
           }
         }
@@ -237,7 +298,7 @@
           @include xxl {
             font-size: 1.5rem;
           }
-          @include sm {
+          @include ph {
             font-size: 0.8rem;
             margin-top: -1rem;
           }
@@ -256,7 +317,7 @@
           height: 40rem;
           gap: 20px;
         }
-        @include sm {
+        @include ph {
           height: fit-content;
           padding: 4rem 1.5rem;
         }
@@ -284,7 +345,7 @@
           @include xxl {
             height: 3rem;
           }
-          @include sm {
+          @include ph {
             width: 38%;
           }
         }
@@ -314,7 +375,7 @@
             height: 4rem;
             font-size: 1.3rem;
           }
-          @include sm {
+          @include ph {
             width: 8rem;
             height: 2.5rem;
           }

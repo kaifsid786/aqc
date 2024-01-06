@@ -8,6 +8,11 @@
   height: fit-content;
   padding: 1rem 0;
 }
+@media only screen and (max-width: 500px) {
+  .main-blogCard {
+    flex-direction: column;
+  }
+}
 .main-blogCard .left {
   width: 30%;
   height: 100%;
@@ -20,12 +25,22 @@
     padding: 0 !important;
   }
 }
+@media only screen and (max-width: 500px) {
+  .main-blogCard .left {
+    width: 100%;
+  }
+}
 .main-blogCard .left img {
   width: 90%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .main-blogCard .left img {
+    width: 100%;
+  }
 }
 .main-blogCard .right {
   width: 70% !important;
@@ -39,6 +54,11 @@
 @media only screen and (min-width: 1536px) {
   .main-blogCard .right {
     gap: 15px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .main-blogCard .right {
+    width: 100% !important;
   }
 }
 .main-blogCard .right .top {

@@ -65,14 +65,20 @@ export default function Technology() {
               <img
                 src="/Tech1.png"
                 alt=""
-                style={hover1 && ph ? { display: "none" } : {}}
+                style={
+                  hover1 && ph
+                    ? { zIndex: -1, opacity: 0 }
+                    : { zIndex: 9, opacity: 1 }
+                }
               />
               <p
                 className="p2"
                 style={
                   !hover1 | !ph
-                    ? { display: "none" }
+                    ? { zIndex: -1, opacity: 0 }
                     : {
+                        opacity: 1,
+                        zIndex: 9,
                         background: "#003e71",
                         width: "100%",
                         height: "100%",
@@ -125,14 +131,20 @@ export default function Technology() {
               <img
                 src="/Tech3.jpg"
                 alt=""
-                style={hover2 && ph ? { display: "none" } : {}}
+                style={
+                  hover2 && ph
+                    ? { zIndex: -1, opacity: 0 }
+                    : { zIndex: 9, opacity: 1 }
+                }
               />
               <p
                 className="p2"
                 style={
                   !hover2 | !ph
-                    ? { display: "none" }
+                    ? { zIndex: -1, opacity: 0 }
                     : {
+                        zIndex: 9,
+                        opacity: 1,
                         background: "#003e71",
                         width: "100%",
                         height: "100%",
@@ -185,13 +197,19 @@ export default function Technology() {
               <img
                 src="/Tech4.jpg"
                 alt=""
-                style={hover3 && ph ? { display: "none" } : {}}
+                style={
+                  hover3 && ph
+                    ? { zIndex: -1, opacity: 0 }
+                    : { zIndex: 9, opacity: 1 }
+                }
               />
               <p
                 style={
                   !hover3 | !ph
-                    ? { display: "none" }
+                    ? { zIndex: -1, opacity: 0 }
                     : {
+                        zIndex: 9,
+                        opacity: 1,
                         background: "#003e71",
                         width: "100%",
                         height: "100%",
@@ -245,14 +263,20 @@ export default function Technology() {
               <img
                 src="/Tech2.jpg"
                 alt=""
-                style={hover4 && ph ? { display: "none" } : {}}
+                style={
+                  hover4 && ph
+                    ? { zIndex: -1, opacity: 0 }
+                    : { zIndex: 9, opacity: 1 }
+                }
               />
               <p
                 className="p2"
                 style={
                   !hover4 | !ph
-                    ? { display: "none" }
+                    ? { zIndex: -1, opacity: 0 }
                     : {
+                        zIndex: 9,
+                        opacity: 1,
                         background: "#003e71",
                         width: "100%",
                         height: "100%",
