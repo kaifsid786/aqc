@@ -1,68 +1,47 @@
-.r-container {
-  gap: 2rem;
-  position: relative;
-  overflow: hidden;
-   
+#app { height: 100% }
+html,
+body {
+  /* position: relative; */
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
 
 
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
 
-.swiper-initialized{
+}
+
+.swiper-slide video{
+  display: block;
+  width: 100%;
+}
+.swiper-slide img {
+  display: block;
   width: 100%;
 }
 
-.swiper-horizontal{
-  overflow: visible;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* width: 90%; */
-  flex-direction: column;
+.cot{
+  color: white;
+    z-index: 1000;
+    top: 35%;
+    display: flex;
+    
+    position: fixed;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+  
 }
-
-.r-buttons{
-  position: absolute;
-  gap: 1rem;
-  top: -4rem;
-  right: 0;
+.cot h1{
+  font-size: 2rem;
+  font-weight:600;
 }
-.r-buttons button{
-  font-size: 1.2rem;
-  padding: .2rem .8rem;
-  color: blue;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-}
-.r-buttons>:nth-child(1)
-{
-  background-color: #EEEEFF;
-}
-.r-buttons>:nth-child(2)
-{
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-}
-
-
-@media (max-width: 640px) {
-  .r-head{
-  align-items: center;
-  }
-  .r-buttons{
-    position: initial;
-  }
-}
-
-@media screen and (max-width:480px) {
-  .swiper-wrapper{
-    /* display: none; */
-  }
-}
-@media screen and (max-width:390px) {
-  .r-head{
-    display: none;
-  }
+.cot p{
+  font-weight: 200;
 }

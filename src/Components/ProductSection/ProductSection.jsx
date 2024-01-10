@@ -114,8 +114,8 @@ const ProductSection = (gall) => {
             {...sliderSettings} 
                 autoplay={{ delay: 3000}}
                 loop={true}
-        freeMode={true}
-        
+              freeMode={true}
+            //  centeredSlides={true}
 
             >
               {data?.map((card, i) => (
@@ -154,12 +154,12 @@ const SlideNextButton = () => {
   
   
   return (
-    <div className="flexCenter r-buttons2">
+    <div >
       <button onClick={() => swiper.slidePrev()} className="swiper-button-prev">
-        &lt;
+        {/* &lt; */}
       </button>
       <button onClick={() => swiper.slideNext()} className="swiper-button-next">
-        &gt;
+        {/* &gt; */}
       </button>
     </div>
   );

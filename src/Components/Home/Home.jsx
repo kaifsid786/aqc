@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Home.scss";
+import "./Home.css";
 import Slider from "../Slides/TopSlider";
 import NavBar from "../NavBar/NavBar";
 import Awd from "../Awd/Awd";
@@ -10,6 +11,22 @@ import Footer from "../Footer/Footer";
 import Counter from "../Counter/Counter";
 import CounterMob from "../Counter/CounterMob";
 import axios from "axios";
+import video1 from "../../images/v1.mp4";
+import video2 from "../../images/v2.mp4";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
+
+// import required modules
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+
+
 
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -64,10 +81,15 @@ const Home = () => {
           overflow: "hidden",
         }}
       >
+        <div className="t-slider">
+
         <Slider />
+        </div>
+        
+        
         {windowWidth <= 480 ? <CounterMob /> : <Counter />}
 
-        <ProductSection gall={gall}/>
+        <ProductSection gall={gall} />
         <Awd />
         <Awards />
         <Blog />
