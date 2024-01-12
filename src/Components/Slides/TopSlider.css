@@ -45,3 +45,40 @@ body {
 .cot p{
   font-weight: 200;
 }
+.swiper-button-next,.swiper-button-prev{
+  display: none;
+}
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  left: -40%;
+  bottom: 18%;
+}
+ .swiper-pagination-bullet-active{
+  width: 2.5rem;
+    height: 7px;
+    border-radius: 10px;
+    
+}
+@media screen and (max-width:480px) {
+  .swiper-slide video{
+    object-fit: cover;
+    height: 100%;
+  }
+  .cot{
+    color: black;
+    bottom: 0%;
+    top: auto;
+    background: linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.57) 52.5%, rgba(255, 255, 255, 0.00) 100%);
+  }
+  .cot h1{
+    font-size: 1.2rem;
+  }
+  .cot p{
+    font-size: 12px;
+    margin-bottom:26px;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    left: 0;
+    bottom: 0;
+  }
+  
+}
