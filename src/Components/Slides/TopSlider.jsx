@@ -21,14 +21,14 @@ export default function TopSlider() {
     <>
       <Swiper
         spaceBetween={30}
-        // autoplay={{ delay: 7000 }}
-        // loop={true}
+        autoplay={{ delay: 7000 }}
+        loop={true}
         effect={"fade"}
         navigation={true}
         pagination={{
           clickable: true,
         }}
-        // freeMode={true}
+        freeMode={true}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper"
       >
