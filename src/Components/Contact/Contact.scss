@@ -80,9 +80,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 12px;
+            gap: 5px;
             @include xxl {
-              gap: 30px;
+              gap: 10px;
             }
             @include ph {
               width: 100%;
@@ -90,18 +90,18 @@
               gap: 10px;
             }
             .logo {
-              width: 3rem;
-              height: 3rem;
+              width: 2rem;
+              height: 2rem;
               background-color: #e1f0fe;
               border-radius: 10px;
               display: flex;
               justify-content: center;
               align-items: center;
-              font-size: 2rem;
+              font-size: 1.5rem;
               @include xxl {
-                width: 5rem;
-                height: 5rem;
-                font-size: 3rem;
+                width: 3rem;
+                height: 3rem;
+                font-size: 2rem;
               }
               @include ph {
                 width: 3rem;
@@ -113,12 +113,12 @@
               color: var(--22, #003e71);
               text-align: center;
               font-family: Poppins;
-              font-size: 1.5rem;
+              font-size: 1rem;
               font-style: normal;
               font-weight: 500;
-              line-height: 2.66669rem; /* 133.333% */
+              line-height: 2rem; /* 133.333% */
               @include xxl {
-                font-size: 2.5rem;
+                font-size: 1.5rem;
               }
               @include ph {
                 font-size: 1.25rem;
@@ -128,13 +128,13 @@
               color: #5a7184;
               text-align: center;
               font-family: Poppins;
-              font-size: 0.9rem;
+              font-size: 0.8rem;
               font-style: normal;
               font-weight: 400;
-              line-height: 1.875rem; /* 150% */
+              line-height: 1.2rem; /* 150% */
               text-align: left;
               @include xxl {
-                font-size: 1.5rem;
+                font-size: 1rem;
               }
               @include ph {
                 font-size: 0.8rem;
@@ -146,30 +146,30 @@
               color: var(--22, #003e71);
               text-align: center;
               font-family: Poppins;
-              font-size: 1.1rem;
+              font-size: 1rem;
               font-style: normal;
               font-weight: 500;
-              line-height: 2.26669rem; /* 164.848% */
+              line-height: 2rem; /* 164.848% */
               @include xxl {
-                font-size: 1.8rem;
+                font-size: 1.2rem;
               }
               @include ph {
                 font-size: 1rem;
               }
             }
             img {
-              width: 2rem;
+              width: 1.5rem;
               @include xxl {
-                width: 3rem;
+                width: 2rem;
               }
             }
             button {
               width: 10rem;
-              height: 3rem;
+              height: 2rem;
               color: var(--22, #003e71);
               text-align: center;
               font-family: Poppins;
-              font-size: 1rem;
+              font-size: 0.8rem;
               font-style: normal;
               font-weight: 500;
               line-height: normal;
@@ -180,8 +180,8 @@
               outline: none;
               @include xxl {
                 width: 15rem;
-                height: 5rem;
-                font-size: 1.5rem;
+                height: 3rem;
+                font-size: 1rem;
               }
             }
           }
@@ -242,6 +242,9 @@
       );
       clip-path: ellipse(90% 100% at top);
       z-index: -1;
+      @include xxl {
+        width: 100vw;
+      }
     }
     .wrapper {
       width: 100%;

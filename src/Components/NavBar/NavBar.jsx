@@ -35,7 +35,7 @@ export default function NavBar() {
         <div className="links">
           <ul>
             <li onClick={() => navigate("/about")}>About Us</li>
-            <li>Products</li>
+            <li onClick={() => navigate("/product")}>Products</li>
             <li onClick={() => navigate("/contract")}>Contract Manufacturer</li>
             <li onClick={() => navigate("/technology")}>Technology</li>
             <li onClick={() => navigate("/blog")}>Blog</li>
@@ -89,7 +89,7 @@ export default function NavBar() {
           <div className="ham-links">
             <ul style={showHamB ? { color: "white" } : {}}>
               <li onClick={() => navigate("/about")}>About Us</li>
-              <li>Products</li>
+              <li onClick={() => navigate("/product")}>Products</li>
               <li onClick={() => navigate("/contract")}>
                 Contract Manufacturer
               </li>

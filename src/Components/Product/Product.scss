@@ -1,0 +1,256 @@
+@import "../Css/mixin.scss";
+.main-product {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include xxl {
+    margin-top: 150px;
+  }
+  .banner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    max-height: 55rem;
+    background: #9f9f9f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sm {
+      height: 20rem;
+    }
+    h3 {
+      color: var(--22, #003e71);
+      text-align: center;
+      font-family: Poppins;
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 5.25rem */
+      text-transform: capitalize;
+      @include xxl {
+        font-size: 4rem;
+      }
+      @include sm {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .section-1 {
+    width: 100%;
+    max-width: 1500px;
+    padding: 5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    @include xxl {
+      padding: 5rem 3rem;
+      padding-bottom: 5rem;
+    }
+    @include sm {
+      padding: 2rem;
+    }
+    h3 {
+      color: var(--22, #003e71);
+      text-align: center;
+      font-family: Poppins;
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 5.25rem */
+      text-transform: capitalize;
+      @include xxl {
+        font-size: 4rem;
+      }
+      @include sm {
+        font-size: 1.5rem;
+        text-align: left;
+      }
+    }
+    p {
+      color: #000;
+      font-family: Poppins;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 1.5rem; /* 154.545% */
+      @include xxl {
+        font-size: 1.375rem;
+        line-height: 2.125rem;
+      }
+      @include sm {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .section-2 {
+    width: 100%;
+    max-width: 1500px;
+    padding: 0 4rem;
+    @include sm {
+      padding: 0 1rem;
+    }
+    @include xxl {
+      padding: 0 1.5rem;
+    }
+  }
+
+  .section-4 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      119deg,
+      #cde8ff -1.11%,
+      #cde8ff -1.1%,
+      rgba(242, 249, 255, 0.47) 49.64%,
+      #e9f5ff 95.36%
+    );
+
+    .section-4-wrapper {
+      width: 100%;
+      max-width: 1500px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 5rem;
+      @include sm {
+        padding: 2rem;
+      }
+      @include xxl {
+        padding: 5rem 3rem;
+      }
+      gap: 5px;
+      h3 {
+        color: var(--22, #003e71);
+        text-align: center;
+        font-family: Poppins;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 5.25rem */
+        text-transform: capitalize;
+        @include xxl {
+          font-size: 4rem;
+        }
+        @include sm {
+          font-size: 1.5rem;
+        }
+      }
+      p {
+        color: #000;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.5rem; /* 154.545% */
+        @include xxl {
+          font-size: 1.375rem;
+          line-height: 2.125rem;
+        }
+        @include sm {
+          font-size: 0.8rem;
+        }
+      }
+
+      .img-wrapper {
+        width: 100%;
+        padding-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        @include sm {
+          flex-direction: column;
+        }
+        gap: 20px;
+        .prod-card-2 {
+          width: calc(33% - 20px);
+          background-color: #003e71;
+          height: 25rem;
+          object-fit: cover;
+          border-radius: 10px;
+          @include xxl {
+            height: 30rem;
+          }
+          @include sm {
+            width: 100%;
+          }
+          img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+          p {
+            width: 100%;
+            height: 40%;
+            color: white;
+            font-size: 0.75rem;
+            line-height: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            @include xxl {
+              font-size: 1rem;
+              line-height: 1.5rem;
+              padding: 0 15px;
+            }
+          }
+        }
+      }
+
+      .img-wrapper-2 {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .section-5 {
+    background: white;
+  }
+
+  .product-aqc-card {
+    width: 24rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #003e71;
+    border-radius: 10px;
+    @include xxl {
+      height: 30rem;
+    }
+    @include sm {
+      width: 95% !important;
+      margin-left: 8px;
+    }
+    img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+    }
+    p {
+      width: 100%;
+      height: 30%;
+      padding: 10px;
+      color: white !important;
+      font-weight: normal;
+      font-size: 1rem;
+    }
+  }
+
+  .dis {
+    opacity: 0.1 !important;
+  }
+}

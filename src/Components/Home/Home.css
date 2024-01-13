@@ -6,6 +6,11 @@
   width: 100% !important;
 }
 
+.t-slider {
+  width: 100% !important;
+  height: 75vh !important;
+}
+
 .Home {
   display: flex;
   flex-direction: column;

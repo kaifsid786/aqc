@@ -61,12 +61,15 @@
 
   .sections {
     width: 100%;
-    max-width: 1920px;
+    max-width: 1500px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     // gap: 50px;
     padding: 4rem 5rem;
+    @include xxl {
+      padding: 4rem 3rem;
+    }
     @include lg {
       padding: 4rem 2rem;
     }

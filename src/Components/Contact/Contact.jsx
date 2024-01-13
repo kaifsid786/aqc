@@ -3,8 +3,8 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { IoMailOpen } from "react-icons/io5";
 import { IoCallSharp } from "react-icons/io5";
-// import { FaArrowRight } from "react-icons/fa";
-// import cust from "../../images/customer-service.png";
+import { FaArrowRight } from "react-icons/fa";
+import cust from "../../images/customer-service.png";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
@@ -78,19 +78,19 @@ export default function Contact() {
                   </p>
                   <div className="info">+1 (646) 786-5060</div>
                 </div>
-                {/* <div className="card">
-                <div className="logo">
-                  <img src={cust} alt="" />
+                <div className="card">
+                  <div className="logo">
+                    <img src={cust} alt="" />
+                  </div>
+                  <h3>Support</h3>
+                  <p>Check out helpful resources, FAQs and developer tools.</p>
+                  <button>
+                    Support Center{" "}
+                    <span>
+                      <FaArrowRight />
+                    </span>
+                  </button>
                 </div>
-                <h3>Support</h3>
-                <p>Check out helpful resources, FAQs and developer tools.</p>
-                <button>
-                  Support Center{" "}
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                </button>
-              </div> */}
               </div>
             </div>
 

@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Technology from "./Components/Technology/Technology";
 import RND from "./Components/RND/RND";
 import Contact from "./Components/Contact/Contact";
+import Product from "./Components/Product/Product";
 import BlogMain from "./Components/Blog/BlogMain/BlogMain";
 import BlogDetail from "./Components/BlogDetail/BlogDetail";
 import WhatsApp from "./Components/WhatsApp/WhatsApp";
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/technology" Component={Technology} />
         <Route path="/rnd" Component={RND} />
         <Route path="/contact" Component={Contact} />
+        <Route path="/product" Component={Product} />
         <Route path="/blog" Component={BlogMain} />
         <Route path="/blogDetail" Component={BlogDetail} />
         <Route path="/whatsapp" Component={WhatsApp} />

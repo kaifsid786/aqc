@@ -16,7 +16,7 @@
     margin-top: 150px;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech {
     overflow: hidden;
     margin-top: 100px;
@@ -28,7 +28,7 @@
   max-height: 55rem;
   padding: 3rem;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .banner {
     height: 20rem;
     padding: 1rem;
@@ -51,7 +51,7 @@
   align-items: center;
   gap: 20px;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .intro {
     padding: 0 2rem;
   }
@@ -71,7 +71,7 @@
     font-size: 3.5rem;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .intro h3 {
     font-size: 1.25rem;
     line-height: 2rem;
@@ -92,7 +92,7 @@
     font-size: 1.1rem;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .intro p {
     width: 20rem;
     font-size: 0.8rem;
@@ -109,7 +109,7 @@
   align-items: center;
   gap: 50px;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards {
     padding: 4rem 1rem;
   }
@@ -121,9 +121,9 @@
   align-items: center;
   background-color: #10c08e;
   border-radius: 10px;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .card-1 {
     flex-direction: column-reverse;
   }
@@ -139,7 +139,7 @@
   gap: 0px;
   padding: 1.5rem;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .card-1 .left {
     width: 100%;
     height: -moz-fit-content;
@@ -161,7 +161,7 @@
     font-size: 2.5rem;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .card-1 .left h3 {
     font-size: 1.5rem;
   }
@@ -180,7 +180,7 @@
     font-size: 1.5rem;
   }
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .card-1 .left p {
     font-size: 0.9rem;
     line-height: 1.25rem;
@@ -189,7 +189,7 @@
 .main-tech .cards .card-1 .left .p2 {
   font-size: 0.75rem;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .card-1 .left .p2 {
     margin-top: 0.8rem;
   }
@@ -202,7 +202,7 @@
   color: white;
   position: relative;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .card-1 .right {
     width: 100%;
   }
@@ -220,7 +220,7 @@
 .main-tech .cards .type2 {
   flex-direction: row-reverse;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .type2 {
     flex-direction: column-reverse;
     background-color: #003e71;
@@ -229,7 +229,7 @@
 .main-tech .cards .type3 {
   background-color: #f6f6f6;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .type3 {
     background-color: #10c08e;
   }
@@ -237,7 +237,7 @@
 .main-tech .cards .type3 .left {
   background-color: #f6f6f6;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .type3 .left {
     background: transparent;
   }
@@ -246,7 +246,7 @@
 .main-tech .cards .type3 .left p {
   color: #003e71;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .type3 .left h3,
   .main-tech .cards .type3 .left p {
     color: white;
@@ -259,7 +259,7 @@
   justify-content: center;
   align-items: center;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 500px) {
   .main-tech .cards .type3 .right {
     padding: 0;
   }

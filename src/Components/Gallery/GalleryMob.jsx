@@ -57,11 +57,11 @@ const GalleryMob = () => {
           setTrigger(false);
         }
       } else {
-        setStart(document.querySelector(".gall-cont").scrollHeight + 300);
+        setStart(document.querySelector(".gall-cont").scrollHeight + 100);
         setEnd(
           document.querySelector(".gall-cont").scrollHeight +
-            document.querySelector(".gall-cont").clientHeight +
-            100
+            document.querySelector(".gall-cont").clientHeight -
+            50
         );
         setScrollHeight(window.scrollY);
 
@@ -79,7 +79,7 @@ const GalleryMob = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollHeight]);
-  console.log(start);
+  console.log(scrollHeight);
   const style = {
     height: scrollHeight >= start && scrollHeight <= end ? "40vh" : "0",
     background:

@@ -73,11 +73,10 @@ export default function About() {
             animate="animate"
           >
             <motion.h3 variants={varient}>
-              We take “{" "}
+              Nutrition Redefined <br />
               <motion.span variants={varient} style={{ color: "#10C08E" }}>
-                Your Wish, Our Command!”
+                Your Healthy Lifestyle Partner
               </motion.span>{" "}
-              very seriously.
             </motion.h3>
             <motion.p variants={varient}>
               Our primary approach has been to meet the customer needs and keep
@@ -87,7 +86,7 @@ export default function About() {
         </div>
         <div className="intro">
           Embarking on our journey in 2009,{" "}
-          <span style={{ fontWeight: "800" }}>AQC Chem</span> set out with a
+          <span style={{ fontWeight: "500" }}>AQC Chem</span> set out with a
           grand vision: to transform the world of nutrition through innovation
           and sheer excellence. Born with the minds of a team from industry
           experts and right from the start our dedication was clear– to
@@ -132,7 +131,7 @@ export default function About() {
               redefine standards.
             </p>
           </motion.div>
-          <motion.div className="card">
+          <motion.div className="card about-type2">
             <h3>Mission</h3>
             <p>
               Our aim at providing high standards of Our global presence
@@ -239,11 +238,11 @@ export default function About() {
           </div> */}
           <div className="wrapper">
             <h3>Our Team</h3>
-            <h4>At AQC Chem Pvt Ltd, Our core values are -</h4>
+            <h4>A passionate squad committed to your well-being</h4>
             <p>
-              We are committed to practices which are sustainable and minimise
-              impact on the environment. AQC strives to create products that
-              contribute to a healthier planet.
+              We are the dreamers who envisioned a world where nutrition isn't
+              just about fueling the body but nurturing the soul. Our visionary
+              spirit propels us forward, guiding our brand toward new heights.
             </p>
           </div>
         </div>

@@ -52,6 +52,11 @@
         background: #fff;
         box-shadow: 0px 4px 55.07px 0px rgba(31, 31, 31, 0.1);
         border-radius: 10px;
+        background: linear-gradient(
+          180deg,
+          rgba(205, 232, 255, 0.1) 0%,
+          rgba(205, 232, 255, 0.4) 100%
+        );
         padding: 10px;
         .num {
           width: 2rem;

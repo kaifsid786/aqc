@@ -73,11 +73,8 @@
   max-width: 1500px;
 }
 .product-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: relative;
+  width: 100% !important;
+  /* position: relative; */
 }
 #residencies2 {
   display: flex;
@@ -173,14 +170,20 @@
     line-height: 4rem;
   }
   .pas-ch {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
   }
   .pas2 {
     font-size: 3.5rem;
   }
   .e-d-h {
     margin-bottom: 5rem;
+  }
+  .slick-slide > div {
+    margin: 15px 12px;
+  }
+  .slick-list {
+    padding: 5px 10px !important;
   }
 }
 @media screen and (min-width: 1500px) {
@@ -218,7 +221,7 @@
 @media screen and (max-width: 480px) {
   .all-container {
     width: 100%;
-    margin-top: 14rem;
+    margin-top: 10rem;
   }
   .ProductSection {
     width: 100%;
@@ -265,4 +268,15 @@
   .pas-ph {
     margin-top: 2rem !important;
   }
+}
+
+.slick-slide > div {
+  margin: 12px;
+}
+.slick-list {
+  /* min-height: 30rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
 }

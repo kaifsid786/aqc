@@ -1,68 +1,88 @@
-.r-container {
-  gap: 2rem;
-  position: relative;
-  overflow: hidden;
-   
+#app {
+  height: 100%;
+}
+html,
+body {
+  /* position: relative; */
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
 
-
-
-.swiper-initialized{
+.swiper-slide video {
+  display: block;
+  width: 100%;
+}
+.swiper-slide img {
+  display: block;
   width: 100%;
 }
 
-.swiper-horizontal{
-  overflow: visible;
-
+.cot {
+  color: white;
+  z-index: 1000;
+  top: 35%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* width: 90%; */
+
+  position: fixed;
+  text-align: center;
   flex-direction: column;
+  width: 100%;
 }
-
-.r-buttons{
-  position: absolute;
-  gap: 1rem;
-  top: -4rem;
-  right: 0;
+.cot h1 {
+  font-size: 2rem;
+  font-weight: 600;
 }
-.r-buttons button{
-  font-size: 1.2rem;
-  padding: .2rem .8rem;
-  color: blue;
-  border: none;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
+.cot p {
+  font-weight: 200;
 }
-.r-buttons>:nth-child(1)
-{
-  background-color: #EEEEFF;
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
 }
-.r-buttons>:nth-child(2)
-{
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  left: -40%;
+  bottom: 18%;
 }
-
-
-@media (max-width: 640px) {
-  .r-head{
-  align-items: center;
+.swiper-pagination-bullet-active {
+  width: 2.5rem;
+  height: 7px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 480px) {
+  .swiper-slide video {
+    object-fit: cover;
+    height: 100%;
   }
-  .r-buttons{
-    position: initial;
+  .cot {
+    color: black;
+    bottom: 0%;
+    top: auto;
+    background: linear-gradient(
+      0deg,
+      #fff 0%,
+      rgba(255, 255, 255, 0.57) 52.5%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
-}
-
-@media screen and (max-width:480px) {
-  .swiper-wrapper{
-    /* display: none; */
+  .cot h1 {
+    font-size: 1.2rem;
   }
-}
-@media screen and (max-width:390px) {
-  .r-head{
-    display: none;
+  .cot p {
+    font-size: 12px;
+    margin-bottom: 26px;
+  }
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 0;
+    bottom: 0;
   }
 }

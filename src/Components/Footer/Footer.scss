@@ -10,11 +10,11 @@
 
   .wrapper {
     width: 100%;
-    max-width: 1366px;
+    max-width: 1500px;
     padding: 4rem 3rem;
     display: flex;
     @include xxl {
-      padding: 4rem 0;
+      padding: 4rem 3rem;
     }
     @include md {
       flex-direction: column;
@@ -78,8 +78,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 13px;
+        gap: 10px;
         padding-left: 5rem;
+        @include xxl {
+          gap: 17px;
+        }
         @include lg {
           width: 45%;
         }
@@ -97,6 +100,9 @@
           font-style: normal;
           font-weight: 500;
           line-height: 2.8155rem; /* 204.764% */
+          @include xxl {
+            margin-bottom: 0.2rem;
+          }
         }
         li {
           list-style: none;
@@ -106,6 +112,9 @@
           font-style: normal;
           font-weight: 300;
           line-height: 2.8155rem; /* 250.267% */
+          @include xxl {
+            line-height: 1.5rem;
+          }
         }
       }
     }

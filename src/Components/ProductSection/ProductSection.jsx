@@ -6,8 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/autoplay";
+// import "swiper/css";
+// import "swiper/css/autoplay";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import "./TestSliderMod.css";
 
 import { sliderSettings } from "../../utils/common";
 import PropertyCard2 from "../PropertyCard2/PropertyCard2";
@@ -16,6 +20,7 @@ import diet from "../../images/dietary-supplement-capsules-ingredients-hand-phar
 import svg1 from "../../images/handshake_9261993 (1).png";
 import svg2 from "../../images/experiments_1974484.png";
 import svg3 from "../../images/capsule_1948415.png";
+import svg4 from "/Micronutrient premixes.svg";
 import GalleryMob from "../Gallery/GalleryMob";
 import { delay } from "framer-motion";
 
@@ -50,11 +55,24 @@ const ProductSection = (gall) => {
       info: "Food Additives are essential substances which are used in the food industry to enhance the flavour, texture, appearance and shelf life of many products.",
     },
     {
-      img: svg1,
+      img: svg4,
       title: "Micronutrient Premixes",
       info: "These are nutritional strategies which involve adding a formulated mixture of vitamins and minerals to commonly consumed food products to enhance nutritional value. ",
     },
   ];
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "10px",
+    slidesToShow: window.innerWidth <= 700 ? 1 : 3,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    beforeChange: (current, next) => setImgIndx(next),
+  };
+  const [imgIndx, setImgIndx] = useState(0);
+  const [slidePerView, setSlidePerView] = useState(3);
   return (
     <div className="all-container">
       <div className="ProductSection">
@@ -109,20 +127,17 @@ const ProductSection = (gall) => {
           data?.map((card, i) => <PropertyCard2 card={card} key={i} />)
         ) : (
           <div className="product-slider">
-            <Swiper
-              modules={[Autoplay]}
-              {...sliderSettings}
-              autoplay={{ delay: 3000 }}
-              loop={true}
-              freeMode={true}
-            >
-              {data?.map((card, i) => (
-                <SwiperSlide key={i}>
-                  <PropertyCard2 card={card} />
-                </SwiperSlide>
-              ))}
-              <SlideNextButton />
-            </Swiper>
+            <Slider {...settings}>
+              {data.map((val, i) => {
+                return (
+                  <PropertyCard2
+                    card={val}
+                    key={i}
+                    st={i === imgIndx ? true : false}
+                  />
+                );
+              })}
+            </Slider>
           </div>
         )}
 
