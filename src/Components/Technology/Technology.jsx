@@ -2,6 +2,7 @@ import "./Technology.scss";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import PreFooter from "../PreFooter/PreFooter";
+import WhatsApp from "../WhatsApp/WhatsApp";
 import { useEffect, useState } from "react";
 export default function Technology() {
   const [hover1, setHover1] = useState(false);
@@ -24,13 +25,10 @@ export default function Technology() {
           <h3>TECHNOLOGY</h3>
           <p>
             {" "}
-            <span style={{ fontWeight: "600" }}>
-              At AQC Chem. Lab Pvt. Ltd.
-            </span>
-            , innovation is in our DNA. It is showcased through the cutting edge
-            technologies that drive our food processing solutions. We harness a
-            range of state-of-the-art technologies that redefine food science,
-            enhancing product quality, efficacy, and consumer experience.
+            <span style={{ fontWeight: "600" }}>At AQC Chem Lab Pvt. Ltd.</span>
+            &#160; Elevate nutrition with our certified micronutrient premixes,
+            curated for optimal health and fortified with essential vitamins and
+            minerals.
           </p>
         </div>
         <div className="cards">
@@ -49,12 +47,11 @@ export default function Technology() {
                 className="p2"
                 style={window.innerWidth > 500 ? { display: "none" } : {}}
               >
-                Our encapsulation technology is a cornerstone of product
-                stability and controlled release. By encasing active ingredients
-                within protective shells, we ensure their preservation until
-                consumption, maximising potency and bioavailability. This
-                empowers our partners to offer products with enhanced shelf life
-                and targeted nutrient delivery.
+                Our encapsulation technology is pivotal for product stability
+                and controlled release. By encapsulating active ingredients in
+                protective shells, we ensure their preservation, maximizing
+                potency and bioavailability. This empowers partners to offer
+                products with extended shelf life and precise nutrient delivery.
               </p>
             </div>
             <div
@@ -91,12 +88,11 @@ export default function Technology() {
                       }
                 }
               >
-                Our encapsulation technology is a cornerstone of product
-                stability and controlled release. By encasing active ingredients
-                within protective shells, we ensure their preservation until
-                consumption, maximising potency and bioavailability. This
-                empowers our partners to offer products with enhanced shelf life
-                and targeted nutrient delivery.
+                Our encapsulation technology is pivotal for product stability
+                and controlled release. By encapsulating active ingredients in
+                protective shells, we ensure their preservation, maximizing
+                potency and bioavailability. This empowers partners to offer
+                products with extended shelf life and precise nutrient delivery.
               </p>
             </div>
           </div>
@@ -115,12 +111,11 @@ export default function Technology() {
                 className="p2"
                 style={window.innerWidth > 500 ? { display: "none" } : {}}
               >
-                Our encapsulation technology is a cornerstone of product
-                stability and controlled release. By encasing active ingredients
-                within protective shells, we ensure their preservation until
-                consumption, maximising potency and bioavailability. This
-                empowers our partners to offer products with enhanced shelf life
-                and targeted nutrient delivery.
+                In the alchemy of modern manufacturing, spray drying emerges as
+                the artful process of metamorphosing liquid substances into
+                powders with unparalleled precision. This artful technique
+                transcends industries, from food and pharmaceuticals to
+                chemicals and beyond, showcasing its versatility and efficacy.
               </p>
             </div>
             <div
@@ -157,12 +152,11 @@ export default function Technology() {
                       }
                 }
               >
-                Our encapsulation technology is a cornerstone of product
-                stability and controlled release. By encasing active ingredients
-                within protective shells, we ensure their preservation until
-                consumption, maximising potency and bioavailability. This
-                empowers our partners to offer products with enhanced shelf life
-                and targeted nutrient delivery.
+                In the alchemy of modern manufacturing, spray drying emerges as
+                the artful process of metamorphosing liquid substances into
+                powders with unparalleled precision. This artful technique
+                transcends industries, from food and pharmaceuticals to
+                chemicals and beyond, showcasing its versatility and efficacy.
               </p>
             </div>
           </div>
@@ -247,12 +241,11 @@ export default function Technology() {
                 className="p2"
                 style={window.innerWidth > 500 ? { display: "none" } : {}}
               >
-                Our encapsulation technology is a cornerstone of product
-                stability and controlled release. By encasing active ingredients
-                within protective shells, we ensure their preservation until
-                consumption, maximising potency and bioavailability. This
-                empowers our partners to offer products with enhanced shelf life
-                and targeted nutrient delivery.
+                This innovative process shapes raw materials into different
+                forms, ensuring optimal nutrient retention. Bridging culinary
+                expertise and nutritional science, extrusion stands as a
+                cornerstone in crafting wholesome and functional food products,
+                revolutionising the landscape of dietary offerings.
               </p>
             </div>
             <div
@@ -289,18 +282,22 @@ export default function Technology() {
                       }
                 }
               >
-                Our encapsulation technology is a cornerstone of product
-                stability and controlled release. By encasing active ingredients
-                within protective shells, we ensure their preservation until
-                consumption, maximising potency and bioavailability. This
-                empowers our partners to offer products with enhanced shelf life
-                and targeted nutrient delivery.
+                This innovative process shapes raw materials into different
+                forms, ensuring optimal nutrient retention. Bridging culinary
+                expertise and nutritional science, extrusion stands as a
+                cornerstone in crafting wholesome and functional food products,
+                revolutionising the landscape of dietary offerings.
               </p>
             </div>
           </div>
         </div>
 
         <PreFooter />
+
+        {/* whatsapp */}
+        <div className="whatsapp">
+          <WhatsApp />
+        </div>
       </div>
       <Footer />
     </>

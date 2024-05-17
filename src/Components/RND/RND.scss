@@ -1,0 +1,277 @@
+@import "../Css/mixin.scss";
+.main-rnd {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  .banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .top-banner {
+      width: 100%;
+      height: calc(100vh - 70px);
+      max-height: 50rem;
+      max-width: 1500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 4rem 5rem;
+      @include xxl {
+        padding-top: 8rem;
+      }
+      .left {
+        width: 50%;
+        h3 {
+          font-size: 40px;
+          font-weight: 600;
+          font-family: Poppins;
+          @include xxl {
+            font-size: 60px;
+          }
+        }
+      }
+      .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        p {
+          font-size: 16px;
+          @include xxl {
+            font-size: 24px;
+          }
+        }
+        button {
+          width: 100px;
+          height: 40px;
+          border-radius: 20px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          background-color: #10c08e;
+          color: white;
+          @include xxl {
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .rel-image {
+      width: 100%;
+      height: 80vh;
+      max-height: 55rem;
+      max-width: 1500px;
+      padding: 2rem 5rem;
+      border-radius: 10px;
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      @include xxl {
+        top: 58%;
+        padding: 0 5rem;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 30rem;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    .bottom-banner {
+      width: 100%;
+      background-color: #002849;
+      height: 100vh;
+      max-height: 45rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      .wrapper {
+        width: 100%;
+        max-width: 1500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 4rem 5rem;
+        padding-bottom: 5rem;
+        gap: 10px;
+        @include xxl {
+          gap: 30px;
+        }
+        h3 {
+          font-size: 40px;
+          font-family: Poppins;
+          color: white;
+          font-weight: 600;
+          @include xxl {
+            font-size: 60px;
+          }
+        }
+        p {
+          font-size: 16px;
+          color: white;
+          font-family: Poppins;
+          @include xxl {
+            font-size: 24px;
+          }
+        }
+
+        .bottom-wrap {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-top: 30px;
+          .bottom-card {
+            width: calc(33% - 20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            cursor: pointer;
+            gap: 5px;
+            @include xxl {
+              gap: 10px;
+            }
+            h5 {
+              font-size: 20px;
+              color: white;
+              @include xxl {
+                font-size: 30px;
+              }
+            }
+            p {
+              font-size: 14px;
+              @include xxl {
+                font-size: 18px;
+              }
+            }
+          }
+          .bottom-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #37536a;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+            @include xxl {
+              height: 5px;
+              top: -20px;
+            }
+          }
+          .bottom-card:hover::before {
+            background-color: #0ef9b6;
+          }
+        }
+      }
+    }
+  }
+
+  .section-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+      width: 100%;
+      max-width: 1500px;
+      padding: 4rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      @include xxl {
+        padding: 8rem 3rem;
+      }
+      @include ph {
+        flex-direction: column-reverse;
+        padding: 2rem 2rem;
+      }
+      .left {
+        width: calc(50% - 40px);
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        @include xxl {
+          height: 30rem;
+        }
+        @include ph {
+          width: 100%;
+          height: 20rem;
+          gap: 15px;
+        }
+        h3 {
+          color: #000;
+          font-family: Poppins;
+          font-size: 50px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 50px; /* 114.286% */
+          @include xxl {
+            font-size: 3.8rem;
+            line-height: 5rem;
+          }
+          @include ph {
+            font-size: 1.25rem;
+            line-height: 1rem;
+          }
+        }
+        p {
+          color: #000;
+          font-family: Poppins;
+          font-size: 1rem;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 1.5rem; /* 154.545% */
+          @include xxl {
+            font-size: 1.2rem;
+          }
+          @include ph {
+            font-size: 0.8rem;
+            line-height: 1.25rem;
+          }
+        }
+      }
+      .right {
+        width: calc(50% - 40px);
+        height: 25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include xxl {
+          height: 30rem;
+        }
+        @include ph {
+          width: 100%;
+          height: 13rem;
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 90%;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

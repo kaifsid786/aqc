@@ -9,13 +9,13 @@
 }
 .main-footer .wrapper {
   width: 100%;
-  max-width: 1366px;
+  max-width: 1500px;
   padding: 4rem 3rem;
   display: flex;
 }
 @media only screen and (min-width: 1536px) {
   .main-footer .wrapper {
-    padding: 4rem 0;
+    padding: 4rem 3rem;
   }
 }
 @media only screen and (max-width: 900px) {

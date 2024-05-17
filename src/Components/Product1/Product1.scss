@@ -1,0 +1,263 @@
+@import "../Css/mixin.scss";
+.product1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  @include ph {
+    margin-top: 70px;
+  }
+  @include xxl {
+    margin-top: 120px;
+  }
+
+  .banner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    max-height: 55rem;
+    position: relative;
+    @include ph {
+      height: 20rem;
+    }
+    .banner-gradient {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 70%;
+      background: linear-gradient(
+        180deg,
+        #fff 0%,
+        rgba(255, 255, 255, 0.6) 57.81%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      @include ph {
+        height: 90%;
+      }
+    }
+    .banner-text {
+      width: 100%;
+      position: absolute;
+      top: 10%;
+      padding: 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      h3 {
+        width: 50rem;
+        color: #002849;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 3rem; /* 110% */
+        @include xxl {
+          margin-top: 4rem;
+          width: 70rem;
+          font-size: 6.25rem;
+          line-height: 6.25rem;
+        }
+        @include ph {
+          font-size: 1.5rem;
+          width: 21rem;
+          line-height: 2rem;
+        }
+      }
+
+      p {
+        width: 48rem;
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.5rem; /* 145.455% */
+        @include xxl {
+          width: 60rem;
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
+        @include ph {
+          font-size: 0.8rem;
+          width: 17rem;
+          line-height: 1rem;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .section1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1366px;
+    padding: 2rem 10rem;
+    @include ph {
+      padding: 2rem;
+      flex-direction: column;
+      max-width: 360px;
+    }
+
+    .left {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      height: 25rem;
+      @include ph {
+        width: 100%;
+      }
+      .img-section {
+        width: 100%;
+        height: 23rem;
+        @include ph {
+          display: none;
+        }
+      }
+      p {
+        @include ph {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .right {
+      flex: 1;
+      height: 27rem;
+      @include ph {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .right-img {
+        width: 100%;
+        height: 100%;
+
+        @include ph {
+          width: 100%;
+          height: 10rem;
+        }
+      }
+
+      .img-section-mob {
+        display: none;
+        @include ph {
+          display: contents;
+          width: 100%;
+          height: 15rem !important;
+        }
+      }
+    }
+  }
+
+  .section2 {
+    width: 100%;
+    max-width: 1366px;
+    padding: 0 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include ph {
+      padding: 2rem;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 360px;
+    }
+    div {
+      @include ph {
+        width: 100% !important;
+        height: 10rem !important;
+      }
+    }
+    // height: 30rem;
+  }
+
+  .section3 {
+    width: 100%;
+    max-width: 1366px;
+    height: 20rem;
+    padding: 2rem 10rem;
+    @include ph {
+      flex-direction: column !important;
+      padding: 2rem;
+      height: fit-content;
+      gap: 20px;
+      max-width: 360px;
+    }
+
+    div {
+      @include ph {
+        width: 100% !important;
+        height: 10rem !important;
+      }
+    }
+  }
+  .section4 {
+    width: 100%;
+    max-width: 1366px;
+    padding: 2rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    @include ph {
+      padding: 2rem;
+      max-width: 360px;
+    }
+    .left {
+      width: 45%;
+      height: 18rem;
+      @include ph {
+        width: 48%;
+        height: 15rem;
+      }
+    }
+    .right {
+      width: 50%;
+      height: 18rem;
+      @include ph {
+        width: 48%;
+        height: 15rem;
+      }
+    }
+  }
+
+  .whatsapp {
+    width: 3rem;
+    height: 3rem;
+    position: fixed !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 999999;
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 500px) {
+  .product1 .section1,
+  .product1 .section2,
+  .product1 .section3,
+  .product1 .section4 {
+    padding: 2rem 0 !important;
+  }
+}

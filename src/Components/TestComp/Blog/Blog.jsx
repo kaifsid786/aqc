@@ -6,7 +6,7 @@ export default function Blog() {
         <div className="wrapper">
           <h3>
             The latest in{" "}
-            <span style={{ color: "#10C08E" }}>Nutritional Universe</span>
+            <span style={{ color: "#10C08E" }}>Nutrition Universe</span>
           </h3>
           <div className="cards">
             <div className="card">

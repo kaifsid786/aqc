@@ -2,6 +2,7 @@ import "./BlogMain.scss";
 import Pagination from "@mui/material/Pagination";
 import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
+import WhatsApp from "../../WhatsApp/WhatsApp";
 import PreFooter from "../../PreFooter/PreFooter";
 import { useState } from "react";
 import BlogPhone from "../BlogPhone/BlogPhone";
@@ -105,9 +106,9 @@ export default function BlogMain() {
         <div className="banner">
           <h3>Blog</h3>
           <p>
-            At AQC Chem. Lab Pvt. Ltd., innovation is in our DNA. It is
-            showcased <br /> through the cutting edge technologies that drive
-            our food processing.
+            Uncover the latest nutritional insights and wellness trends in our
+            blog section. <br />
+            Explore a treasure trove of expert advice and interesting article.
           </p>
         </div>
 
@@ -317,6 +318,11 @@ export default function BlogMain() {
         </div>
 
         <PreFooter />
+
+        {/* whatsapp */}
+        <div className="whatsapp">
+          <WhatsApp />
+        </div>
       </div>
       <Footer />
     </>

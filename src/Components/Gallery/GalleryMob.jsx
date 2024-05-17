@@ -39,16 +39,50 @@ const GalleryMob = () => {
 
       const element = document.querySelector(".gall-cont");
       const newScrollHeight = element.scrollHeight;
-      if (window.innerWidth > 1500) {
+      if (window.innerHeight < 650) {
         setStart(document.querySelector(".gall-cont").scrollHeight + 100);
         setEnd(
           document.querySelector(".gall-cont").scrollHeight +
-            document.querySelector(".gall-cont").clientHeight +
-            250
+            document.querySelector(".gall-cont").clientHeight -
+            50
         );
         setScrollHeight(window.scrollY);
 
-        if (scrollHeight >= end - 400) {
+        if (scrollHeight >= end - 100) {
+          document.querySelector(".gall-animation").classList.add("bottom");
+          setTrigger(true);
+
+          // bottom.style.background='linear-gradient(#00284900, #002849)'
+        } else {
+          setTrigger(false);
+        }
+      } else if (window.innerHeight >= 650 && window.innerHeight < 800) {
+        setStart(document.querySelector(".gall-cont").scrollHeight - 100);
+        setEnd(
+          document.querySelector(".gall-cont").scrollHeight +
+            document.querySelector(".gall-cont").clientHeight -
+            150
+        );
+        setScrollHeight(window.scrollY);
+
+        if (scrollHeight >= end - 100) {
+          document.querySelector(".gall-animation").classList.add("bottom");
+          setTrigger(true);
+
+          // bottom.style.background='linear-gradient(#00284900, #002849)'
+        } else {
+          setTrigger(false);
+        }
+      } else if (window.innerHeight >= 800 && window.innerHeight < 900) {
+        setStart(document.querySelector(".gall-cont").scrollHeight - 450);
+        setEnd(
+          document.querySelector(".gall-cont").scrollHeight +
+            document.querySelector(".gall-cont").clientHeight -
+            500
+        );
+        setScrollHeight(window.scrollY);
+
+        if (scrollHeight >= end - 100) {
           document.querySelector(".gall-animation").classList.add("bottom");
           setTrigger(true);
 
@@ -57,11 +91,11 @@ const GalleryMob = () => {
           setTrigger(false);
         }
       } else {
-        setStart(document.querySelector(".gall-cont").scrollHeight + 100);
+        setStart(document.querySelector(".gall-cont").scrollHeight - 750);
         setEnd(
           document.querySelector(".gall-cont").scrollHeight +
             document.querySelector(".gall-cont").clientHeight -
-            50
+            800
         );
         setScrollHeight(window.scrollY);
 
@@ -79,7 +113,6 @@ const GalleryMob = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollHeight]);
-  console.log(scrollHeight);
   const style = {
     height: scrollHeight >= start && scrollHeight <= end ? "40vh" : "0",
     background:

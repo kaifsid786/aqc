@@ -10,16 +10,14 @@ export default function Awards() {
         <div className="content">
           <h3>Technologies</h3>
           <p style={window.innerWidth <= 480 ? { display: "none" } : {}}>
-            At AQC Chem. Lab Pvt. Ltd., innovation is in our DNA. We harness a
-            range of state- of- the- art technologies that <br /> redefine food
-            science, enhancing product quality, efficacy, and consumer
-            experience.
+            At AQC Chem Lab Pvt. Ltd., innovation is inherent. Our quality
+            <br /> controlled premixes redefine functional food technology by
+            enhancing taste and nutrition.
           </p>
           <p style={window.innerWidth > 480 ? { display: "none" } : {}}>
-            At AQC Chem. Lab Pvt. Ltd., innovation is in our DNA. We harness a
-            range of state- of- the- art technologies that redefine food
-            science, enhancing product quality, efficacy, and consumer
-            experience.
+            At AQC Chem Lab Pvt. Ltd., innovation is inherent. Our quality
+            controlled premixes redefine functional food technology by enhancing
+            taste and nutrition.
           </p>
           <div className="process">
             <div className="card">

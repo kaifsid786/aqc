@@ -11,6 +11,7 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import locationImg from "/location.png";
+import WhatsApp from "../WhatsApp/WhatsApp";
 
 export default function Contact() {
   const form = useRef();
@@ -20,10 +21,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_rt18t53",
-        "template_2jjvyda",
+        "service_1xyc165",
+        "template_3woft7p",
         form.current,
-        "4b2IseQlivRCEo0r4"
+        "Jr2_NGqGKWQW26WzV"
       )
       .then(
         (result) => {
@@ -57,7 +58,19 @@ export default function Contact() {
             <div className="left">
               <div className="cards">
                 <div className="card">
-                  <div className="logo">
+                  <div
+                    className="logo"
+                    onClick={() => {
+                      if (window.innerWidth > 900) {
+                        window.location.href =
+                          "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=shiyvamgupta@aqcchem.com";
+                      } else {
+                        window.location.href =
+                          "mailto:shiyvamgupta@aqcchem.com";
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
                     <IoMailOpen />
                   </div>
                   <h3>Email us</h3>
@@ -65,7 +78,21 @@ export default function Contact() {
                     Email us for general queries, including marketing and
                     partnership opportunities.
                   </p>
-                  <div className="info">hello@helpcenter.com</div>
+                  <div
+                    className="info"
+                    onClick={() => {
+                      if (window.innerWidth > 900) {
+                        window.location.href =
+                          "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=shiyvamgupta@aqcchem.com";
+                      } else {
+                        window.location.href =
+                          "mailto:shiyvamgupta@aqcchem.com";
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Shiyvamgupta@aqcchem.com
+                  </div>
                 </div>
                 <div className="card">
                   <div className="logo">
@@ -76,7 +103,7 @@ export default function Contact() {
                     Call us to speak to a member of our team. We are always
                     happy to help.
                   </p>
-                  <div className="info">+1 (646) 786-5060</div>
+                  <div className="info">+91-99207 79504</div>
                 </div>
                 <div className="card">
                   <div className="logo">
@@ -134,6 +161,11 @@ export default function Contact() {
               <button>Submit</button>
             </form>
           </div>
+        </div>
+
+        {/* whatsapp */}
+        <div className="whatsapp">
+          <WhatsApp />
         </div>
       </div>
       <Footer />

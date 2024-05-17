@@ -2,7 +2,10 @@ import "./Footer.scss";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
     <div className="main-footer">
       <div className="wrapper">
@@ -10,9 +13,10 @@ export default function Footer() {
           <div className="col-1">
             <img src="/AQC2.svg" alt="" />
             <p>
-              More than 12 years in the Nutrition and we’re just getting Better.
-              and we’re just getting Better More than 12 years in the Nutrition
-              and we’re just get Better. and we’re just getting Better
+              More than 15 years in the field of nutrition and we relentlessly
+              pursue the latest advancements and insights. AQC ensures that our
+              expertise evolves alongside the ever-expanding landscape of
+              nutritional science.
             </p>
             <div className="social-links">
               <div className="circle">
@@ -29,17 +33,18 @@ export default function Footer() {
 
           <div className="col-2">
             <h3>Quick Links</h3>
-            <li>Home</li>
-            <li>About US</li>
-            <li>Contact</li>
+            <li onClick={() => navigate("/")}>Home</li>
+            <li onClick={() => navigate("/about")}>About US</li>
+            <li onClick={() => navigate("/contact")}>Contact</li>
           </div>
         </div>
         <div className="row-2">
           <div className="col-2">
-            <h3>Services</h3>
-            <li>Contract Manufacturer</li>
-            <li>Services</li>
-            <li>Products</li>
+            <h3>Division</h3>
+            <li onClick={() => navigate("/contract")}>Contract Manufacturer</li>
+            <li onClick={() => navigate("/product")}>Lab Equipment</li>
+            <li onClick={() => navigate("/product")}>Food Additives</li>
+            <li onClick={() => navigate("/product")}>Nutrition</li>
           </div>
           <div
             className="col-2"
@@ -50,9 +55,9 @@ export default function Footer() {
             }
           >
             <h3>More</h3>
+            <li onClick={() => navigate("/product")}>Products</li>
             <li>Terms & Conditions</li>
-            <li>Privacy policy</li>
-            <li>Blogs</li>
+            <li onClick={() => navigate("/blog")}>Blogs</li>
             <li>Privacy Policy</li>
           </div>
         </div>
@@ -63,11 +68,12 @@ export default function Footer() {
       <div className="copyright">
         {window.innerWidth <= 500 ? (
           <p>
-            AQC NUTRITION <br />
+            AQC Chem Lab Pvt. Ltd.
+            <br />
             2011-2021© All rights reserved.
           </p>
         ) : (
-          <p>AQC NUTRITION 2011-2021© | All rights reserved.</p>
+          <p>AQC Chem Lab Pvt. Ltd. | All Rights Reserved</p>
         )}
       </div>
     </div>

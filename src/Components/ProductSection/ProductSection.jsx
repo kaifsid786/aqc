@@ -40,14 +40,9 @@ const ProductSection = (gall) => {
 
   const data = [
     {
-      img: svg1,
-      title: "Contract Manufacturing",
-      info: "Your trusted partner in contract manufacturing solutions while committing to quality, innovation & precision.",
-    },
-    {
-      img: svg2,
-      title: "Lab Equipments",
-      info: "We Believe that state of art technology and the best technology is the foundation of reliable scientific analysis. That is why we are committed to provide you with top notch equipment.",
+      img: svg4,
+      title: "Micronutrient Premixes",
+      info: "These are nutritional strategies which involve adding a formulated mixture of vitamins and minerals to commonly consumed food products to enhance nutritional value. ",
     },
     {
       img: svg3,
@@ -55,9 +50,14 @@ const ProductSection = (gall) => {
       info: "Food Additives are essential substances which are used in the food industry to enhance the flavour, texture, appearance and shelf life of many products.",
     },
     {
-      img: svg4,
-      title: "Micronutrient Premixes",
-      info: "These are nutritional strategies which involve adding a formulated mixture of vitamins and minerals to commonly consumed food products to enhance nutritional value. ",
+      img: svg2,
+      title: "Lab Equipments",
+      info: "We Believe that state of art technology and the best technology is the foundation of reliable scientific analysis. That is why we are committed to provide you with top notch equipment.",
+    },
+    {
+      img: svg1,
+      title: "Contract Manufacturing",
+      info: "Your trusted partner in contract manufacturing solutions while committing to quality, innovation & precision.",
     },
   ];
   const settings = {
@@ -92,7 +92,7 @@ const ProductSection = (gall) => {
           >
             <div className="magic-title">About Us</div>
             <div className="health-magin-info-title">
-              Health Magic- Where Taste
+              Nutrition Redefined- Where Taste
               {windowWidth <= 480 ? "" : <br />}
               Meets Nutrition
             </div>
@@ -101,11 +101,10 @@ const ProductSection = (gall) => {
               className="health-magic-info-desc"
               style={{ fontSize: "0.8rem", fontWeight: "300" }}
             >
-              Founded in the year 1999-2000 , AQC Chem. Lab Pvt. Ltd has slowly
-              but steadily grown to be one of the trusted names in the industry.
-              We began our journey with a vision to redefine food enhancement by
-              creating products which are not only delicious but are also
-              healthy, safe and sustainable.
+              Established in 2009, AQC Chem Lab Pvt. Ltd. has evolved with a
+              mission to revolutionize food enhancement through advanced
+              technology. Our commitment is to craft nutritious, healthy, and
+              tasty products sustainably.
             </div>
             <div className="health-magic-info-btn">
               <button onClick={() => navigate("/about")}>Know More</button>

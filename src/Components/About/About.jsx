@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.scss";
 import img from "../../../public/AboutBan.png";
-import HomeUSP from "./HomeUSP/HomeUSP";
+import WhatsApp from "../WhatsApp/WhatsApp";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 import { useNavigate } from "react-router-dom";
@@ -103,7 +103,7 @@ export default function About() {
           innovation not only enhanced the nutritional quotient of foods but
           also revolutionised production methodologies, setting new industry
           benchmarks.{" "}
-          <span
+          {/* <span
             style={{
               fontWeight: "500",
               cursor: "pointer",
@@ -112,7 +112,7 @@ export default function About() {
             }}
           >
             READ MORE
-          </span>
+          </span> */}
         </div>
 
         <motion.div
@@ -125,19 +125,20 @@ export default function About() {
           <motion.div className="card">
             <h3>Vission</h3>
             <p>
-              Our aim at providing high standards of Our global presence
-              expanded naturally, and we take pride in establishing a footprint
-              acros solutions that amplify nutrition, elevate well-being, and
-              redefine standards.
+              At AQC, we're committed to simplifying healthy living and adding
+              flavor. Our vision is a world where nutrition is celebrated and
+              well-being is paramount. Through innovation and inclusivity, we
+              offer conscious nourishment without sacrificing taste.
             </p>
           </motion.div>
           <motion.div className="card about-type2">
             <h3>Mission</h3>
             <p>
-              Our aim at providing high standards of Our global presence
-              expanded naturally, and we take pride in establishing a footprint
-              acros solutions that amplify nutrition, elevate well-being, and
-              redefine standards.
+              Our mission is to transform lives through accessible,
+              evidence-based solutions. We strive to inspire and empower
+              individuals on their wellness journeys, ensuring enduring health.
+              With a focus on excellence and innovation, we aim to guide the way
+              towards a healthier, happier world.
             </p>
           </motion.div>
         </motion.div>
@@ -147,15 +148,15 @@ export default function About() {
             <div className="left">
               <h3>Our Commitment to Quality: </h3>
               <p>
-                Our primary approach has been to meet the customer needs & keep
-                our customers always at the forefront of everything we do.  
+                Our Primary approach has been to meet the customer needs and
+                keep our customers always at the forefront of everything we do.
                 <br />
-                Our global presence expanded naturally, and we take pride in
-                establishing a footprint across 30+ countries. Presently, AQC
-                Chem. Lab stands tall, earning the trust of 400+ clients
-                worldwide, owing to our unwavering commitment to delivering
-                top-tier solutions that amplify nutrition, elevate well-being,
-                and redefine standards in the nutrition segment. 
+                br Our global presence expanded naturally and we take pride in
+                establishing a footprint across 70 countries. Currently, AQC
+                Chem Lab stands tall earning the trust of 250+ clients worldwide
+                owing to our unwavering commitment to delivering top- tier
+                solutions that amplify nutrition, elevate well being and
+                redefine standards in the nutrition industry.
               </p>
             </div>
             <div className="right">
@@ -164,7 +165,20 @@ export default function About() {
           </div>
         </div>
 
-        <div className="usp">
+        <motion.div
+          className="usp"
+          initial={{
+            x: "-5rem",
+            opacity: 0,
+          }}
+          whileInView={{
+            x: "0",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
           <h3>Why AQC ?</h3>
           <p>
             Embarking on our journey in 2009, AQC Chem set out with a grand
@@ -183,7 +197,7 @@ export default function About() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
         <div className="team-section">
           {/* <div className="wrapper">
@@ -256,6 +270,11 @@ export default function About() {
         {window.innerWidth <= 480 ? <Awd /> : ""}
 
         <PreFooter />
+
+        {/* whatsapp */}
+        <div className="whatsapp">
+          <WhatsApp />
+        </div>
       </div>
 
       <Footer />

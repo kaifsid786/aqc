@@ -39,7 +39,7 @@
 .main-techComp .content .process {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
 }

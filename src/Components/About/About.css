@@ -122,6 +122,7 @@
   .main-about .intro {
     font-size: 1.05rem;
     line-height: 2rem;
+    padding: 4rem 3rem;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -140,6 +141,12 @@
   justify-content: space-between;
   align-items: center;
 }
+@media only screen and (min-width: 1536px) {
+  .main-about .mission-vission {
+    padding: 0 3rem;
+    padding-bottom: 2rem;
+  }
+}
 @media only screen and (max-width: 500px) {
   .main-about .mission-vission {
     flex-direction: column;
@@ -154,7 +161,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 19.15881rem;
+  height: 20rem;
   background: url("/Rectangle 34624666.png");
   background-size: 100% 100%;
   padding: 0 4rem;
@@ -164,12 +171,12 @@
   .main-about .mission-vission .card {
     width: 100%;
     padding: 0 2rem;
-    height: 18rem !important;
+    height: 22rem !important;
   }
 }
 @media only screen and (max-width: 1200px) {
   .main-about .mission-vission .card {
-    height: 22rem;
+    height: 25rem;
   }
 }
 .main-about .mission-vission .card h3 {
@@ -194,21 +201,21 @@
 .main-about .mission-vission .card p {
   color: black;
   font-family: Poppins;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.83631rem; /* 146.907% */
+  line-height: 1.5; /* 146.907% */
 }
 @media only screen and (min-width: 1536px) {
   .main-about .mission-vission .card p {
-    font-size: 1.05rem;
-    line-height: 2.125rem;
+    font-size: 1rem;
+    line-height: 2rem;
   }
 }
 @media only screen and (max-width: 500px) {
   .main-about .mission-vission .card p {
-    font-size: 0.8rem;
-    line-height: 1.25rem;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
   }
 }
 .main-about .mission-vission .about-type2 {

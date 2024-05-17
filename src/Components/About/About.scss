@@ -6,17 +6,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 70px;
   @include md {
-    margin-top: 150px;
+    margin-top: 120px;
   }
   @include xxl {
-    margin-top: 150px;
+    margin-top: 120px;
   }
 
   @include ph {
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 70px;
   }
   .about-banner {
     width: 100%;
@@ -141,7 +141,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      height: 19.15881rem;
+      height: 20rem;
       // background: linear-gradient(
       //   180deg,
       //   rgba(205, 232, 255, 0.2) 0%,
@@ -153,14 +153,14 @@
       background: url("/Rectangle 34624666.png");
       background-size: 100% 100%;
       padding: 0 4rem;
-      gap: 0px;
+      gap: 20px;
       @include ph {
         width: 100%;
         padding: 0 2rem;
-        height: 18rem !important;
+        height: 22rem !important;
       }
       @include lg {
-        height: 22rem;
+        height: 25rem;
       }
       h3 {
         color: black;
@@ -180,17 +180,17 @@
       p {
         color: black;
         font-family: Poppins;
-        font-size: 1rem;
+        font-size: 0.85rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 1.83631rem; /* 146.907% */
+        line-height: 1.5; /* 146.907% */
         @include xxl {
-          font-size: 1.05rem;
-          line-height: 2.125rem;
+          font-size: 1rem;
+          line-height: 2rem;
         }
         @include ph {
-          font-size: 0.8rem;
-          line-height: 1.25rem;
+          font-size: 0.7rem;
+          line-height: 1.2rem;
         }
       }
     }
@@ -365,6 +365,7 @@
       }
       .card {
         width: calc(33% - 10px);
+        height: 16rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -382,6 +383,7 @@
         }
         @include xxl {
           padding: 4rem;
+          height: 18rem;
         }
         img {
           width: 3rem;
@@ -621,5 +623,17 @@
     width: 100%;
     max-width: 1500px;
     padding: 2rem 3rem;
+  }
+
+  .whatsapp {
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 999999;
   }
 }

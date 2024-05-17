@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import PreFooter from "../PreFooter/PreFooter";
+import WhatsApp from "../WhatsApp/WhatsApp";
 
 const varient = {
   initial: {
@@ -118,6 +119,11 @@ export default function Contract() {
         </div>
 
         <PreFooter />
+
+        {/* whatsapp */}
+        <div className="whatsapp">
+          <WhatsApp />
+        </div>
       </div>
 
       <Footer />

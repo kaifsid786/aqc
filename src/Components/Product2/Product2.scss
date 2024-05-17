@@ -1,0 +1,236 @@
+@import "../Css/mixin.scss";
+.product2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  @include ph {
+    margin-top: 70px;
+  }
+  @include xxl {
+    margin-top: 120px;
+  }
+
+  .banner {
+    width: 100%;
+    height: calc(100vh - 100px);
+    max-height: 55rem;
+    @include ph {
+      height: 20rem;
+    }
+
+    .banner-gradient {
+      position: absolute;
+      top: 8%;
+      width: 100%;
+      height: 80%;
+      background: linear-gradient(
+        180deg,
+        #fff 0%,
+        rgba(255, 255, 255, 0.6) 57.81%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      @include ph {
+        height: 90%;
+      }
+      @include xxl {
+        top: 9%;
+      }
+    }
+    .banner-text {
+      width: 100%;
+      position: absolute;
+      top: 20%;
+      padding: 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      h3 {
+        width: 40rem;
+        color: #002849;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 3rem; /* 110% */
+        @include xxl {
+          margin-top: 4rem;
+          width: 70rem;
+          font-size: 6.25rem;
+          line-height: 6.25rem;
+        }
+        @include ph {
+          font-size: 1.5rem;
+          width: 20rem;
+          line-height: 2rem;
+        }
+      }
+
+      p {
+        width: 48rem;
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.5rem; /* 145.455% */
+        @include xxl {
+          width: 60rem;
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
+        @include ph {
+          font-size: 0.8rem;
+          width: 17rem;
+          line-height: 1rem;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .para {
+    width: 100%;
+    max-width: 1500px;
+    padding: 2rem 5rem;
+    font-size: 1rem;
+    font-family: Poppins;
+    @include ph {
+      padding: 2rem;
+      font-size: 0.8rem;
+      max-width: 360px;
+    }
+  }
+
+  .section {
+    width: 100%;
+    max-width: 1500px;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include ph {
+      flex-direction: column-reverse;
+      gap: 20px;
+      padding: 2rem;
+      max-width: 360px;
+    }
+
+    .left {
+      width: 40%;
+      height: 28rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: #eaf6ff;
+      padding: 20px;
+      border-radius: 20px;
+      @include ph {
+        width: 100%;
+        height: 18rem;
+      }
+
+      .info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+
+        h3 {
+          color: #003e71;
+          font-size: 1.5rem;
+          font-weight: 600;
+          @include ph {
+            font-size: 1rem;
+          }
+        }
+        p {
+          font-size: 1rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      .types {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        h4 {
+          cursor: pointer;
+          position: relative;
+          @include ph {
+            font-size: 0.65rem;
+          }
+        }
+        h4::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          // background-color: #003e71;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+      .types::before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #003e71;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    .right {
+      width: 55%;
+      height: 28rem;
+      @include ph {
+        width: 100%;
+        height: 15rem;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .whatsapp {
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 999999;
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 500px) {
+  .product2 .section,
+  .product2 .para {
+    padding: 2rem 0;
+  }
+}

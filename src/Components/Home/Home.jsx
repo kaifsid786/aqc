@@ -10,18 +10,11 @@ import Footer from "../Footer/Footer";
 import Counter from "../Counter/Counter";
 import CounterMob from "../Counter/CounterMob";
 import WhatsApp from "../WhatsApp/WhatsApp";
-import video1 from "/1715412_Flour_Dough_Ingredient_1280x720 (1).mp4";
-import video2 from "/4661195_Closeup_Woman_Baker_1280x720 (1).mp4";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-// import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -48,6 +41,8 @@ const Home = () => {
         <Awd />
         <Awards />
         <Blog />
+
+        {/* whatsapp */}
         <div className="whatsapp">
           <WhatsApp />
         </div>

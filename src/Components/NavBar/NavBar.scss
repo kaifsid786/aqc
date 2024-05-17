@@ -1,19 +1,19 @@
 @import "../Css/mixin.scss";
 .navbar {
   width: 100%;
-  height: 100px;
+  height: 70px;
   position: fixed;
   top: 0;
   z-index: 99999 !important;
   background-color: white;
   @include md {
-    height: 150px;
+    height: 120px;
   }
   @include xxl {
-    height: 150px;
+    height: 120px;
   }
   @include sm {
-    height: 100px;
+    height: 70px;
   }
   .wrapper {
     max-width: 1500px;
@@ -27,19 +27,19 @@
       padding: 0 5rem;
     }
     img {
-      width: 150px;
-      height: 50px;
+      width: 120px;
+      height: 40px;
       flex-shrink: 0;
       @include xxl {
-        height: 80px;
-      }
-      @include md {
-        width: 180px;
         height: 70px;
       }
+      @include md {
+        width: 160px;
+        height: 60px;
+      }
       @include sm {
-        width: 100px;
-        height: 50px;
+        width: 80px;
+        height: 40px;
       }
     }
     .links {
@@ -57,16 +57,74 @@
           cursor: pointer;
           color: var(--22, #003e71);
           font-family: Poppins;
-          font-size: 0.8rem;
+          font-size: 14px;
           font-style: normal;
           font-weight: 500;
           line-height: 2.75rem; /* 220% */
+          position: relative;
           @include xxl {
             font-size: 1rem;
+          }
+
+          .drop-down {
+            width: 15rem;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: -0.2rem;
+            top: 2.5rem;
+            background: #003e71;
+            height: 0rem;
+            overflow: hidden;
+            border-radius: 10px;
+            gap: 15px;
+
+            @include xxl {
+              width: 15rem;
+              left: 0;
+              top: 3rem;
+            }
+
+            li {
+              width: 100%;
+              padding: 5px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              font-size: 0.75rem;
+              color: white;
+              line-height: 1rem;
+              gap: 5px;
+              border-radius: 5px;
+              @include xxl {
+                font-size: 0.9rem;
+              }
+              img {
+                @include xxl {
+                  width: 1.5rem !important;
+                  height: 1.5rem !important;
+                }
+              }
+            }
+
+            li:hover {
+              background-color: white;
+              color: black;
+              font-weight: 700;
+              img {
+                filter: none !important;
+              }
+            }
           }
         }
         li:hover {
           font-weight: bolder;
+          .drop-down {
+            height: 10rem;
+          }
         }
         .contactLink {
           width: 5.5rem;
@@ -76,7 +134,7 @@
           background: var(--22, #003e71);
           color: #fff;
           font-family: Poppins;
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           font-style: normal;
           font-weight: 500;
           line-height: 2.75rem; /* 220% */
@@ -123,14 +181,15 @@
       background-color: white;
       position: fixed;
       left: 0;
-      top: 150px;
+      top: 120px;
       z-index: 999;
+      overflow: scroll;
       @include mds {
         display: none;
       }
       @include sm {
         width: 80%;
-        top: 99px;
+        top: 70px;
       }
       .ham-links {
         width: 100%;
@@ -154,6 +213,15 @@
             font-size: 1.5rem;
             @include sm {
               font-size: 1rem;
+
+              .mob-dropdown {
+                width: 100%;
+                margin-top: 10px;
+                margin-left: 20px;
+                // height: 8rem;
+                overflow: hidden;
+                transition: all 0.5s ease;
+              }
             }
           }
         }

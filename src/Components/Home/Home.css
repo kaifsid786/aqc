@@ -6,11 +6,6 @@
   width: 100% !important;
 }
 
-.t-slider {
-  width: 100% !important;
-  height: 75vh !important;
-}
-
 .Home {
   display: flex;
   flex-direction: column;
@@ -20,6 +15,15 @@
   overflow: hidden;
   position: relative;
   margin-top: 100px;
+}
+.Home .t-slider {
+  width: 100% !important;
+  height: calc(100vh - 50px);
+}
+@media only screen and (max-width: 769px) {
+  .Home .t-slider {
+    height: 33rem !important;
+  }
 }
 .Home .whatsapp {
   width: 3rem;

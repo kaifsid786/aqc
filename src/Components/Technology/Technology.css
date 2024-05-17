@@ -109,6 +109,11 @@
   align-items: center;
   gap: 50px;
 }
+@media only screen and (min-width: 1536px) {
+  .main-tech .cards {
+    padding: 4rem 3rem;
+  }
+}
 @media only screen and (max-width: 500px) {
   .main-tech .cards {
     padding: 4rem 1rem;

@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import v1 from "/v2-2.mp4";
+import v2 from "/v1-2.mp4";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -12,8 +13,6 @@ import "./TopSlider.css";
 
 // import required modules
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import v1 from "/1715412_Flour_Dough_Ingredient_1280x720 (1).mp4";
-import v2 from "/4661195_Closeup_Woman_Baker_1280x720 (1).mp4";
 import PropertyCard from "../PropertyCard/PropertyCard";
 
 export default function TopSlider() {
@@ -27,16 +26,20 @@ export default function TopSlider() {
         pagination={{
           clickable: true,
         }}
+        autoplay={{
+          delay: 7000,
+          disableOnInteraction: false,
+        }}
         freeMode={true}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <PropertyCard />
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide>
           {/* <img src="https://swiperjs.com/demos/images/nature-1.jpg" /> */}
-          <video src={v1} autoPlay muted loop></video>
+          <video src={v1} autoPlay muted loop preload="auto"></video>
           <div class="cot">
             <h1>
               Fueling Your Potential <br /> Nourishing Your Journey
@@ -50,7 +53,7 @@ export default function TopSlider() {
         </SwiperSlide>
         <SwiperSlide>
           {/* <img src="https://swiperjs.com/demos/images/nature-2.jpg" /> */}
-          <video src={v2} autoPlay muted loop></video>
+          <video src={v2} autoPlay muted loop preload="auto"></video>
           <div class="cot">
             <h1>
               Elevate Your Plate <br />

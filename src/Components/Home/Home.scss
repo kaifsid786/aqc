@@ -14,7 +14,7 @@
   background: transparent;
   overflow: hidden;
   position: relative;
-  margin-top: 100px;
+  margin-top: 70px;
   .t-slider {
     width: 100% !important;
     height: calc(100vh - 50px);
@@ -36,12 +36,12 @@
   }
 
   @include md {
-    margin-top: 150px;
+    margin-top: 120px;
   }
   @include xxl {
-    margin-top: 150px;
+    margin-top: 120px;
   }
   @include sm {
-    margin-top: 100px;
+    margin-top: 70px;
   }
 }
