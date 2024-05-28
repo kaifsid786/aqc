@@ -6,8 +6,9 @@
   justify-content: center;
   align-items: center;
   margin-top: 70px;
-  @include ph {
+  @include sm {
     margin-top: 70px;
+    max-width: 500px;
   }
   @include xxl {
     margin-top: 120px;
@@ -17,7 +18,7 @@
     width: 100%;
     height: calc(100vh - 100px);
     max-height: 55rem;
-    @include ph {
+    @include sm {
       height: 20rem;
     }
 
@@ -33,7 +34,11 @@
         rgba(255, 255, 255, 0) 100%
       );
       @include ph {
-        height: 90%;
+        height: 70% !important;
+      }
+      @include sm {
+        height: 55%;
+        max-width: 500px;
       }
       @include xxl {
         top: 9%;
@@ -49,7 +54,9 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
-
+      @include sm {
+        max-width: 500px;
+      }
       h3 {
         width: 40rem;
         color: #002849;
@@ -65,7 +72,7 @@
           font-size: 6.25rem;
           line-height: 6.25rem;
         }
-        @include ph {
+        @include sm {
           font-size: 1.5rem;
           width: 20rem;
           line-height: 2rem;
@@ -86,7 +93,7 @@
           font-size: 2rem;
           line-height: 2.5rem;
         }
-        @include ph {
+        @include sm {
           font-size: 0.8rem;
           width: 17rem;
           line-height: 1rem;
@@ -107,10 +114,10 @@
     padding: 2rem 5rem;
     font-size: 1rem;
     font-family: Poppins;
-    @include ph {
+    @include sm {
       padding: 2rem;
       font-size: 0.8rem;
-      max-width: 360px;
+      // max-width: 360px;
     }
   }
 
@@ -121,11 +128,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    @include ph {
+    @include sm {
       flex-direction: column-reverse;
       gap: 20px;
       padding: 2rem;
-      max-width: 360px;
+      // max-width: 360px;
     }
 
     .left {
@@ -138,7 +145,7 @@
       background: #eaf6ff;
       padding: 20px;
       border-radius: 20px;
-      @include ph {
+      @include sm {
         width: 100%;
         height: 18rem;
       }
@@ -155,7 +162,7 @@
           color: #003e71;
           font-size: 1.5rem;
           font-weight: 600;
-          @include ph {
+          @include sm {
             font-size: 1rem;
           }
         }
@@ -175,7 +182,7 @@
         h4 {
           cursor: pointer;
           position: relative;
-          @include ph {
+          @include sm {
             font-size: 0.65rem;
           }
         }
@@ -202,7 +209,7 @@
     .right {
       width: 55%;
       height: 28rem;
-      @include ph {
+      @include sm {
         width: 100%;
         height: 15rem;
       }

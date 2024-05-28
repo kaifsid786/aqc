@@ -15,15 +15,16 @@
   @include md {
     margin-top: 120px;
   }
-  @include ph {
+  @include sm {
     margin-top: 70px;
+    max-width: 500px;
   }
 
   .banner {
     width: 100%;
     height: calc(100vh - 100px);
     max-height: 55rem;
-    @include ph {
+    @include sm {
       height: 20rem;
     }
 
@@ -39,7 +40,11 @@
         rgba(255, 255, 255, 0) 100%
       );
       @include ph {
-        height: 90%;
+        height: 70%;
+      }
+      @include sm {
+        height: 55%;
+        max-width: 500px;
       }
     }
     .banner-text {
@@ -52,6 +57,9 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
+      @include sm {
+        max-width: 500px;
+      }
 
       h3 {
         width: 40rem;
@@ -68,7 +76,7 @@
           font-size: 6.25rem;
           line-height: 6.25rem;
         }
-        @include ph {
+        @include sm {
           font-size: 1.5rem;
           width: 20rem;
           line-height: 2rem;
@@ -89,7 +97,7 @@
           font-size: 2rem;
           line-height: 2.5rem;
         }
-        @include ph {
+        @include sm {
           font-size: 0.8rem;
           width: 17rem;
           line-height: 1rem;
@@ -113,8 +121,8 @@
     @include md {
       padding: 2rem 3rem;
     }
-    @include ph {
-      max-width: 360px;
+    @include sm {
+      // max-width: 360px;
       padding: 2rem 1rem;
       font-size: 0.8rem;
     }
@@ -195,12 +203,15 @@
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
-    @include ph {
-      max-width: 360px;
+    @include sm {
+      // max-width: 360px;
     }
 
     .card {
-      width: 10rem;
+      width: 14rem;
+      @include ph {
+        width: 10rem;
+      }
       //   height: 10rem;
       padding: 10px 0;
       gap: 5px;

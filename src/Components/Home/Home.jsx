@@ -35,7 +35,7 @@ const Home = () => {
         <div className="t-slider">
           <Slider />
         </div>
-        {windowWidth <= 480 ? <CounterMob /> : <Counter />}
+        {windowWidth <= 500 ? <CounterMob /> : <Counter />}
 
         <ProductSection />
         <Awd />

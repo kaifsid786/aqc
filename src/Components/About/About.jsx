@@ -263,11 +263,11 @@ export default function About() {
 
         <div
           className="awards"
-          style={window.innerWidth <= 480 ? { display: "none" } : {}}
+          style={window.innerWidth <= 800 ? { display: "none" } : {}}
         >
           <Awd />
         </div>
-        {window.innerWidth <= 480 ? <Awd /> : ""}
+        {window.innerWidth <= 800 ? <Awd /> : ""}
 
         <PreFooter />
 

@@ -14,9 +14,10 @@
     margin-top: 120px;
   }
 
-  @include ph {
+  @include sm {
     overflow: hidden;
     margin-top: 70px;
+    max-width: 500px;
   }
   .about-banner {
     width: 100%;
@@ -26,7 +27,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    @include ph {
+    @include sm {
       height: 20rem;
     }
     .banner-gradient {
@@ -38,7 +39,7 @@
         rgba(255, 255, 255, 0.6) 57.81%,
         rgba(255, 255, 255, 0) 100%
       );
-      @include ph {
+      @include sm {
         height: 90%;
       }
     }
@@ -67,7 +68,7 @@
           font-size: 6.25rem;
           line-height: 6.25rem;
         }
-        @include ph {
+        @include sm {
           font-size: 1.5rem;
           width: 20rem;
           line-height: 2rem;
@@ -87,7 +88,7 @@
           font-size: 2rem;
           line-height: 2.5rem;
         }
-        @include ph {
+        @include sm {
           font-size: 0.8rem;
           width: 17rem;
           line-height: 1rem;
@@ -111,7 +112,7 @@
       line-height: 2rem;
       padding: 4rem 3rem;
     }
-    @include ph {
+    @include sm {
       font-size: 0.8rem;
       line-height: 1.25rem;
       padding: 2rem 2rem;
@@ -129,7 +130,7 @@
       padding: 0 3rem;
       padding-bottom: 2rem;
     }
-    @include ph {
+    @include sm {
       flex-direction: column;
       padding: 0 2rem;
       gap: 0px;
@@ -154,7 +155,7 @@
       background-size: 100% 100%;
       padding: 0 4rem;
       gap: 20px;
-      @include ph {
+      @include sm {
         width: 100%;
         padding: 0 2rem;
         height: 22rem !important;
@@ -173,7 +174,7 @@
           font-size: 2rem;
           line-height: 3.125rem;
         }
-        @include ph {
+        @include sm {
           font-size: 1.25rem;
         }
       }
@@ -188,7 +189,7 @@
           font-size: 1rem;
           line-height: 2rem;
         }
-        @include ph {
+        @include sm {
           font-size: 0.7rem;
           line-height: 1.2rem;
         }
@@ -221,7 +222,7 @@
       @include xxl {
         padding: 8rem 3rem;
       }
-      @include ph {
+      @include sm {
         flex-direction: column-reverse;
         padding: 2rem 2rem;
       }
@@ -236,7 +237,7 @@
         @include xxl {
           height: 30rem;
         }
-        @include ph {
+        @include sm {
           width: 100%;
           height: 20rem;
           gap: 15px;
@@ -252,7 +253,7 @@
             font-size: 3.8rem;
             line-height: 5rem;
           }
-          @include ph {
+          @include sm {
             font-size: 1.25rem;
             line-height: 1rem;
           }
@@ -267,7 +268,7 @@
           @include xxl {
             font-size: 1.2rem;
           }
-          @include ph {
+          @include sm {
             font-size: 0.8rem;
             line-height: 1.25rem;
           }
@@ -282,7 +283,7 @@
         @include xxl {
           height: 30rem;
         }
-        @include ph {
+        @include sm {
           width: 100%;
           height: 13rem;
         }
@@ -304,7 +305,7 @@
     max-width: 1500px;
     padding: 5rem 5rem;
     gap: 10px;
-    @include ph {
+    @include sm {
       padding: 2rem;
       align-items: flex-start;
       gap: 0;
@@ -320,7 +321,7 @@
       @include xxl {
         font-size: 4rem;
       }
-      @include ph {
+      @include sm {
         font-size: 1.5rem;
       }
     }
@@ -338,7 +339,7 @@
         font-size: 1.5rem;
         line-height: 2rem;
       }
-      @include ph {
+      @include sm {
         width: 20rem !important;
         text-align: left;
         font-size: 0.85rem;
@@ -359,7 +360,7 @@
       @include xxl {
         padding-top: 40px;
       }
-      @include ph {
+      @include sm {
         flex-direction: column;
         gap: 10px;
       }
@@ -376,7 +377,7 @@
         padding: 2rem;
         border-radius: 10px;
         gap: 10px;
-        @include ph {
+        @include sm {
           width: 100%;
           gap: 0;
           align-items: flex-start;
@@ -403,7 +404,7 @@
           @include xxl {
             font-size: 1.5rem;
           }
-          @include ph {
+          @include sm {
             font-size: 1rem;
           }
         }
@@ -423,7 +424,7 @@
           @include lg {
             font-size: 0.85rem;
           }
-          @include ph {
+          @include sm {
             width: 100% !important;
             font-size: 0.75rem;
             text-align: left;
@@ -452,7 +453,7 @@
     //     padding: 8rem 3rem;
     //     gap: 50px;
     //   }
-    //   @include ph {
+    //   @include sm {
     //     padding: 4rem 2rem;
     //     gap: 20px;
     //   }
@@ -474,7 +475,7 @@
     //       font-size: 3rem;
     //       line-height: 5rem;
     //     }
-    //     @include ph {
+    //     @include sm {
     //       font-size: 1.5rem;
     //       line-height: 2rem;
     //     }
@@ -490,7 +491,7 @@
     //       font-size: 1.2rem;
     //       line-height: 2.125rem;
     //     }
-    //     @include ph {
+    //     @include sm {
     //       font-size: 0.8rem;
     //       margin-top: -1rem;
     //     }
@@ -499,7 +500,7 @@
     //     width: 100%;
     //     display: flex;
     //     justify-content: space-between;
-    //     @include ph {
+    //     @include sm {
     //       flex-direction: column;
     //       gap: 25px;
     //     }
@@ -516,7 +517,7 @@
     //         font-size: 2rem;
     //         line-height: normal;
     //       }
-    //       @include ph {
+    //       @include sm {
     //         font-size: 1rem;
     //         width: 100%;
     //       }
@@ -532,7 +533,7 @@
     //         font-size: 1.1rem;
     //         line-height: 2rem;
     //       }
-    //       @include ph {
+    //       @include sm {
     //         font-size: 0.75rem;
     //         width: 100%;
     //         line-height: 1.25rem;
@@ -557,7 +558,7 @@
         padding: 10rem 5rem;
         padding-bottom: 5rem;
       }
-      @include ph {
+      @include sm {
         padding: 4rem 2rem;
         padding-bottom: 2rem;
         align-items: flex-start;
@@ -573,7 +574,7 @@
           font-size: 4rem;
           line-height: 5rem;
         }
-        @include ph {
+        @include sm {
           font-size: 1.5rem;
           line-height: 3rem;
         }
@@ -590,7 +591,7 @@
           font-size: 2rem;
           line-height: 3rem;
         }
-        @include ph {
+        @include sm {
           font-size: 1rem;
           line-height: 1.5rem;
         }
@@ -609,7 +610,7 @@
           font-size: 1.5rem;
           line-height: 2rem;
         }
-        @include ph {
+        @include sm {
           width: 20rem;
           font-size: 0.85rem;
           line-height: 1.2rem;

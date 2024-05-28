@@ -19,8 +19,9 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    @include ph {
+    @include sm {
       height: 14rem;
+      max-width: 500px;
     }
     h3 {
       color: #fff;
@@ -35,7 +36,7 @@
       @include xxl {
         font-size: 3.75rem;
       }
-      @include ph {
+      @include sm {
         font-size: 1.625rem !important;
       }
     }
@@ -52,7 +53,7 @@
         font-size: 1.5rem;
         line-height: 2.125rem;
       }
-      @include ph {
+      @include sm {
         width: 20rem;
         font-size: 1rem;
         line-height: 1.3rem;
@@ -85,7 +86,7 @@
     @include lg {
       padding: 4rem 2rem;
     }
-    @include ph {
+    @include sm {
       padding: 0;
     }
 
@@ -100,7 +101,7 @@
         width: 100%;
         padding: 0 5rem;
       }
-      @include ph {
+      @include sm {
         padding: 0;
       }
 
@@ -137,7 +138,7 @@
         justify-content: center;
         align-items: center;
         gap: 30px;
-        @include ph {
+        @include sm {
           padding: 2rem;
           padding-top: 0 !important;
         }
@@ -230,7 +231,7 @@
     align-items: center;
     padding-bottom: 2rem;
     position: relative;
-    @include ph {
+    @include sm {
       padding-bottom: 0;
       margin-bottom: 2rem;
       :before {

@@ -14,9 +14,10 @@
     margin-top: 120px;
   }
 
-  @include ph {
+  @include sm {
     overflow: hidden;
     margin-top: 70px;
+    max-width: 500px;
   }
 
   .banner {
@@ -26,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @include ph {
+    @include sm {
       height: fit-content;
       clip-path: ellipse(122% 100% at top);
     }
@@ -39,7 +40,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      @include ph {
+      @include sm {
         padding: 4rem 2rem;
         padding-top: 0;
         flex-direction: column;
@@ -55,7 +56,7 @@
         justify-content: center;
         align-items: center;
         padding-right: 5rem;
-        @include ph {
+        @include sm {
           width: 100%;
           padding: 0;
         }
@@ -67,7 +68,7 @@
           justify-content: center;
           align-items: center;
           gap: 30px;
-          @include ph {
+          @include sm {
             flex-direction: column;
             gap: 50px;
           }
@@ -84,7 +85,7 @@
             @include xxl {
               gap: 10px;
             }
-            @include ph {
+            @include sm {
               width: 100%;
               align-items: center;
               gap: 10px;
@@ -103,7 +104,7 @@
                 height: 3rem;
                 font-size: 2rem;
               }
-              @include ph {
+              @include sm {
                 width: 3rem;
                 height: 3rem;
                 font-size: 1.5rem;
@@ -120,7 +121,7 @@
               @include xxl {
                 font-size: 1.5rem;
               }
-              @include ph {
+              @include sm {
                 font-size: 1.25rem;
               }
             }
@@ -136,7 +137,7 @@
               @include xxl {
                 font-size: 1rem;
               }
-              @include ph {
+              @include sm {
                 font-size: 0.8rem;
                 line-height: 1.5rem;
                 text-align: center;
@@ -153,7 +154,7 @@
               @include xxl {
                 font-size: 1.2rem;
               }
-              @include ph {
+              @include sm {
                 font-size: 1rem;
               }
             }
@@ -194,7 +195,7 @@
         justify-content: center;
         align-items: center;
         padding: 0 2rem;
-        @include ph {
+        @include sm {
           width: 100%;
           padding: 0;
         }
@@ -204,7 +205,7 @@
           @include xxl {
             height: 40rem;
           }
-          @include ph {
+          @include sm {
             height: 20rem;
           }
         }
@@ -226,7 +227,7 @@
     align-items: center;
     position: relative;
     padding: 4rem 5rem;
-    @include ph {
+    @include sm {
       padding: 4rem 1rem;
       padding-top: 2rem;
     }
@@ -252,7 +253,7 @@
       border-radius: 2.5625rem;
       background: #fff;
       box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.12);
-      @include ph {
+      @include sm {
         flex-direction: column;
       }
       .left {
@@ -268,7 +269,7 @@
           height: 40rem;
           gap: 20px;
         }
-        @include ph {
+        @include sm {
           width: 100%;
           padding: 4rem 1.5rem;
           height: 10rem;
@@ -287,7 +288,7 @@
             width: 30rem;
             font-size: 4rem;
           }
-          @include ph {
+          @include sm {
             font-size: 1.375em;
           }
         }
@@ -301,7 +302,7 @@
           @include xxl {
             font-size: 1.5rem;
           }
-          @include ph {
+          @include sm {
             font-size: 0.8rem;
             margin-top: -1rem;
           }
@@ -320,7 +321,7 @@
           height: 40rem;
           gap: 20px;
         }
-        @include ph {
+        @include sm {
           height: fit-content;
           padding: 4rem 1.5rem;
         }
@@ -348,7 +349,7 @@
           @include xxl {
             height: 3rem;
           }
-          @include ph {
+          @include sm {
             width: 38%;
           }
         }
@@ -378,7 +379,7 @@
             height: 4rem;
             font-size: 1.3rem;
           }
-          @include ph {
+          @include sm {
             width: 8rem;
             height: 2.5rem;
           }

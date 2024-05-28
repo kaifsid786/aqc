@@ -1,16 +1,9 @@
 import "./BlogPhone.scss";
-import { useState } from "react";
-export default function BlogPhone() {
+import { useEffect, useState } from "react";
+export default function BlogPhone({ allCat, phF, sPhF }) {
   const [clickedIndex, setClickedIndex] = useState(0);
   const [clickedIndexT, setClickedIndexT] = useState(0);
-  const handleClick = (index) => {
-    // Update the clickedIndex to the current clicked element
-    setClickedIndex(index);
-  };
-  const handleClickT = (index) => {
-    // Update the clickedIndex to the current clicked element
-    setClickedIndexT(index);
-  };
+
   const isClicked = (index) => {
     // Check if the current element is clicked
     return index === clickedIndex;
@@ -20,16 +13,17 @@ export default function BlogPhone() {
     return index === clickedIndexT;
   };
 
-  const topMenu = [
+  const Cat = [
     "All Category",
     "Nutrition",
-    "Market",
     "Guide",
+    "Marketing",
+    "Nutritional Food",
     "Nutritional Beverages",
     "Food Science",
-    "Marketing Theory",
   ];
   const tag = [
+    "All",
     "Health",
     "Campaign",
     "Spray Drying",
@@ -37,13 +31,46 @@ export default function BlogPhone() {
     "Nutrition",
   ];
 
+  // Filterartion
+  const [selectedCat, setSelectedCat] = useState(Cat[0]);
+  const [selectedTag, setSelectedTag] = useState(tag[0]);
+
+  const handleClick = (index) => {
+    // Update the clickedIndex to the current clicked element
+    setClickedIndex(index);
+    setSelectedCat(Cat[index]);
+  };
+  const handleClickT = (index) => {
+    // Update the clickedIndex to the current clicked element
+    setClickedIndexT(index);
+    setSelectedTag(tag[index]);
+  };
+
+  useEffect(() => {
+    if (selectedCat === Cat[0] && selectedTag === tag[0]) sPhF(allCat);
+    else
+      sPhF(
+        allCat.filter((data) => {
+          return (
+            selectedCat === "" ||
+            data.cat === selectedCat ||
+            selectedTag === "" ||
+            data.tag === selectedTag
+          );
+        })
+      );
+  }, [selectedCat, selectedTag]);
+  console.log(allCat);
+  console.log(phF);
+  console.log(selectedTag);
+
   return (
     <div
       className="main-blogPhone"
       style={window.innerWidth > 900 ? { display: "none" } : {}}
     >
       <div className="row">
-        {topMenu.map((val, i) => {
+        {Cat.map((val, i) => {
           return i <= 3 ? (
             <span
               onClick={() => handleClick(i)}
@@ -61,7 +88,7 @@ export default function BlogPhone() {
         })}
       </div>
       <div className="row">
-        {topMenu.map((val, i) => {
+        {Cat.map((val, i) => {
           return i > 3 && i <= 5 ? (
             <span
               onClick={() => handleClick(i)}
@@ -79,7 +106,7 @@ export default function BlogPhone() {
         })}
       </div>
       <div className="row rowL">
-        {topMenu.map((val, i) => {
+        {Cat.map((val, i) => {
           return i > 5 ? (
             <span
               onClick={() => handleClick(i)}

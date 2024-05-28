@@ -145,7 +145,8 @@ const Product3 = () => {
       title: "Spectrometer",
       subTitle: "",
       img: prod12,
-      des: "",
+      des: "A spectrometer is a scientific instrument used to separate and measure spectral components of a physical phenomenon.",
+      height: "3rem",
     },
     {
       title: "Whiteness Tester",

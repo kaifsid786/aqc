@@ -4,35 +4,15 @@ import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
 import WhatsApp from "../../WhatsApp/WhatsApp";
 import PreFooter from "../../PreFooter/PreFooter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogPhone from "../BlogPhone/BlogPhone";
 import BlogCard from "../BlogCard/BlogCard";
 import img from "../../../../public/blog1.png";
 import img2 from "../../../../public/blog2.png";
 import img3 from "../../../../public/blog3.png";
 export default function BlogMain() {
-  const [border1, setBorder1] = useState(true);
-  const [border2, setBorder2] = useState(false);
-  const [border3, setBorder3] = useState(false);
-  const [border4, setBorder4] = useState(false);
-  const [border5, setBorder5] = useState(false);
-  const [border6, setBorder6] = useState(false);
-  const [border7, setBorder7] = useState(false);
-  const [clickedIndexC, setClickedIndexC] = useState(0);
   const [clickedIndexT, setClickedIndexT] = useState(0);
 
-  const handleClickC = (index) => {
-    // Update the clickedIndex to the current clicked element
-    setClickedIndexC(index);
-  };
-  const handleClickT = (index) => {
-    // Update the clickedIndex to the current clicked element
-    setClickedIndexT(index);
-  };
-  const isClickedC = (index) => {
-    // Check if the current element is clicked
-    return index === clickedIndexC;
-  };
   const isClickedT = (index) => {
     // Check if the current element is clicked
     return index === clickedIndexT;
@@ -45,6 +25,8 @@ export default function BlogMain() {
         "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
       des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
       img: img,
+      cat: "Cookies",
+      tag: "Health",
     },
     {
       date: "01|July|2023",
@@ -52,6 +34,8 @@ export default function BlogMain() {
         "Revolutionary Research Unveils New Insights into Gut-Brain Connection for Optimal Mental Health",
       des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
       img: img2,
+      cat: "Cookies",
+      tag: "Campaign",
     },
     {
       date: "01|July|2023",
@@ -59,6 +43,8 @@ export default function BlogMain() {
         "Breakthrough Discovery: Superfood Extracts Found to Potentially Enhance Longevity & Vitality",
       des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
       img: img3,
+      cat: "Technology",
+      tag: "Health",
     },
     {
       date: "01|July|2023",
@@ -66,6 +52,8 @@ export default function BlogMain() {
         "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
       des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
       img: img,
+      cat: "Technology",
+      tag: "Spray Drying",
     },
     {
       date: "01|July|2023",
@@ -73,6 +61,8 @@ export default function BlogMain() {
         "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
       des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
       img: img,
+      cat: "Cookies",
+      tag: "Spray Drying",
     },
     {
       date: "01|July|2023",
@@ -80,18 +70,59 @@ export default function BlogMain() {
         "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
       des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
       img: img,
+      cat: "Nutritional Food",
+      tag: "Campaign",
+    },
+    {
+      date: "01|July|2023",
+      title:
+        "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
+      des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
+      img: img,
+      cat: "Nutritional Beverages",
+      tag: "Nutrition",
+    },
+    {
+      date: "01|July|2023",
+      title:
+        "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
+      des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
+      img: img,
+      cat: "Markets",
+      tag: "Nutrition",
+    },
+    {
+      date: "01|July|2023",
+      title:
+        "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
+      des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
+      img: img,
+      cat: "Guide",
+      tag: "Manufactured Vitamins",
+    },
+    {
+      date: "01|July|2023",
+      title:
+        "Cutting-Edge Study Reveals Surprising Benefits of Microgreens in Boosting Immunity",
+      des: "In today’s fast-paced world, time has become a precious resource. Whether you’re a student, a professional, or a business owner, managing your time effectively is crucial for success. Are you struggling to stay focused.",
+      img: img,
+      cat: "Food Science",
+      tag: "Manufactured Vitamins",
     },
   ];
 
   const cat = [
-    "Cookies",
-    "Technology",
+    "All Category",
+    "Nutrition",
+    "Guide",
+    "Marketing",
     "Nutritional Food",
     "Nutritional Beverages",
-    "Markets",
+    "Food Science",
   ];
 
   const tag = [
+    "All",
     "Health",
     "Campaign",
     "Spray Drying",
@@ -99,6 +130,56 @@ export default function BlogMain() {
     "Nutrition",
   ];
 
+  // Filteration-------------------------------------------------------->
+  const [selectedCat, setSelectedCat] = useState(cat[0]);
+  const [selectedTag, setSelectedTag] = useState(tag[0]);
+  const [filteredCat, setFilteredCat] = useState(allCat);
+  // for phone
+  const [filteredPhoneCat, setFilteredPhoneCat] = useState(allCat);
+
+  const [selectedCatTop, setSelectedCatTop] = useState(0);
+
+  useEffect(() => {
+    if (selectedCat === cat[0] && selectedTag === tag[0])
+      setFilteredCat(allCat);
+    else
+      setFilteredCat(
+        allCat.filter((data) => {
+          return (
+            selectedCat === "" ||
+            data.cat === selectedCat ||
+            selectedTag === "" ||
+            data.tag === selectedTag
+          );
+        })
+      );
+  }, [selectedCat, selectedTag]);
+
+  const selectCat = (indx) => {
+    setSelectedCatTop(indx);
+    setSelectedCat(cat[indx]);
+  };
+  const handleClickT = (index) => {
+    // Update the clickedIndex to the current clicked element
+    setClickedIndexT(index);
+    setSelectedTag(tag[index]);
+  };
+
+  // ----------------------------------------------------------------------------------------->
+
+  // Pagination Logic------------------------------------------------->
+  if (window.innerWidth > 800) {
+    if (filteredCat.length % 5 === 0)
+      var pages = parseInt(filteredCat.length / 5);
+    else var pages = parseInt(filteredCat.length / 5) + 1;
+  } else {
+    if (filteredPhoneCat.length % 5 === 0)
+      var pages = parseInt(filteredPhoneCat.length / 5);
+    else var pages = parseInt(filteredPhoneCat.length / 5) + 1;
+  }
+  const [pageIndx, setPageIndx] = useState(1);
+
+  // ----------------------------------------------------------------->
   return (
     <>
       <NavBar />
@@ -114,150 +195,60 @@ export default function BlogMain() {
 
         <div className="sections">
           <div className="left">
-            <BlogPhone />
+            <BlogPhone
+              allCat={allCat}
+              phF={filteredPhoneCat}
+              sPhF={setFilteredPhoneCat}
+            />
             <div
               className="menu"
               style={window.innerWidth <= 900 ? { display: "none" } : {}}
             >
-              <span
-                onClick={() => {
-                  setBorder1(true);
-                  setBorder2(false);
-                  setBorder3(false);
-                  setBorder4(false);
-                  setBorder5(false);
-                  setBorder6(false);
-                  setBorder7(false);
-                }}
-                style={
-                  border1
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                All Category
-              </span>
-              <span
-                onClick={() => {
-                  setBorder1(false);
-                  setBorder2(true);
-                  setBorder3(false);
-                  setBorder4(false);
-                  setBorder5(false);
-                  setBorder6(false);
-                  setBorder7(false);
-                }}
-                style={
-                  border2
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                Nutrition
-              </span>
-              <span
-                onClick={() => {
-                  setBorder1(false);
-                  setBorder2(false);
-                  setBorder3(true);
-                  setBorder4(false);
-                  setBorder5(false);
-                  setBorder6(false);
-                  setBorder7(false);
-                }}
-                style={
-                  border3
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                Markets
-              </span>
-              <span
-                onClick={() => {
-                  setBorder1(false);
-                  setBorder2(false);
-                  setBorder3(false);
-                  setBorder4(true);
-                  setBorder5(false);
-                  setBorder6(false);
-                  setBorder7(false);
-                }}
-                style={
-                  border4
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                Guide
-              </span>
-              <span
-                onClick={() => {
-                  setBorder1(false);
-                  setBorder2(false);
-                  setBorder3(false);
-                  setBorder4(false);
-                  setBorder5(true);
-                  setBorder6(false);
-                  setBorder7(false);
-                }}
-                style={
-                  border5
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                Marketing
-              </span>
-              <span
-                onClick={() => {
-                  setBorder1(false);
-                  setBorder2(false);
-                  setBorder3(false);
-                  setBorder4(false);
-                  setBorder5(false);
-                  setBorder6(true);
-                  setBorder7(false);
-                }}
-                style={
-                  border6
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                Nutritional Beverages
-              </span>
-              <span
-                onClick={() => {
-                  setBorder1(false);
-                  setBorder2(false);
-                  setBorder3(false);
-                  setBorder4(false);
-                  setBorder5(false);
-                  setBorder6(false);
-                  setBorder7(true);
-                }}
-                style={
-                  border7
-                    ? { borderBottom: "2px solid black", color: "black" }
-                    : {}
-                }
-              >
-                Food science
-              </span>
+              {cat.map((val, i) => {
+                return (
+                  <span
+                    key={i}
+                    style={
+                      selectedCatTop === i
+                        ? {
+                            borderBottom: "2px solid black",
+                            fontWeight: "600",
+                            color: "black",
+                          }
+                        : {}
+                    }
+                    onClick={() => selectCat(i)}
+                  >
+                    {val}
+                  </span>
+                );
+              })}
             </div>
 
             <div className="img-wrapper">
-              {allCat.map((val, i) => {
-                return (
-                  <BlogCard
-                    date={allCat[i].date}
-                    title={allCat[i].title}
-                    des={allCat[i].des}
-                    img={allCat[i].img}
-                  />
-                );
-              })}
+              {window.innerWidth > 800
+                ? filteredCat.map((val, i) => {
+                    if (i >= 5 * (pageIndx - 1) && i < 5 * pageIndx)
+                      return (
+                        <BlogCard
+                          date={allCat[i].date}
+                          title={allCat[i].title}
+                          des={allCat[i].des}
+                          img={allCat[i].img}
+                        />
+                      );
+                  })
+                : filteredPhoneCat.map((val, i) => {
+                    if (i >= 5 * (pageIndx - 1) && i < 5 * pageIndx)
+                      return (
+                        <BlogCard
+                          date={allCat[i].date}
+                          title={allCat[i].title}
+                          des={allCat[i].des}
+                          img={allCat[i].img}
+                        />
+                      );
+                  })}
             </div>
           </div>
           <div
@@ -277,9 +268,9 @@ export default function BlogMain() {
                   return (
                     <div
                       className="content"
-                      onClick={() => handleClickC(i)}
+                      onClick={() => selectCat(i)}
                       style={
-                        isClickedC(i)
+                        selectedCatTop === i
                           ? { background: "#003E71", color: "white" }
                           : {}
                       }
@@ -314,7 +305,7 @@ export default function BlogMain() {
         </div>
 
         <div className="pagination">
-          <Pagination count={15} />
+          <Pagination count={pages} onChange={(e, page) => setPageIndx(page)} />
         </div>
 
         <PreFooter />
