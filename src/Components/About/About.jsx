@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./About.scss";
 import img from "../../../public/AboutBan.png";
 import WhatsApp from "../WhatsApp/WhatsApp";
@@ -11,6 +11,8 @@ import PreFooter from "../PreFooter/PreFooter";
 import quality from "/qualityAss.svg";
 import innovation from "/innovation.svg";
 import sustain from "/sustain.svg";
+import axios from 'axios' 
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 const varient = {
   initial: {
     x: -100,
@@ -59,6 +61,79 @@ const uspCard = [
 
 export default function About() {
   const navigate = useNavigate();
+  const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const [aboutData,setAboutData]=useState(' ');
+
+  const [whyAqc,setWhyAqc]=useState();
+const [ourTeam,setOurTeam]=useState();
+const [commitment,setCommitment]=useState('');
+const [awd,setAwd]=useState('');
+  useEffect(()=>{
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+    const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+    const headers = {
+      Authorization: `Bearer ${token}`, // Using template literals for cleaner code
+    };
+    const fetchData=async()=>{
+      try {
+        
+        const res=await axios.get(`${baseURL}/abouts?populate=*`,{ 
+          headers:headers
+        })
+        if(res.data){
+          const Data=res.data.data[0].attributes;
+          setAboutData(Data);
+          
+         setOurTeam(Data.our_teams);
+        }
+        // console.log(res.data.data[0].attributes);
+        
+       
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    
+
+    const fetchAwd=async()=>{
+      try {
+        const res=await axios.get(`${baseURL}/awards?populate=*`,{ 
+          headers:headers
+        })
+        const awdData=res?.data?.data[0].attributes;
+        setAwd(awdData)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    const fetchCommetment=async()=>{
+      try {
+        const res=await axios.get(`${baseURL}/our-commitments?populate=*`,{ 
+          headers:headers
+        })
+        const cmt=res?.data?.data[0].attributes;
+        setCommitment(cmt);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    const fetchWhy=async()=>{
+      try {
+        const res=await axios.get(`${baseURL}/why-aqcs?populate=*`,{ 
+          headers:headers
+        })
+        const why=res?.data?.data[0].attributes;
+        setWhyAqc(why);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+    fetchCommetment();
+    fetchAwd();
+    fetchWhy();
+  },[])
 
   return (
     <>
@@ -73,36 +148,15 @@ export default function About() {
             animate="animate"
           >
             <motion.h3 variants={varient}>
-              Nutrition Redefined <br />
-              <motion.span variants={varient} style={{ color: "#10C08E" }}>
-                Your Healthy Lifestyle Partner
-              </motion.span>{" "}
+              <div dangerouslySetInnerHTML={{ __html: aboutData.Heading}} />
             </motion.h3>
             <motion.p variants={varient}>
-              Our primary approach has been to meet the customer needs and keep
-              our customers always at the forefront of everything we do. 
+              <div dangerouslySetInnerHTML={{ __html: aboutData.Sub_Heading}} />
             </motion.p>
           </motion.div>
         </div>
         <div className="intro">
-          Embarking on our journey in 2009,{" "}
-          <span style={{ fontWeight: "500" }}>AQC Chem</span> set out with a
-          grand vision: to transform the world of nutrition through innovation
-          and sheer excellence. Born with the minds of a team from industry
-          experts and right from the start our dedication was clear– to
-          seamlessly blend technology and culinary science into a harmonious
-          union.    <br /> <br />
-          Through years of learning, we honed our expertise and skills,
-          prioritising research and development and we swiftly emerged as a
-          pioneering presence in the nutrition domain. In our early years we
-          took time to deeply understand industry's intricacies, guiding us to
-          customise our offerings to meet specific requisites. As time passed,
-          our unwavering dedication to quality and precision propelled us to
-          create our flagship products – micronutrient premixes, nutraceutical
-          solutions, and specialised laboratory equipment. These pillars of
-          innovation not only enhanced the nutritional quotient of foods but
-          also revolutionised production methodologies, setting new industry
-          benchmarks.{" "}
+          <div dangerouslySetInnerHTML={{ __html: aboutData.About_Information}} />
           {/* <span
             style={{
               fontWeight: "500",
@@ -123,44 +177,20 @@ export default function About() {
           className="mission-vission"
         >
           <motion.div className="card">
-            <h3>Vission</h3>
-            <p>
-              At AQC, we're committed to simplifying healthy living and adding
-              flavor. Our vision is a world where nutrition is celebrated and
-              well-being is paramount. Through innovation and inclusivity, we
-              offer conscious nourishment without sacrificing taste.
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: aboutData.Vision}} />
           </motion.div>
           <motion.div className="card about-type2">
-            <h3>Mission</h3>
-            <p>
-              Our mission is to transform lives through accessible,
-              evidence-based solutions. We strive to inspire and empower
-              individuals on their wellness journeys, ensuring enduring health.
-              With a focus on excellence and innovation, we aim to guide the way
-              towards a healthier, happier world.
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: aboutData.Mission}} />
           </motion.div>
         </motion.div>
 
         <div className="commitment">
           <div className="wrapper">
             <div className="left">
-              <h3>Our Commitment to Quality: </h3>
-              <p>
-                Our Primary approach has been to meet the customer needs and
-                keep our customers always at the forefront of everything we do.
-                <br />
-                br Our global presence expanded naturally and we take pride in
-                establishing a footprint across 70 countries. Currently, AQC
-                Chem Lab stands tall earning the trust of 250+ clients worldwide
-                owing to our unwavering commitment to delivering top- tier
-                solutions that amplify nutrition, elevate well being and
-                redefine standards in the nutrition industry.
-              </p>
+              <div dangerouslySetInnerHTML={{ __html: aboutData.Commitment}} />
             </div>
             <div className="right">
-              <img src={img} alt="" />
+            <img src={`${ImgURL}${aboutData?.Commitment_Image?.data?.attributes?.url}`} alt="" />
             </div>
           </div>
         </div>
@@ -179,20 +209,13 @@ export default function About() {
             duration: 1,
           }}
         >
-          <h3>Why AQC ?</h3>
-          <p>
-            Embarking on our journey in 2009, AQC Chem set out with a grand
-            vision: to transform the world of nutrition through innovation and
-            sheer excellence. Born with the minds of a team from industry
-            experts
-          </p>
+          {ReactHtmlParser(aboutData?.Why_Aqc)}
+
           <div className="usp-wrapper">
-            {uspCard.map((val) => {
+            {aboutData?.why_aqc_cards?.data.map((val,index) => {
               return (
-                <div className="card">
-                  <img src={val.img} alt="" />
-                  <h3>{val.title}</h3>
-                  <p>{val.des}</p>
+                <div className="card" key={index}>
+                  {ReactHtmlParser(val?.attributes?.Card)}
                 </div>
               );
             })}
@@ -251,13 +274,7 @@ export default function About() {
             <div className="horz-bar"></div>
           </div> */}
           <div className="wrapper">
-            <h3>Our Team</h3>
-            <h4>A passionate squad committed to your well-being</h4>
-            <p>
-              We are the dreamers who envisioned a world where nutrition isn't
-              just about fueling the body but nurturing the soul. Our visionary
-              spirit propels us forward, guiding our brand toward new heights.
-            </p>
+            {ReactHtmlParser(aboutData?.Our_Team)}
           </div>
         </div>
 
@@ -265,7 +282,7 @@ export default function About() {
           className="awards"
           style={window.innerWidth <= 480 ? { display: "none" } : {}}
         >
-          <Awd />
+          <Awd Certifications={aboutData?.Certifications}/>
         </div>
         {window.innerWidth <= 480 ? <Awd /> : ""}
 

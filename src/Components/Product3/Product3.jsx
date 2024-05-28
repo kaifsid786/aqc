@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Product3.scss";
 import NavBar from "../NavBar/NavBar";
 import PreFooter from "../PreFooter/PreFooter";
@@ -25,6 +25,8 @@ import prod17 from "/prod2/Sedimentation Shaker.png";
 import prod18 from "/prod2/SIEVE - SHAKER.png";
 import prod19 from "/prod2/Whitness Tester 2.png";
 import { motion } from "framer-motion";
+import axios from "axios";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 const varient = {
   initial: {
@@ -179,6 +181,62 @@ const Product3 = () => {
 
   const [hoveredCard, setHoveredCard] = useState(0);
 
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const [data,setData]=useState('');
+  const [prod,setProd]=useState([]);
+  useEffect(() => {
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+    const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${baseURL}/lab-equipments?populate[0]=Banner_Image&populate[1]=Lab_Equipments_Products.Image`,
+          {
+            headers: headers,
+          }
+        );
+        if (res.data) {
+          const profData = res.data.data[0].attributes;
+          // console.log(profData);
+          setData(profData);
+          
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+    
+  }, []);
+
+  const containerRefs = useRef([]);
+  const heightRefs = useRef([]);
+   
+  const [containerHeights, setContainerHeights] = useState({});
+
+  useEffect(() => {
+    if (hoveredCard !== null) {
+      const container = containerRefs.current[hoveredCard];
+      if (container) {
+        const h3 = container.querySelector('h3');
+        const p = container.querySelector('p');
+        if (h3 && p) {
+          const height = h3.offsetHeight + p.scrollHeight ;
+          setContainerHeights((prev) => ({
+            ...prev,
+            [hoveredCard]: height,
+          }));
+        }
+      }
+    }
+  }, [hoveredCard]);
+  
+
+  // console.log(prod)
   return (
     <>
       <NavBar />
@@ -192,26 +250,15 @@ const Product3 = () => {
             animate="animate"
           >
             <motion.h3 variants={varient}>
-              Driving Innovation
-              <br />
-              <motion.span
-                variants={varient}
-                style={{ color: "rgb(16, 192, 142)l" }}
-              >
-                with Precision Lab Equipment
-              </motion.span>{" "}
+              {ReactHtmlParser(data?.Banner_Heading)}
             </motion.h3>
           </motion.div>
-          <img src={prod3Banner} alt="" />
+          <img src={`${ImgURL}${data?.Banner_Image?.data?.attributes?.url}`} alt="" />
         </div>
 
         {/* para */}
         <div className="para">
-          Step into the realm of precision and efficiency with our advanced lab
-          equipment, meticulously designed to elevate the standards of the food
-          processing industry. From Automatic Failing Number Apparatus to
-          Infrared Moisture Meters, our cutting-edge tools empower you to
-          achieve unparalleled accuracy in your production processes.
+        {ReactHtmlParser(data?.Information)}
         </div>
 
         {/* section */}
@@ -219,9 +266,11 @@ const Product3 = () => {
           className="section"
           style={window.innerWidth < 900 ? { display: "none" } : {}}
         >
-          {prod3Data.map((val, i) => {
+          {Array.isArray(data?.Lab_Equipments_Products) && data?.Lab_Equipments_Products?.map((val, i) => {
             return (
-              <div className="card" key={i}>
+              <div className="card" key={i} 
+              ref={(el) => (containerRefs.current[i] = el)}
+              onMouseOver={() => setHoveredCard(i)}>
                 <h3
                   style={
                     hoveredCard === i
@@ -232,20 +281,20 @@ const Product3 = () => {
                   }
                   onMouseOver={() => setHoveredCard(i)}
                 >
-                  {val.title}
+                  {val?.Heading}
                 </h3>
-                <h5>{val.subTitle}</h5>
-                <p
+                {/* <h5>{val?.subTitle}</h5> */}
+                <p ref={(el) => (heightRefs.current[i] = el)}
                   style={
                     hoveredCard === i
-                      ? { height: val.height, opacity: 1 }
-                      : { heght: "0", opacity: 0 }
+                      ? { height: `${containerHeights[i]}px`, opacity: 1, transition: 'height 0.3s ease' }
+                      : { height: "0", opacity: 0, transition: 'height 0.3s ease' }
                   }
                 >
-                  {val.des}
+                  {val?.Description}
                 </p>
                 <img
-                  src={val.img}
+                  src={`${ImgURL}${val?.Icon?.data?.attributes?.url}`}
                   alt=""
                   style={
                     hoveredCard != i
@@ -253,12 +302,12 @@ const Product3 = () => {
                       : i % 2 === 0
                       ? {
                           rotate: "-7.21deg",
-                          top: `${i * 4.4}rem`,
+                          top: `${i * 5}rem`,
                           opacity: "1",
                         }
                       : {
                           rotate: "7.21deg",
-                          top: `${i * 4.4}rem`,
+                          top: `${i * 5}rem`,
                           opacity: "1",
                         }
                   }
@@ -273,12 +322,12 @@ const Product3 = () => {
           className="mob-section"
           style={window.innerWidth >= 900 ? { display: "none" } : {}}
         >
-          {prod3Data.map((val, i) => {
+          {Array.isArray(prod?.lab_equip_products?.data) && prod?.lab_equip_products?.data?.map((val, i) => {
             return (
               <div className="card" key={i}>
-                <img src={val.img} alt="" />
-                <h3>{val.title}</h3>
-                <h5>{val.subTitle}</h5>
+                <img src={`${ImgURL}${val?.attributes?.Image?.data?.attributes?.url}`} alt="" />
+                <h3>{val?.attributes?.Heading}</h3>
+                <h5>{val?.attributes?.Information}</h5>
                 <p
                   style={{
                     height: "2.4rem",

@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import PreFooter from "../PreFooter/PreFooter";
 import WhatsApp from "../WhatsApp/WhatsApp";
+import { useEffect, useState } from "react";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import axios from "axios";
 
 const varient = {
   initial: {
@@ -23,7 +26,53 @@ const varient = {
 };
 
 export default function Contract() {
+  const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
   const navigate = useNavigate();
+  const [banner,setBanner]=useState('')
+  
+  
+  useEffect(() => {
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+  const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+  const headers = {
+    Authorization: `Bearer ${token}`, // Using template literals for cleaner code
+  };
+    const fetchData = async () => {
+      
+      try {
+        const res = await axios.get(`${baseURL}/contracts?populate=*`, {
+          headers: headers,
+        });
+        // console.log(res.data.data[0].attributes); 
+        if(res.data){
+          const contractData=res.data.data[0].attributes;
+          setBanner(contractData);
+          setService(contractData?.contract_manufacturer_service?.data?.attributes);
+          
+          // console.log(contractData);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
+    const fetchCollaborator=async()=>{
+      try {
+        const res = await axios.get(`${baseURL}/collaborator-with-confidences?populate=*`, {
+          headers: headers,
+        });
+       
+        const collab=res.data.data[0].attributes;
+        console.log(collab);
+       
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData();
+    fetchCollaborator();
+  }, []);
 
   return (
     <>
@@ -37,63 +86,25 @@ export default function Contract() {
             initial="initial"
             animate="animate"
           >
-            <motion.h3 variants={varient}>
-              We bring{" "}
-              <motion.span variants={varient} style={{ color: "#10C08E" }}>
-                years of experience & expertise
-              </motion.span>{" "}
-              to the table at AQC
-            </motion.h3>
-            <motion.p variants={varient}>
-              which make us your trusted partner in contract manufacturing
-              solutions. The commitment to quality, innovation and precision
-              sets us apart from others in the industry.  
-            </motion.p>
+            {ReactHtmlParser(banner?.Banner_Information)}
           </motion.div>
         </div>
 
         <div className="services">
           <div className="wrapper">
             <h3>
-              OUR{" "}
-              <span style={{ color: "#10C08E" }}>CONTRACT MANUFACTURING</span>{" "}
-              SERVICES
+              {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Heading)}
             </h3>
             <div className="contents">
               <div className="card">
-                <h6>
-                  <img src="/formula.svg" alt="" />
-                </h6>
-                <h3>Client Accquired Formulation:</h3>
-                <p>
-                  AQC Chem Pvt Ltd understands that there cannot be one solution
-                  for all. The team of experts work closely to develop tailor
-                  made solutions to cater your exact specifications.
-                </p>
+                {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Card1)}
               </div>
               <div className="card">
-                <h6>
-                  <img src="/workers.svg" alt="" />
-                </h6>
-                <h3>High Manufacturing Capacity:</h3>
-                <p>
-                  We have some best in class technologies to offer our clients
-                  and adhere to industry standards. AQC Chem Pvt Ltd makes sure
-                  that production is efficient and precise right from the
-                  starting to full scale manufacturing.
-                </p>
+                {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Card2)}
               </div>
               <div className="card">
-                <h6>
-                  <img src="/research.svg" alt="" />
-                </h6>
-                <h3>Own Research and Development Labs:</h3>
-                <p>
-                  For us, quality is the main checkpoint. We follow some
-                  rigorous quality control to meet and maintain quality
-                  standards. At AQC, we take compliance and safety very
-                  seriously.{" "}
-                </p>
+                {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Card3)}
+
               </div>
             </div>
           </div>
@@ -102,18 +113,11 @@ export default function Contract() {
         <div className="commitment">
           <div className="wrapper">
             <div className="left">
-              <h3>Collaborate with confidence </h3>
-              <p>
-                As a contract manufacturer, choosing our company as a partner
-                means choosing a team which is dedicated to your success. The
-                experience, commitment of quality and focused innovation our
-                company holds ensure that our clients get top-tier service that
-                meet your expectations.
-              </p>
+              {ReactHtmlParser(banner?.Collaborate_with_confidence )}
               <button>Get Started</button>
             </div>
             <div className="right">
-              <img src={img} alt="" />
+              <img src={`${ImgURL}${banner?.Collaboration_Image?.data?.attributes?.url}`} alt="" />
             </div>
           </div>
         </div>

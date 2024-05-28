@@ -6,46 +6,24 @@ import img3 from "../../images/Group 1171277277.png";
 import img4 from "../../images/Smile Face.png";
 import img5 from "../../images/Group.png";
 import CountUp from "react-countup";
-const Counter = () => {
+const Counter = ({counts}) => {
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
   return (
     <div className="counters">
       <div className="parent">
-        <div className="prof">
-          <img src={img1} alt="" />
-          <span>Professionals</span>
-          <span>
-            <CountUp end={60} duration={10} />+
-          </span>
-        </div>
-        <div className="prof">
-          <img src={img2} alt="" />
-          <span>Countries</span>
-          <span>
-            <CountUp end={70} duration={10} />+
-          </span>
-        </div>
-        <div className="prof">
-          <img src={img3} alt="" />
-          <span>Annual production</span>
-          <span>
-            <CountUp end={50000} duration={5} />
-            +MT
-          </span>
-        </div>
-        <div className="prof">
-          <img src={img4} alt="" />
-          <span>clients</span>
-          <span>
-            <CountUp end={250} duration={8} />+
-          </span>
-        </div>
-        <div className="prof">
-          <img src={img5} alt="" />
-          <span>Yrs. of Experience</span>
-          <span>
-            <CountUp end={15} duration={10} />+
-          </span>
-        </div>
+        {counts?.map((val,index)=>{
+          return(
+            <div className="prof" key={index}>
+              <img src={`${ImgURL}${val?.Image?.data?.attributes?.url}`} alt="" />
+              <span>{val?.Heading}</span>
+              <span>
+                <CountUp end={val?.Quantity} duration={10} />{val?.Post_Description}
+              </span>
+            </div>
+          )  
+        })}
+        
       </div>
     </div>
   );

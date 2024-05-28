@@ -3,7 +3,7 @@ import "./PropertyCard2.css";
 
 const PropertyCard = ({ card, st }) => {
   // console.log(card);
-
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;  
   return (
     <div
       className="flexColStart r-card2"
@@ -13,15 +13,15 @@ const PropertyCard = ({ card, st }) => {
           : window.innerWidth > 900
           ? { scale: "0.8" }
           : { scale: "1" }
-      }
+      } 
     >
-      <img src={card.img} alt="home" />
+      <img src={`${ImgURL}${card?.Image?.data?.attributes?.url}`} alt="home" />
 
       <span className="secondaryText r-price">
         <span style={{ color: "orange" }}></span>
-        <span className="card-title">{card.title}</span>
+        <span className="card-title">{card?.Heading}</span>
       </span>
-      <span className="primaryText">{card.info}</span>
+      <span className="primaryText">{card?.Description}</span>
       {/* <span className="secondaryText">{truncate(card.description,{length:80})}</span> */}
     </div>
   );

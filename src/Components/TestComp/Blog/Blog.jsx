@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./Blog.scss";
-export default function Blog() {
+export default function Blog({ blogs }) {
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const navigate=useNavigate();
   return (
     <>
       <div className="main-blog">
@@ -9,30 +12,18 @@ export default function Blog() {
             <span style={{ color: "#10C08E" }}>Nutrition Universe</span>
           </h3>
           <div className="cards">
-            <div className="card">
-              <img src="/blog1.png" alt="" />
-              <h6>
-                Cutting-Edge Study Reveals Surprising Benefits of Microgreens in
-                Boosting Immunity
-              </h6>
-              <p>Read on our blog</p>
-            </div>
-            <div className="card">
-              <img src="/blog2.png" alt="" />
-              <h6>
-                Revolutionary Research Unveils New Insights into Gut-Brain
-                Connection for Optimal Mental Health
-              </h6>
-              <p>Read on our blog</p>
-            </div>
-            <div className="card">
-              <img src="/blog3.png" alt="" />
-              <h6>
-                Breakthrough Discovery: Superfood Extracts Found to Potentially
-                Enhance Longevity and Vitality
-              </h6>
-              <p>Read on our blog</p>
-            </div>
+            {Array.isArray(blogs) &&
+              blogs?.map((val, index) => {
+                return (
+                  <div className="card">
+                    <img src={`${ImgURL}${val?.attributes?.Image?.data?.attributes?.url}`} alt="" />
+                    <h6>
+                      {val?.attributes?.Heading}
+                    </h6>
+                    <p onClick={()=>navigate(`/blog/${val?.attributes?.slug}`)}>Read on our blog</p>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

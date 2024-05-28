@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import prod1Banner from "/prod1-banner.jpg";
 import "./Product1.scss";
@@ -14,6 +14,8 @@ import oil from "/prod4/Oil 1.png";
 import Salt from "/prod4/Salt 1.jpg";
 import Biscuits from "/prod4/Biscuits & Cookies 1.png";
 import WhatsApp from "../WhatsApp/WhatsApp";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import axios from "axios";
 
 const varient = {
   initial: {
@@ -116,6 +118,39 @@ const Product1 = () => {
     },
   ];
 
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const [data,setData]=useState('');
+  useEffect(() => {
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+    const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${baseURL}/micronutrient-premixes?populate[0]=Banner_Image&populate[1]=Micronutrient_Products.Image&populate[2]=Micronutrient_Products.Icon`,
+          {
+            headers: headers,
+          }
+        );
+        if (res.data) {
+          const profData = res.data.data[0].attributes;
+          console.log(profData);
+          setData(profData);
+          
+        }
+
+        // console.log(res.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <NavBar />
@@ -129,17 +164,10 @@ const Product1 = () => {
             animate="animate"
           >
             <motion.h3 variants={varient}>
-              Unlocking Health Potential: <br />
-              <motion.span
-                variants={varient}
-                style={{ color: "rgb(16, 192, 142)" }}
-              >
-                Explore Our Cutting-Edge Micronutrient Premix Solutions Elevate
-                Your Nutrition
-              </motion.span>{" "}
+              {ReactHtmlParser(data?.Banner_Heading)}
             </motion.h3>
           </motion.div>
-          <img src={prod1Banner} alt="prod1-banner" />
+          <img src={`${ImgURL}${data?.Banner_Image?.data?.attributes?.url}`} alt="prod1-banner" />
         </div>
 
         {/* section -1  */}
@@ -184,22 +212,22 @@ other confectionery items. So indulge youeself in the guilt free feast."
         </div>
 
         {/* section - 2 */}
-        <div className="section2">
-          {section2Data.map((val, i) => {
+        {/* <div className="section2">
+          {data?.Micronutrient_Products?.map((val, i) => {
             return (
               <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
                 <Prod1Card
-                  title={val.title}
+                  title={val?.Heading}
                   img={val.img}
                   key={i}
-                  des={val.des}
+                  des={val?.Description}
                   height="12rem"
                   cursor={val.cursor}
                 />
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* section- 3 */}
         <div
@@ -210,20 +238,20 @@ other confectionery items. So indulge youeself in the guilt free feast."
             alignItems: "center",
           }}
         >
-          {section3Data.map((val, i) => {
+          {/* {data?.Micronutrient_Products?.map((val, i) => {
             return (
               <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
                 <Prod1Card
-                  title={val.title}
-                  img={val.img}
-                  key={i}
-                  des={val.des}
-                  height="8rem"
-                  cursor={val.cursor}
+                   title={val?.Heading}
+                   img={val.img}
+                   key={i}
+                   des={val?.Description}
+                   height="12rem"
+                   cursor={val.cursor}
                 />
               </div>
             );
-          })}
+          })} */}
         </div>
 
         {/* section - 4 */}

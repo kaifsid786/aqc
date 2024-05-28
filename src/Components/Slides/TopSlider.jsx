@@ -15,7 +15,7 @@ import "./TopSlider.css";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import PropertyCard from "../PropertyCard/PropertyCard";
 
-export default function TopSlider() {
+export default function TopSlider({videoSrc}) {
   return (
     <>
       <Swiper

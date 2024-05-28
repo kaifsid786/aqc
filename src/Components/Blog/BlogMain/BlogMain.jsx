@@ -4,12 +4,15 @@ import NavBar from "../../NavBar/NavBar";
 import Footer from "../../Footer/Footer";
 import WhatsApp from "../../WhatsApp/WhatsApp";
 import PreFooter from "../../PreFooter/PreFooter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogPhone from "../BlogPhone/BlogPhone";
 import BlogCard from "../BlogCard/BlogCard";
 import img from "../../../../public/blog1.png";
 import img2 from "../../../../public/blog2.png";
 import img3 from "../../../../public/blog3.png";
+import axios from "axios";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+
 export default function BlogMain() {
   const [border1, setBorder1] = useState(true);
   const [border2, setBorder2] = useState(false);
@@ -98,18 +101,54 @@ export default function BlogMain() {
     "Manufactured Vitamins",
     "Nutrition",
   ];
+  // Filteration-------------------------------------------------------->
+  const [selectedCat, setSelectedCat] = useState(cat[0]);
+  const [selectedTag, setSelectedTag] = useState(tag[0]);
+  const [filteredCat, setFilteredCat] = useState(allCat);
+  // for phone
+  const [filteredPhoneCat, setFilteredPhoneCat] = useState(allCat);
 
+  const [selectedCatTop, setSelectedCatTop] = useState(0);
+
+
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const [data,setData]=useState([]);
+  const [prod,setProd]=useState([]);
+  useEffect(()=>{
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+    const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const fetchData=async()=>{
+      try {
+        const res = await axios.get(
+          `${baseURL}/blogs?populate[0]=Banner_Image&populate[1]=blog_pages.Image`,
+          {
+            headers: headers,
+          }
+        );
+        // console.log(res);
+        if (res.data) {
+          const profData = res.data.data?.[0]?.attributes;
+          // console.log(profData);
+          setData(profData);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  },[])
+  // console.log(data);
   return (
     <>
       <NavBar />
       <div className="main-Blogmain">
-        <div className="banner">
-          <h3>Blog</h3>
-          <p>
-            Uncover the latest nutritional insights and wellness trends in our
-            blog section. <br />
-            Explore a treasure trove of expert advice and interesting article.
-          </p>
+        <div className="banner" style={{ 
+    backgroundImage: `url(${ImgURL}${data?.Banner_Image?.data?.attributes?.url})` 
+  }}>
+          {ReactHtmlParser(data?.Blog_Content)}
         </div>
 
         <div className="sections">
@@ -248,13 +287,14 @@ export default function BlogMain() {
             </div>
 
             <div className="img-wrapper">
-              {allCat.map((val, i) => {
+              {data?.blog_pages?.data?.map((val, i) => {
                 return (
                   <BlogCard
-                    date={allCat[i].date}
-                    title={allCat[i].title}
-                    des={allCat[i].des}
-                    img={allCat[i].img}
+                    date={(val?.attributes?.createdAt).substr(0,10)}
+                    title={val?.attributes?.Heading}
+                    des={val?.attributes?.Blogless_content}
+                    img={`${ImgURL}${val?.attributes?.Image?.data?.attributes?.url}`}
+                    AllContent={val}
                   />
                 );
               })}
@@ -273,7 +313,7 @@ export default function BlogMain() {
             <div className="section1">
               <h3>Categories</h3>
               <div className="section-wrapper">
-                {cat.map((val, i) => {
+                {data?.Categories?.map((val, i) => {
                   return (
                     <div
                       className="content"
@@ -284,7 +324,7 @@ export default function BlogMain() {
                           : {}
                       }
                     >
-                      {val}
+                      {val?.name}
                     </div>
                   );
                 })}
@@ -293,7 +333,7 @@ export default function BlogMain() {
             <div className="section1">
               <h3>Tags</h3>
               <div className="section-wrapper">
-                {tag.map((val, i) => {
+                {Array.isArray(data?.Tags) && data?.Tags.map((val, i) => {
                   return (
                     <div
                       className="content"
@@ -304,7 +344,7 @@ export default function BlogMain() {
                           : {}
                       }
                     >
-                      {val}
+                      {val?.name}
                     </div>
                   );
                 })}

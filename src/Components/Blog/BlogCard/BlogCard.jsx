@@ -1,6 +1,11 @@
 import React from 'react'
 import './BlogCard.scss'
+import { useNavigate } from 'react-router-dom'
 export default function BlogCard(props) {
+
+  const navigate = useNavigate();
+  const id = props?.AllContent?.attributes?.slug;
+  // console.log(id);
   return (
     <div className="main-blogCard">
          <div className="left">
@@ -16,7 +21,7 @@ export default function BlogCard(props) {
             <p>
                {props.des}
             </p>
-            <button>Read more &#8594; </button>
+            <button onClick={() => navigate(`/blog/${id}`)}>Read more &#8594;</button>
          </div>
     </div>
   )

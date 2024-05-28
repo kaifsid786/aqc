@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import PreFooter from "../PreFooter/PreFooter";
 import Footer from "../Footer/Footer";
@@ -9,6 +9,8 @@ import flavour from "/prod3/tasty-flat-lay-assortment-mixed-chocolate 1.jpg";
 import improv from "/prod3/composition-pasta 1.jpg";
 import WhatsApp from "../WhatsApp/WhatsApp";
 import { motion } from "framer-motion";
+import axios from "axios";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 const varient = {
   initial: {
@@ -36,6 +38,42 @@ const Product2 = () => {
     " AQC is offering food improvers to elevate the texture & taste of food like noodles, pastas, vermicelli, cereals etc.",
   ];
   const [index, setIndex] = useState(0);
+
+
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const [data,setData]=useState('');
+  
+  useEffect(() => {
+    const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
+    const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${baseURL}/food-additives?populate[0]=Banner_Image&populate[1]=Food_Additives_Products.Image`,
+          {
+            headers: headers,
+          }
+        );
+        if (res.data) {
+          const profData = res.data.data[0].attributes;
+          // console.log(profData);
+          setData(profData);
+          
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    
+
+    fetchData();
+    
+  }, []);
   return (
     <>
       <NavBar />
@@ -49,81 +87,52 @@ const Product2 = () => {
             animate="animate"
           >
             <motion.h3 variants={varient}>
-              Crafting Culinary <br />
-              <motion.span
-                variants={varient}
-                style={{ color: "rgb(16, 192, 142)" }}
-              >
-                Excellence with our quality food additives
-              </motion.span>{" "}
+            {ReactHtmlParser(data?.Banner_Heading)}
             </motion.h3>
           </motion.div>
-          <img src={prod2Banner} alt="" />
+          <img src={`${ImgURL}${data?.Banner_Image?.data?.attributes?.url}`} alt="" />
         </div>
 
         <div className="para">
-          Discover the art of flavor enhancement and food preservation with AQC
-          Chem Lab's versatile food additives. Elevate your culinary creations
-          with our range of natural extracts and functional additives, ensuring
-          delicious taste and extended freshness. Unleash your creativity and
-          take your dishes to new heights with our premium food additives,
-          making every meal a delightful experience.
+          {data?.Information}
         </div>
 
         {/* section */}
         <div className="section">
           <div className="left">
             <div className="info">
-              <h3>{title[index]}</h3>
-              <p>{des[index]}</p>
+              <h3>{data?.Food_Additives_Products?.[index]?.Heading}</h3>
+              <p>{data?.Food_Additives_Products?.[index]?.Description}</p>
               <p style={{ fontWeight: "600" }}>
                 **customized formulations available as per customer's
                 requirements
               </p>
             </div>
+            
             <div className="types">
-              <h4
-                style={
-                  selectBorder === 0
-                    ? { borderBottom: "2px solid  #10C08E", color: "#10C08E" }
-                    : {}
-                }
-                onClick={() => {
-                  setSelectedBorder(0);
-                  setSelectedImg(imgs[0]);
-                  setIndex(0);
-                }}
-              >
-                Dough Softeners
-              </h4>
-              <h4
-                style={
-                  selectBorder === 1
-                    ? { borderBottom: "2px solid  #10C08E", color: "#10C08E" }
-                    : {}
-                }
-                onClick={() => {
-                  setSelectedBorder(1);
-                  setSelectedImg(imgs[1]);
-                  setIndex(1);
-                }}
-              >
-                Flavours
-              </h4>
-              <h4
-                style={
-                  selectBorder === 2
-                    ? { borderBottom: "2px solid  #10C08E", color: "#10C08E" }
-                    : {}
-                }
-                onClick={() => {
-                  setSelectedBorder(2);
-                  setSelectedImg(imgs[2]);
-                  setIndex(2);
-                }}
-              >
-                Food Improvers
-              </h4>
+
+            {
+              Array.isArray(data?.Food_Additives_Products) && data?.Food_Additives_Products?.map((val,index)=>{
+                return(
+                  
+                      <h4
+                        style={
+                          selectBorder === index
+                            ? { borderBottom: "2px solid  #10C08E", color: "#10C08E" }
+                            : {}
+                        }
+                        onClick={() => {
+                          setSelectedBorder(index);
+                          setSelectedImg(`${ImgURL}${val?.Image?.data?.attributes?.url}`);
+                          setIndex(index);
+                        }}
+                      >
+                        {val?.Heading}
+                      </h4>
+                    
+                )
+              })
+            }
             </div>
           </div>
           <div className="right">

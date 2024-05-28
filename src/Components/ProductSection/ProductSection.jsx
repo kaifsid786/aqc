@@ -24,7 +24,8 @@ import svg4 from "/Micronutrient premixes.svg";
 import GalleryMob from "../Gallery/GalleryMob";
 import { delay } from "framer-motion";
 
-const ProductSection = (gall) => {
+const ProductSection = ({gall,slidesContent}) => {
+  // console.log(slidesContent)
   const navigate = useNavigate();
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -123,11 +124,11 @@ const ProductSection = (gall) => {
           Products and Services
         </div>
         {windowWidth <= 480 ? (
-          data?.map((card, i) => <PropertyCard2 card={card} key={i} />)
+          slidesContent?.map((card, i) => <PropertyCard2 card={card} key={i} />)
         ) : (
           <div className="product-slider">
             <Slider {...settings}>
-              {data.map((val, i) => {
+              {slidesContent?.map((val, i) => {
                 return (
                   <PropertyCard2
                     card={val}
