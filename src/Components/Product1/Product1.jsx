@@ -14,7 +14,11 @@ import oil from "/prod4/Oil 1.png";
 import Salt from "/prod4/Salt 1.jpg";
 import Biscuits from "/prod4/Biscuits & Cookies 1.png";
 import WhatsApp from "../WhatsApp/WhatsApp";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2,
+} from "react-html-parser";
 import axios from "axios";
 
 const varient = {
@@ -119,7 +123,7 @@ const Product1 = () => {
   ];
 
   const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
-  const [data,setData]=useState('');
+  const [data, setData] = useState("");
   useEffect(() => {
     const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
@@ -139,7 +143,6 @@ const Product1 = () => {
           const profData = res.data.data[0].attributes;
           console.log(profData);
           setData(profData);
-          
         }
 
         // console.log(res.data);
@@ -167,11 +170,14 @@ const Product1 = () => {
               {ReactHtmlParser(data?.Banner_Heading)}
             </motion.h3>
           </motion.div>
-          <img src={`${ImgURL}${data?.Banner_Image?.data?.attributes?.url}`} alt="prod1-banner" />
+          <img
+            src={`${ImgURL}${data?.Banner_Image?.data?.attributes?.url}`}
+            alt="prod1-banner"
+          />
         </div>
 
         {/* section -1  */}
-        <div className="section1">
+        {/* <div className="section1">
           <div className="left">
             <p>
               Elevate nutrition with our certified micronutrient premixes,
@@ -209,13 +215,21 @@ other confectionery items. So indulge youeself in the guilt free feast."
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* section - 2 */}
-        {/* <div className="section2">
+        <div
+          className="section2"
+          style={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "30px",
+          }}
+        >
           {data?.Micronutrient_Products?.map((val, i) => {
             return (
-              <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
+              <div style={{ width: "100%", height: "18rem" }}>
                 <Prod1Card
                   title={val?.Heading}
                   img={val.img}
@@ -227,10 +241,10 @@ other confectionery items. So indulge youeself in the guilt free feast."
               </div>
             );
           })}
-        </div> */}
+        </div>
 
         {/* section- 3 */}
-        <div
+        {/* <div
           className="section3"
           style={{
             display: "flex",
@@ -238,7 +252,7 @@ other confectionery items. So indulge youeself in the guilt free feast."
             alignItems: "center",
           }}
         >
-          {/* {data?.Micronutrient_Products?.map((val, i) => {
+          {data?.Micronutrient_Products?.map((val, i) => {
             return (
               <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
                 <Prod1Card
@@ -251,8 +265,8 @@ other confectionery items. So indulge youeself in the guilt free feast."
                 />
               </div>
             );
-          })} */}
-        </div>
+          })}
+        </div> */}
 
         {/* section - 4 */}
         {/* <div className="section4">
@@ -277,7 +291,7 @@ other confectionery items. So indulge youeself in the guilt free feast."
         </div> */}
 
         {/* section-5 */}
-        <div className="section2">
+        {/* <div className="section2">
           {section5Data.map((val, i) => {
             return (
               <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
@@ -292,10 +306,10 @@ other confectionery items. So indulge youeself in the guilt free feast."
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* section-6 */}
-        <div className="section4">
+        {/* <div className="section4">
           <div className="left">
             <Prod1Card
               title="MEAT & MEAT PRODUCTS"
@@ -318,10 +332,10 @@ product."
               cursor="/prod4/cursor/panCake.png"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* section-7 */}
-        <div className="section2">
+        {/* <div className="section2">
           {section7Data.map((val, i) => {
             return (
               <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
@@ -336,17 +350,17 @@ product."
               </div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* customized Section */}
-        <div className="section3">
+        {/* <div className="section3">
           <Prod1Card
             title="Customized formulations available as per customer's requirements"
             img="/prod4/customised.jpg"
             des="You can customized your formulations as per your requirements"
             height="4rem"
           />
-        </div>
+        </div> */}
         <PreFooter />
 
         {/* whatsapp */}

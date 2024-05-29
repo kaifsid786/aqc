@@ -23,7 +23,10 @@ export default function Awards({ TechHead, TechMeth }) {
                   <div className="num">
                     {" "}
                     <h6>
-                      <img src={`${ImgURL}${val?.Image?.data?.attributes?.url}`} alt="" />
+                      <img
+                        src={`${ImgURL}${val?.Image?.data?.attributes?.url}`}
+                        alt=""
+                      />
                     </h6>
                   </div>
                   <h3>{val?.Heading}</h3>
