@@ -63,7 +63,7 @@ export default function Technology() {
       <NavBar />
       <div className="main-tech">
         <div className="banner">
-          <img src="/TechBan.png" alt="" />
+          <img src={`${ImgURL}${data?.BannerImg?.data?.attributes?.url}`} alt="" />
         </div>
         <div className="intro">{ReactHtmlParser(data?.Heading)}</div>
         <div className="cards">

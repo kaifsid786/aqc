@@ -139,7 +139,7 @@ const [awd,setAwd]=useState('');
     <>
       <NavBar />
       <div className="main-about">
-        <div className="about-banner">
+        <div className="about-banner" style={{background:`url(${ImgURL}${aboutData?.Banner_Image?.data?.attributes?.url})`}}>
           <div className="banner-gradient"></div>
           <motion.div
             className="banner-text"

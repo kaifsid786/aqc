@@ -294,7 +294,7 @@ const Product3 = () => {
                   {val?.Description}
                 </p>
                 <img
-                  src={`${ImgURL}${val?.Icon?.data?.attributes?.url}`}
+                  src={`${ImgURL}${val?.Image?.data?.attributes?.url}`}
                   alt=""
                   style={
                     hoveredCard != i
@@ -322,12 +322,12 @@ const Product3 = () => {
           className="mob-section"
           style={window.innerWidth >= 900 ? { display: "none" } : {}}
         >
-          {Array.isArray(prod?.lab_equip_products?.data) && prod?.lab_equip_products?.data?.map((val, i) => {
+          {Array.isArray(data?.Lab_Equipments_Products) && data?.Lab_Equipments_Products?.map((val, i) => {
             return (
               <div className="card" key={i}>
-                <img src={`${ImgURL}${val?.attributes?.Image?.data?.attributes?.url}`} alt="" />
-                <h3>{val?.attributes?.Heading}</h3>
-                <h5>{val?.attributes?.Information}</h5>
+                <img src={`${ImgURL}${val?.Image?.data?.attributes?.url}`} alt="" />
+                <h3>{val?.Heading}</h3>
+                {/* <h5>{val?.Information}</h5> */}
                 <p
                   style={{
                     height: "2.4rem",
@@ -336,7 +336,7 @@ const Product3 = () => {
                     textAlign: "center",
                   }}
                 >
-                  {val.des}
+                  {val?.Description}
                 </p>
               </div>
             );

@@ -171,7 +171,7 @@ const Product1 = () => {
         </div>
 
         {/* section -1  */}
-        <div className="section1">
+        {/* <div className="section1">
           <div className="left">
             <p>
               Elevate nutrition with our certified micronutrient premixes,
@@ -209,13 +209,22 @@ other confectionery items. So indulge youeself in the guilt free feast."
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
-        {/* section - 2 */}
-        {/* <div className="section2">
+
+{/* section2 */}
+        <div
+          className="section2"
+          style={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "30px",
+          }}
+        >
           {data?.Micronutrient_Products?.map((val, i) => {
             return (
-              <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
+              <div style={{ width: "100%", height: "18rem" }}>
                 <Prod1Card
                   title={val?.Heading}
                   img={val.img}
@@ -227,126 +236,20 @@ other confectionery items. So indulge youeself in the guilt free feast."
               </div>
             );
           })}
-        </div> */}
-
-        {/* section- 3 */}
-        <div
-          className="section3"
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          {/* {data?.Micronutrient_Products?.map((val, i) => {
-            return (
-              <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
-                <Prod1Card
-                   title={val?.Heading}
-                   img={val.img}
-                   key={i}
-                   des={val?.Description}
-                   height="12rem"
-                   cursor={val.cursor}
-                />
-              </div>
-            );
-          })} */}
         </div>
 
         {/* section - 4 */}
-        {/* <div className="section4">
-          <div className="left">
-            <Prod1Card
-              title="Salt"
-              img={Salt}
-              des="Our Salt fortification premixes make every grain of salt count, infusing your meals with added nutrition."
-              height="9rem"
-              cursor="/prod4/cursor/salt.png"
-            />
-          </div>
-          <div className="right">
-            <Prod1Card
-              title="Biscuits & Cookies"
-              img={Biscuits}
-              des="Give your biscuits & cookies a healthy & Tasty twist with our premium fortification premixes."
-              height="7rem"
-              cursor="/prod4/cursor/cookie.png"
-            />
-          </div>
-        </div> */}
+        
 
-        {/* section-5 */}
-        <div className="section2">
-          {section5Data.map((val, i) => {
-            return (
-              <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
-                <Prod1Card
-                  title={val.title}
-                  img={val.img}
-                  key={i}
-                  des={val.des}
-                  height="12rem"
-                  cursor={val.cursor}
-                />
-              </div>
-            );
-          })}
-        </div>
+        
 
         {/* section-6 */}
-        <div className="section4">
-          <div className="left">
-            <Prod1Card
-              title="MEAT & MEAT PRODUCTS"
-              img="/prod4/meat.jpg"
-              des="Make your meat products stand out in the market by offering consumers a healthier option that doesn't 
-compromise on taste. With our Micronutrient Premix for Meat & Meat Products, you can boost the 
-nutritional value of your products and cater to the growing demand for healthier food choices."
-              height="10rem"
-              cursor="/prod4/cursor/meat.png"
-            />
-          </div>
-          <div className="right">
-            <Prod1Card
-              title="SAVOURY & SNACKS"
-              img="/prod4/snacks.jpg"
-              des=" Savor the Flavor, Boost the Nutrition! Our Micronutrient Premix for Savory Snacks makes snacking a guilt
-free pleasure. Our premixes are made with the highest quality ingredients to ensure you get the best possible 
-product."
-              height="7rem"
-              cursor="/prod4/cursor/panCake.png"
-            />
-          </div>
-        </div>
+        
 
         {/* section-7 */}
-        <div className="section2">
-          {section7Data.map((val, i) => {
-            return (
-              <div style={{ width: "calc(33% - 10px)", height: "18rem" }}>
-                <Prod1Card
-                  title={val.title}
-                  img={val.img}
-                  key={i}
-                  des={val.des}
-                  height="12rem"
-                  cursor={val.cursor}
-                />
-              </div>
-            );
-          })}
-        </div>
+        
 
-        {/* customized Section */}
-        <div className="section3">
-          <Prod1Card
-            title="Customized formulations available as per customer's requirements"
-            img="/prod4/customised.jpg"
-            des="You can customized your formulations as per your requirements"
-            height="4rem"
-          />
-        </div>
+       
         <PreFooter />
 
         {/* whatsapp */}

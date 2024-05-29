@@ -40,14 +40,15 @@ export default function Contract() {
     const fetchData = async () => {
       
       try {
-        const res = await axios.get(`${baseURL}/contracts?populate=*`, {
+        const res = await axios.get(`${baseURL}/contracts?populate[0]=Banner_Image&populate[1]=Contract_Manifacture_card1.Image&populate[2]=Contract_Manifacture_card2.Image&populate[3]=Contract_Manifacture_card3.Image&populate[4]=Collaboration_Image` , {
           headers: headers,
         });
         // console.log(res.data.data[0].attributes); 
         if(res.data){
           const contractData=res.data.data[0].attributes;
           setBanner(contractData);
-          setService(contractData?.contract_manufacturer_service?.data?.attributes);
+          console.log(contractData);
+          // setService(contractData?.contract_manufacturer_service?.data?.attributes);
           
           // console.log(contractData);
         }
@@ -56,29 +57,16 @@ export default function Contract() {
       }
     };
     
-    const fetchCollaborator=async()=>{
-      try {
-        const res = await axios.get(`${baseURL}/collaborator-with-confidences?populate=*`, {
-          headers: headers,
-        });
-       
-        const collab=res.data.data[0].attributes;
-        console.log(collab);
-       
-      } catch (error) {
-        console.log(error);
-      }
-    }
 
     fetchData();
-    fetchCollaborator();
+    
   }, []);
 
   return (
     <>
       <NavBar />
       <div className="main-contract">
-        <div className="banner">
+        <div className="banner" style={{background:`url(${ImgURL}${banner?.Banner_Image?.data?.attributes?.url})`}}>
           <div className="banner-gradient"></div>
           <motion.div
             className="banner-text"
@@ -91,20 +79,38 @@ export default function Contract() {
         </div>
 
         <div className="services">
-          <div className="wrapper">
+          <div className="wrapper"> 
             <h3>
-              {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Heading)}
+              {ReactHtmlParser(banner?.Contract_Manifacture_Service_Heading)}
             </h3>
             <div className="contents">
               <div className="card">
-                {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Card1)}
-              </div>
-              <div className="card">
-                {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Card2)}
-              </div>
-              <div className="card">
-                {ReactHtmlParser(banner?.contract_manufacturer_services?.data?.[0]?.attributes?.Card3)}
 
+                <h6>
+                  <img src={`${ImgURL}${banner?.Contract_Manifacture_card1?.Image?.data?.attributes?.url}`} alt="" />
+                </h6>
+                <h3>{banner?.Contract_Manifacture_card1?.Heading}</h3>
+                <p>
+                  {banner?.Contract_Manifacture_card1?.Description}
+                </p>
+              </div>
+              <div className="card">
+                <h6>
+                  <img src={`${ImgURL}${banner?.Contract_Manifacture_card2?.Image?.data?.attributes?.url}`} alt="" />
+                </h6>
+                <h3>{banner?.Contract_Manifacture_card2?.Heading}</h3>
+                <p>
+                  {banner?.Contract_Manifacture_card2?.Description}
+                </p>
+              </div>
+              <div className="card">
+              <h6>
+                  <img src={`${ImgURL}${banner?.Contract_Manifacture_card3?.Image?.data?.attributes?.url}`} alt="" />
+                </h6>
+                <h3>{banner?.Contract_Manifacture_card3?.Heading}</h3>
+                <p>
+                  {banner?.Contract_Manifacture_card3?.Description}
+                </p>
               </div>
             </div>
           </div>
