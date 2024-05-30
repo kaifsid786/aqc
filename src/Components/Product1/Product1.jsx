@@ -213,9 +213,17 @@ other confectionery items. So indulge youeself in the guilt free feast."
 
 
 {/* section2 */}
+        <div className="section1">
+        <p>
+              Elevate nutrition with our certified micronutrient premixes,
+              curated for optimal health and fortified with essential vitamins
+              and minerals.
+            </p>
+        </div>
         <div
           className="section2"
           style={{
+            
             width: "100%",
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -227,11 +235,11 @@ other confectionery items. So indulge youeself in the guilt free feast."
               <div style={{ width: "100%", height: "18rem" }}>
                 <Prod1Card
                   title={val?.Heading}
-                  img={val.img}
+                  img={`${ImgURL}${val?.Image?.data?.attributes?.url}`}
                   key={i}
                   des={val?.Description}
                   height="12rem"
-                  cursor={val.cursor}
+                  cursor={`${ImgURL}${val?.Icon?.data?.attributes?.url}`}
                 />
               </div>
             );

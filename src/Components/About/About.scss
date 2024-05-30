@@ -23,7 +23,7 @@
     max-height: 55rem;
     height: calc(100vh - 100px);
     // background: url("/public/AboutBan.png");
-    background-size: cover;
+    background-size: cover !important;
     background-position: center;
     position: relative;
     @include ph {

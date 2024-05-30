@@ -96,28 +96,8 @@ const [awd,setAwd]=useState('');
 
     
 
-    const fetchAwd=async()=>{
-      try {
-        const res=await axios.get(`${baseURL}/awards?populate=*`,{ 
-          headers:headers
-        })
-        const awdData=res?.data?.data[0].attributes;
-        setAwd(awdData)
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    const fetchCommetment=async()=>{
-      try {
-        const res=await axios.get(`${baseURL}/our-commitments?populate=*`,{ 
-          headers:headers
-        })
-        const cmt=res?.data?.data[0].attributes;
-        setCommitment(cmt);
-      } catch (error) {
-        console.log(error);
-      }
-    }
+  
+   
     const fetchWhy=async()=>{
       try {
         const res=await axios.get(`${baseURL}/why-aqcs?populate=*`,{ 
@@ -130,8 +110,8 @@ const [awd,setAwd]=useState('');
       }
     }
     fetchData();
-    fetchCommetment();
-    fetchAwd();
+    // fetchCommetment();
+    // fetchAwd();
     fetchWhy();
   },[])
 
@@ -139,7 +119,7 @@ const [awd,setAwd]=useState('');
     <>
       <NavBar />
       <div className="main-about">
-        <div className="about-banner" style={{background:`url(${ImgURL}${aboutData?.Banner_Image?.data?.attributes?.url})`}}>
+        <div className="about-banner" style={{background:`url(${ImgURL}${aboutData?.Image?.data?.attributes?.url})`}} >
           <div className="banner-gradient"></div>
           <motion.div
             className="banner-text"

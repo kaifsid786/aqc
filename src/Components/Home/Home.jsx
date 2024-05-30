@@ -44,14 +44,14 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${baseURL}/homes?populate[0]=Home_Gallery&populate[1]=Company_Information.Image&populate[2]=Slider.Image&populate[3]=Used_Technologies.Image&populate[4]=Cirtifications`,
+          `${baseURL}/homes?populate[0]=Home_Gallery&populate[1]=Company_Details.Image&populate[2]=Slider.Image&populate[3]=Used_Technologies.Image&populate[4]=Cirtifications`,
           {
             headers: headers,
           }
         );
         if (res.data) {
           const profData = res.data.data[0].attributes;
-          // console.log(profData);
+          console.log(profData);
           setData(profData);
           
         }
@@ -82,7 +82,7 @@ const Home = () => {
     fetchBlog();
     
   }, []);
-  console.log(blogs)
+  // console.log(blogs)
 
   return (
     <>
@@ -91,7 +91,7 @@ const Home = () => {
         <div className="t-slider">
           <Slider videoSrc={data?.Home_video?.url}/>
         </div>
-        {windowWidth <= 480 ? <CounterMob counts={data?.Company_Information} /> : <Counter counts={data?.Company_Information} />}
+        {windowWidth <= 480 ? <CounterMob counts={data?.Company_Details} /> : <Counter counts={data?.Company_Details} />}
 
         <ProductSection slidesContent={data?.Slider} gall = {data?.Home_Gallery}/>
         <Awd Certifications={data?.Cirtifications}/>
