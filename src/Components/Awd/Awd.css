@@ -32,8 +32,9 @@
   .awd-awards-wrapper {
     width: 23rem;
     padding: 0 2rem !important;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 20px;
   }
   .awards img {
     margin-top: 1rem;

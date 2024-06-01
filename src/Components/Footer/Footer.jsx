@@ -42,9 +42,11 @@ export default function Footer() {
           <div className="col-2">
             <h3>Division</h3>
             <li onClick={() => navigate("/contract")}>Contract Manufacturer</li>
-            <li onClick={() => navigate("/product")}>Lab Equipment</li>
-            <li onClick={() => navigate("/product")}>Food Additives</li>
-            <li onClick={() => navigate("/product")}>Nutrition</li>
+            <li onClick={() => navigate("/labEquipments")}>Lab Equipment</li>
+            <li onClick={() => navigate("/foodAdditives")}>Food Additives</li>
+            <li onClick={() => navigate("/micronutrientsPremixes")}>
+              Nutrition
+            </li>
           </div>
           <div
             className="col-2"
@@ -55,7 +57,9 @@ export default function Footer() {
             }
           >
             <h3>More</h3>
-            <li onClick={() => navigate("/product")}>Products</li>
+            <li onClick={() => navigate("/micronutrientsPremixes")}>
+              Products
+            </li>
             <li>Terms & Conditions</li>
             <li onClick={() => navigate("/blog")}>Blogs</li>
             <li>Privacy Policy</li>

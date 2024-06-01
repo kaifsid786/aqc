@@ -11,8 +11,12 @@ import PreFooter from "../PreFooter/PreFooter";
 import quality from "/qualityAss.svg";
 import innovation from "/innovation.svg";
 import sustain from "/sustain.svg";
-import axios from 'axios' 
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import axios from "axios";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2,
+} from "react-html-parser";
 const varient = {
   initial: {
     x: -100,
@@ -61,65 +65,63 @@ const uspCard = [
 
 export default function About() {
   const navigate = useNavigate();
-  const ImgURL=import.meta.env.VITE_REACT_APP_UPLOAD_URL;
-  const [aboutData,setAboutData]=useState(' ');
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const [aboutData, setAboutData] = useState(" ");
 
-  const [whyAqc,setWhyAqc]=useState();
-const [ourTeam,setOurTeam]=useState();
-const [commitment,setCommitment]=useState('');
-const [awd,setAwd]=useState('');
-  useEffect(()=>{
+  const [whyAqc, setWhyAqc] = useState();
+  const [ourTeam, setOurTeam] = useState();
+  const [commitment, setCommitment] = useState("");
+  const [awd, setAwd] = useState("");
+  useEffect(() => {
     const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
     const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
     const headers = {
       Authorization: `Bearer ${token}`, // Using template literals for cleaner code
     };
-    const fetchData=async()=>{
+    const fetchData = async () => {
       try {
-        
-        const res=await axios.get(`${baseURL}/abouts?populate=*`,{ 
-          headers:headers
-        })
-        if(res.data){
-          const Data=res.data.data[0].attributes;
+        const res = await axios.get(`${baseURL}/abouts?populate=*`, {
+          headers: headers,
+        });
+        if (res.data) {
+          const Data = res.data.data[0].attributes;
           setAboutData(Data);
-          
-         setOurTeam(Data.our_teams);
+
+          setOurTeam(Data.our_teams);
         }
         // console.log(res.data.data[0].attributes);
-        
-       
       } catch (error) {
         console.log(error);
       }
-    }
+    };
 
-    
-
-  
-   
-    const fetchWhy=async()=>{
+    const fetchWhy = async () => {
       try {
-        const res=await axios.get(`${baseURL}/why-aqcs?populate=*`,{ 
-          headers:headers
-        })
-        const why=res?.data?.data[0].attributes;
+        const res = await axios.get(`${baseURL}/why-aqcs?populate=*`, {
+          headers: headers,
+        });
+        const why = res?.data?.data[0].attributes;
         setWhyAqc(why);
       } catch (error) {
         console.log(error);
       }
-    }
+    };
     fetchData();
     // fetchCommetment();
     // fetchAwd();
     fetchWhy();
-  },[])
+  }, []);
 
   return (
     <>
       <NavBar />
       <div className="main-about">
-        <div className="about-banner" style={{background:`url(${ImgURL}${aboutData?.Image?.data?.attributes?.url})`}} >
+        <div
+          className="about-banner"
+          style={{
+            background: `url(${ImgURL}${aboutData?.Image?.data?.attributes?.url})`,
+          }}
+        >
           <div className="banner-gradient"></div>
           <motion.div
             className="banner-text"
@@ -128,15 +130,19 @@ const [awd,setAwd]=useState('');
             animate="animate"
           >
             <motion.h3 variants={varient}>
-              <div dangerouslySetInnerHTML={{ __html: aboutData.Heading}} />
+              <div dangerouslySetInnerHTML={{ __html: aboutData.Heading }} />
             </motion.h3>
             <motion.p variants={varient}>
-              <div dangerouslySetInnerHTML={{ __html: aboutData.Sub_Heading}} />
+              <div
+                dangerouslySetInnerHTML={{ __html: aboutData.Sub_Heading }}
+              />
             </motion.p>
           </motion.div>
         </div>
         <div className="intro">
-          <div dangerouslySetInnerHTML={{ __html: aboutData.About_Information}} />
+          <div
+            dangerouslySetInnerHTML={{ __html: aboutData.About_Information }}
+          />
           {/* <span
             style={{
               fontWeight: "500",
@@ -157,20 +163,23 @@ const [awd,setAwd]=useState('');
           className="mission-vission"
         >
           <motion.div className="card">
-            <div dangerouslySetInnerHTML={{ __html: aboutData.Vision}} />
+            <div dangerouslySetInnerHTML={{ __html: aboutData.Vision }} />
           </motion.div>
           <motion.div className="card about-type2">
-            <div dangerouslySetInnerHTML={{ __html: aboutData.Mission}} />
+            <div dangerouslySetInnerHTML={{ __html: aboutData.Mission }} />
           </motion.div>
         </motion.div>
 
         <div className="commitment">
           <div className="wrapper">
             <div className="left">
-              <div dangerouslySetInnerHTML={{ __html: aboutData.Commitment}} />
+              <div dangerouslySetInnerHTML={{ __html: aboutData.Commitment }} />
             </div>
             <div className="right">
-            <img src={`${ImgURL}${aboutData?.Commitment_Image?.data?.attributes?.url}`} alt="" />
+              <img
+                src={`${ImgURL}${aboutData?.Commitment_Image?.data?.attributes?.url}`}
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -192,7 +201,7 @@ const [awd,setAwd]=useState('');
           {ReactHtmlParser(aboutData?.Why_Aqc)}
 
           <div className="usp-wrapper">
-            {aboutData?.why_aqc_cards?.data.map((val,index) => {
+            {aboutData?.why_aqc_cards?.data.map((val, index) => {
               return (
                 <div className="card" key={index}>
                   {ReactHtmlParser(val?.attributes?.Card)}
@@ -253,18 +262,20 @@ const [awd,setAwd]=useState('');
             </div>
             <div className="horz-bar"></div>
           </div> */}
-          <div className="wrapper">
-            {ReactHtmlParser(aboutData?.Our_Team)}
-          </div>
+          <div className="wrapper">{ReactHtmlParser(aboutData?.Our_Team)}</div>
         </div>
 
         <div
           className="awards"
           style={window.innerWidth <= 480 ? { display: "none" } : {}}
         >
-          <Awd Certifications={aboutData?.Certifications}/>
+          <Awd Certifications={aboutData?.Certifications} />
         </div>
-        {window.innerWidth <= 480 ? <Awd /> : ""}
+        {window.innerWidth <= 480 ? (
+          <Awd Certifications={aboutData?.Certifications} />
+        ) : (
+          ""
+        )}
 
         <PreFooter />
 

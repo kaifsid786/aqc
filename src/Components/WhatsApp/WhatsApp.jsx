@@ -9,7 +9,7 @@ const WhatsAppIcon = () => {
   const redirectToWhatsApp = () => {
     // Replace the phone number and message parameters with your desired values
     const phoneNumber = "8448803484";
-    const message = "Hello, this is a message from my website!";
+    const message = "Hello, this is a message from AQC website!";
 
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
       message
