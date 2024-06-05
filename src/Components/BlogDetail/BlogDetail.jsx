@@ -9,43 +9,44 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import PreFooter from "../PreFooter/PreFooter";
 import axios from "axios";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2,
+} from "react-html-parser";
 
 export default function BlogDetail() {
-
-  const {id }= useParams();
-  const [data,setData]=useState('');
+  const { id } = useParams();
+  const [data, setData] = useState("");
   // console.log(id);
   const baseURL = import.meta.env.VITE_REACT_APP_API_URL;
-    const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
-    const headers = {
-      Authorization: `Bearer ${token}`,
-    };
-    const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
+  const token = import.meta.env.VITE_REACT_APP_API_TOKEN;
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+  const ImgURL = import.meta.env.VITE_REACT_APP_UPLOAD_URL;
 
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(
-          `${baseURL}/blog-pages?filters[slug][$eq]=${id}&populate=*`,
-          {
-            headers: headers,
-          }
-        );
-        if (res.data) {
-          const profData = res.data.data?.[0]?.attributes;
-          console.log(profData);
-          setData(profData);
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(
+        `${baseURL}/blog-pages?filters[slug][$eq]=${id}&populate=*`,
+        {
+          headers: headers,
         }
-        
-      } catch (error) {
-        console.error('Error fetching data:', error);
+      );
+      if (res.data) {
+        const profData = res.data.data?.[0]?.attributes;
+        console.log(profData);
+        setData(profData);
       }
-    };
-  useEffect(()=>{
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
     fetchData();
-  },[id]);
-  const  memoizedData = useMemo(()=>data,[data]);
+  }, [id]);
+  const memoizedData = useMemo(() => data, [data]);
   // console.log(memoizedData);
   const [clickedIndex, setClickedIndex] = useState(0);
   const handleClick = (index) => {
@@ -121,76 +122,92 @@ export default function BlogDetail() {
 
   const renderContent = (content) => {
     if (!content || !content.type) return null;
-  
+
     switch (content.type) {
-      case 'heading':
+      case "heading":
         const HeadingTag = `h${content.level}`;
         return (
-          <HeadingTag key={content.children[0]?.text} style={{width:"100%"}}>
+          <HeadingTag key={content.children[0]?.text} style={{ width: "100%" }}>
             {content.children.map((child, index) => renderContent(child))}
           </HeadingTag>
         );
-  
-      case 'paragraph':
+
+      case "paragraph":
         return (
           <p key={content.children[0]?.text}>
             {content.children.map((child, index) => renderContent(child))}
           </p>
         );
-  
-      case 'list':
-        return content.format === 'unordered' ? (
+
+      case "list":
+        return content.format === "unordered" ? (
           <ul key={content.children[0]?.text}>
             {content.children.map((listItem, index) => (
-              <li key={index}>{listItem.children.map((child) => renderContent(child))}</li>
+              <li key={index}>
+                {listItem.children.map((child) => renderContent(child))}
+              </li>
             ))}
           </ul>
         ) : (
           <ol key={content.children[0]?.text}>
             {content.children.map((listItem, index) => (
-              <li key={index}>{listItem.children.map((child) => renderContent(child))}</li>
+              <li key={index}>
+                {listItem.children.map((child) => renderContent(child))}
+              </li>
             ))}
           </ol>
         );
-  
-      case 'list-item':
+
+      case "list-item":
         return (
           <li key={content.children[0]?.text}>
             {content.children.map((child, index) => renderContent(child))}
           </li>
         );
-  
-      case 'text':
+
+      case "text":
         let textElement = content.text;
         if (content.bold) textElement = <b key={content.text}>{textElement}</b>;
-        if (content.italic) textElement = <i key={content.text}>{textElement}</i>;
-        if (content.underline) textElement = <u key={content.text}>{textElement}</u>;
-        if (content.strikethrough) textElement = <s key={content.text}>{textElement}</s>;
-        if (content.link) textElement = <a href={content.link} key={content.text}>{textElement}</a>;
+        if (content.italic)
+          textElement = <i key={content.text}>{textElement}</i>;
+        if (content.underline)
+          textElement = <u key={content.text}>{textElement}</u>;
+        if (content.strikethrough)
+          textElement = <s key={content.text}>{textElement}</s>;
+        if (content.link)
+          textElement = (
+            <a href={content.link} key={content.text}>
+              {textElement}
+            </a>
+          );
         return textElement;
 
-        case 'link':
-          return (
-            <a href={content.url} key={content.url}>
-              {content.children.map((child, index) => renderContent(child))}
-            </a>
-          );    
-  
-      case 'image':
-        return <img src={content.image?.url} alt={content.image?.alt} key={content.image?.url} />;
-  
+      case "link":
+        return (
+          <a href={content.url} key={content.url}>
+            {content.children.map((child, index) => renderContent(child))}
+          </a>
+        );
+
+      case "image":
+        return (
+          <img
+            src={content.image?.url}
+            alt={content.image?.alt}
+            key={content.image?.url}
+          />
+        );
+
       default:
         return null;
     }
   };
   return (
     <>
-      <NavBar />
+      <NavBar blogDetailImg="/AQC.svg" />
       <div className="main-blogDetail">
         <div className="banner">
-          <p>
-          {memoizedData?.Heading}
-          </p>
+          <p>{memoizedData?.Heading}</p>
         </div>
 
         <div className="section">
@@ -201,7 +218,7 @@ export default function BlogDetail() {
             <h3>Table of Content</h3>
             <div className="content">
               {memoizedData?.Blog_Content?.map((val, i) => {
-                if(val?.type === "heading"){
+                if (val?.type === "heading") {
                   return (
                     <span
                       onClick={() => handleClick(i)}
@@ -211,7 +228,6 @@ export default function BlogDetail() {
                     </span>
                   );
                 }
-                
               })}
             </div>
             <div className="social-media">
@@ -231,7 +247,10 @@ export default function BlogDetail() {
           </div>
 
           <div className="right">
-            <img src={`${ImgURL}${memoizedData?.Image?.data?.attributes?.url}`}  alt="" />
+            <img
+              src={`${ImgURL}${memoizedData?.Image?.data?.attributes?.url}`}
+              alt=""
+            />
             {/* {ReactHtmlParser(memoizedData?.Blog_Content)} */}
             {memoizedData?.Blog_Content?.map((content, index) => (
               <React.Fragment key={index}>

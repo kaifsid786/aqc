@@ -90,11 +90,11 @@
     }
 
     .left {
-      width: 60%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 30px;
       @include md {
         width: 100%;
@@ -105,12 +105,13 @@
       }
 
       .menu {
-        width: 100%;
+        // width: 100%;
         border-bottom: 2px solid rgba(168, 170, 179, 0.5);
         height: 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 7rem;
         span {
           height: 100%;
           display: flex;

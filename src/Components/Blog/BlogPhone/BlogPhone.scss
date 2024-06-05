@@ -10,12 +10,13 @@
   .row {
     width: 100%;
     // padding: 0.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid grey;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 
     span {
+      width: 10rem;
+      border-bottom: 1px solid gray;
       color: rgba(0, 0, 0, 0.4);
       font-family: Poppins;
       font-size: 0.875rem;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import img1 from "../../images/spoon-ingredients-full-flour.png";
-import img2 from "../../../public/prod4/supplements.jpg"
+import img2 from "../../../public/prod4/supplements.jpg";
 
 import img3 from "../../images/milled-rice-bowl-wooden-spoon-black-cement-floor.png";
 import img4 from "../../images/assorted-pastry-near-raisins-nuts.png";
@@ -13,20 +13,19 @@ import img10 from "../../images/gmo-chemical-modified-food-meat-high-view.png";
 import img11 from "../../images/scientist-holding-petri-dish-tweezers.png";
 import img12 from "../../images/selective-focus-shot-fresh-fruits-vegetables-with-different-medicine-wooden-spoon.png";
 import img13 from "../../images/colorful-candies-jelly-marmalade-wooden-box-sweets-old-background-top-view-free-copy-space.png";
-import img14 from "../../../public/prod4/meat.jpg"
-import img15 from "../../../public/prod4/snacks.jpg"
-import img16 from "../../../public/prod4/Oil 1.png"
-import img17 from "../../../public/rnd1.jpg"
-import img18 from "../../../public/prod4/flour 1.png"
-import img19 from "../../../public/prod4/Biscuits & Cookies 1.png"
-import img20 from "../../../public/prod4/diatery.jpg"
-import img21 from "../../../public/prod3/composition-pasta 1.png"
-import img22 from "../../../public/prod3/homemade-bread 1.png"
-import img8 from "../../../public/prod3/mediaImg5.png"
-import img23 from "../../../public/prod4/Salt 1.jpg"
-import img24 from "../../../public/prod4/assortment-peanuts-with-shells 1.png"
-import img25 from "../../../public/prod4/stack-whole-meal-cookies-wooden-background.png"
-
+import img14 from "../../../public/prod4/meat.jpg";
+import img15 from "../../../public/prod4/snacks.jpg";
+import img16 from "../../../public/prod4/Oil 1.png";
+import img17 from "../../../public/rnd1.jpg";
+import img18 from "../../../public/prod4/flour 1.png";
+import img19 from "../../../public/prod4/Biscuits & Cookies 1.png";
+import img20 from "../../../public/prod4/diatery.jpg";
+import img21 from "../../../public/prod3/composition-pasta 1.png";
+import img22 from "../../../public/prod3/homemade-bread 1.jpg";
+import img8 from "../../../public/prod3/mediaImg5.png";
+import img23 from "../../../public/prod4/Salt 1.jpg";
+import img24 from "../../../public/prod4/assortment-peanuts-with-shells 1.png";
+import img25 from "../../../public/prod4/stack-whole-meal-cookies-wooden-background.png";
 
 import "./Gallery.css";
 import { motion, AnimatePresence } from "framer-motion";
@@ -157,9 +156,8 @@ const Gallery = () => {
             className="G-col1"
             style={{ display: "flex", flexDirection: "column" }}
           >
-           
             <img src={img17} alt="" />
-           
+
             <img src={img7} alt="" />
             <img src={img8} alt="" />
             <img src={img9} alt="" />
@@ -181,7 +179,6 @@ const Gallery = () => {
             <img src={img12} alt="" />
             <img src={img13} alt="" />
             <img src={img14} alt="" />
-            
           </motion.div>
           <motion.div
             initial={{ y: "15rem" }}
@@ -195,8 +192,8 @@ const Gallery = () => {
             className="G-col1"
             style={{ display: "flex", flexDirection: "column" }}
           >
-             <img src={img16} alt="" />
-            <img src={img6} alt="" /> 
+            <img src={img16} alt="" />
+            <img src={img6} alt="" />
             <img src={img18} alt="" />
             <img src={img19} alt="" />
             <img src={img20} alt="" />

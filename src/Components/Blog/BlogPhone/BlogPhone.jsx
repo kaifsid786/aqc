@@ -1,41 +1,29 @@
 import "./BlogPhone.scss";
-import { useState } from "react";
-export default function BlogPhone() {
-  const [clickedIndex, setClickedIndex] = useState(0);
-  const [clickedIndexT, setClickedIndexT] = useState(0);
-  const handleClick = (index) => {
-    // Update the clickedIndex to the current clicked element
-    setClickedIndex(index);
-  };
-  const handleClickT = (index) => {
-    // Update the clickedIndex to the current clicked element
-    setClickedIndexT(index);
-  };
-  const isClicked = (index) => {
-    // Check if the current element is clicked
-    return index === clickedIndex;
-  };
-  const isClickedT = (index) => {
-    // Check if the current element is clicked
-    return index === clickedIndexT;
+import { useState, useEffect } from "react";
+import BlogCard from "../BlogCard/BlogCard";
+export default function BlogPhone({
+  allCat,
+  filteredPhoneCat,
+  setFilteredPhoneCat,
+  phData,
+}) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectIndx = (index) => {
+    setSelectedIndex(index);
   };
 
-  const topMenu = [
-    "All Category",
-    "Nutrition",
-    "Market",
-    "Guide",
-    "Nutritional Beverages",
-    "Food Science",
-    "Marketing Theory",
-  ];
-  const tag = [
-    "Health",
-    "Campaign",
-    "Spray Drying",
-    "Manufactured Vitamins",
-    "Nutrition",
-  ];
+  // filteration ------------------------------------------------->
+  useEffect(() => {
+    if (selectedIndex === 0) setFilteredPhoneCat(phData?.blog_pages?.data);
+    else
+      setFilteredCat(
+        phData?.blog_pages?.data?.filter(
+          (item) =>
+            item?.attributes?.Tags?.[0] ===
+            phData?.Categories?.[selectedIndex]?.name
+        )
+      );
+  }, [selectedIndex]);
 
   return (
     <div
@@ -43,84 +31,20 @@ export default function BlogPhone() {
       style={window.innerWidth > 900 ? { display: "none" } : {}}
     >
       <div className="row">
-        {topMenu.map((val, i) => {
-          return i <= 3 ? (
+        {allCat?.map((val, i) => {
+          return (
             <span
-              onClick={() => handleClick(i)}
               style={
-                isClicked(i)
-                  ? { borderBottom: "1.5px solid black", color: "black" }
+                selectedIndex === i
+                  ? { borderBottom: "1.2px solid black", color: "black" }
                   : {}
               }
+              onClick={() => selectIndx(i)}
             >
-              {val}
+              {val.name}
             </span>
-          ) : (
-            ""
           );
         })}
-      </div>
-      <div className="row">
-        {topMenu.map((val, i) => {
-          return i > 3 && i <= 5 ? (
-            <span
-              onClick={() => handleClick(i)}
-              style={
-                isClicked(i)
-                  ? { borderBottom: "1.5px solid black", color: "black" }
-                  : {}
-              }
-            >
-              {val}
-            </span>
-          ) : (
-            ""
-          );
-        })}
-      </div>
-      <div className="row rowL">
-        {topMenu.map((val, i) => {
-          return i > 5 ? (
-            <span
-              onClick={() => handleClick(i)}
-              style={
-                isClicked(i)
-                  ? { borderBottom: "1.5px solid black", color: "black" }
-                  : {}
-              }
-            >
-              {val}
-            </span>
-          ) : (
-            ""
-          );
-        })}
-        <span className="selectBlog">
-          <select name="" id="">
-            <option value="">Popular</option>
-            <option value="">Latest</option>
-            <option value="">Most Viewed</option>
-          </select>
-        </span>
-      </div>
-
-      <div className="row2">
-        <h3>Tags</h3>
-        <div className="row-2-content">
-          {tag.map((val, i) => {
-            return (
-              <div
-                className="content"
-                onClick={() => handleClickT(i)}
-                style={
-                  isClickedT(i) ? { background: "#003E71", color: "white" } : {}
-                }
-              >
-                {val}
-              </div>
-            );
-          })}
-        </div>
       </div>
     </div>
   );

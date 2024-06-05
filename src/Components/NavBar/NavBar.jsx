@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import accord3 from "../../../public/Micronutrient premixes icon.svg";
 import accord2 from "../../../public/Food additives icon.svg";
 import accord1 from "../../../public/Lab equipment icon.svg";
-export default function NavBar() {
+export default function NavBar({ blogDetailImg }) {
   const navigate = useNavigate();
   const [showhamMenu, setShowHamMenu] = useState(true);
   const [showHamB, setShowHamB] = useState(false);
@@ -32,7 +32,13 @@ export default function NavBar() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          src={!showHamB ? "./AQC.svg" : "/AQC2.svg"}
+          src={
+            !showHamB
+              ? blogDetailImg === undefined
+                ? "./AQC.svg"
+                : blogDetailImg
+              : "/AQC2.svg"
+          }
           onClick={() => navigate("/")}
           style={{ cursor: "pointer" }}
         />
