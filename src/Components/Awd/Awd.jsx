@@ -22,15 +22,35 @@ const awd = ({ Certifications }) => {
             phWidth = 7;
           }
           return (
-            <img
+            <div
+              className="div"
               style={
-                window.innerWidth > 480
-                  ? { width: `${width}rem` }
-                  : { width: `${phWidth}rem` }
+                index === 4
+                  ? {
+                      width: "8rem",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginLeft: "32%",
+                    }
+                  : {
+                      width: "8rem",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }
               }
-              src={`${ImgURL}${val?.attributes?.url}`}
-              alt=""
-            />
+            >
+              <img
+                style={
+                  window.innerWidth > 480
+                    ? { width: `${width}rem` }
+                    : { width: `${phWidth}rem` }
+                }
+                src={`${ImgURL}${val?.attributes?.url}`}
+                alt=""
+              />
+            </div>
           );
         })}
       </div>

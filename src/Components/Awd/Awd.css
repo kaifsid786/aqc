@@ -32,8 +32,8 @@
   .awd-awards-wrapper {
     width: 23rem;
     padding: 0 2rem !important;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     justify-items: center;
     align-items: center;
     gap: 20px;
